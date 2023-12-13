@@ -1,5 +1,88 @@
 # Changelog
 
+## 2.3.5
+
+### Bugs fixed
+
+* Right click menu was pointing to the wrong list row
+* Double click to connect
+
+
+## 2.3.4
+
+### Bugs fixed
+
+* Errors when connected to a device with the DisconnectItems plugin enabled
+
+## 2.3.3
+
+### Changes
+
+* Do not re-use dbusmenu item identifiers; avoids issues at least with gnome-shell-extension-appindicator.
+
+### Bugs fixed
+
+* Issues with NM PANU connections of equally named devices
+* Submenus in KDE Plasma tray
+* Avoid using StatusNotifierItem and GtkStatusIcon icons in parallel
+
+## 2.3.2
+
+### Bugs fixed
+
+* StatusNotifierItem submenus did not work in lxqt-panel (@niknah)
+* StatusNotifierItem vanished on panel restarts
+* StatusNotifierItem compatibility issues with libdbusmenu used at least by xfce4-panel and Waybar
+* StatusNotifierItem showed the menu on left click in xfce4-panel
+
+## 2.3.1
+
+### Bugs fixed
+
+* StatusNotifierItem sent an incomplete NewStatus signal.
+* Avoid statusbar resize when showing progressbar
+
+## 2.3
+
+### Bugs fixed
+
+* Blocked emblem was not visible for scales other than 1
+
+## 2.3.beta1
+
+### New features
+
+* Audio profile switcher in applet menu (@abhijeetviswa)
+* Symbolic tray icon option (GSettings switch symbolic-status-icons in org.blueman.general)
+
+### Changes
+
+* Replace AppIndicator with DBus StatusNotifierItem
+* Use a GtkTreeModelFilter to show/hide unnamed devices
+* Replace sigint hack with GLib to catch it
+* Port meson from deprecated python3 module
+* Rework battery handling
+* Merge Battery applet plugin into ConnectionNotifier
+* Symbolic icons and small UI improvements
+
+## 2.2.5
+
+### Bugs fixed
+
+* Fix network interface iteration on 32 bit systems
+* Manager: Fix cancel button in send-note dialog
+* Fix battery and signals bars
+
+## 2.2.4
+
+### Changes
+
+* Dropped the PIN database
+
+### Bugs fixed
+
+* blueman-mechanism accepted arbitrary file paths and returned the errors from trying to open them, see https://github.com/blueman-project/blueman/security/advisories/GHSA-3r9p-m5c8-8mw8
+
 ## 2.2.3
 
 ### Bugs fixed

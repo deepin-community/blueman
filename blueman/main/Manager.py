@@ -1,4 +1,5 @@
 import logging
+import signal
 from gettext import gettext as _
 from typing import Optional, Any, Tuple
 
@@ -32,6 +33,14 @@ class Blueman(Gtk.Application):
     def __init__(self) -> None:
         super().__init__(application_id="org.blueman.Manager")
 
+        def do_quit(_: object) -> bool:
+            self.quit()
+            return False
+
+        s = GLib.unix_signal_source_new(signal.SIGINT)
+        s.set_callback(do_quit)
+        s.attach()
+
     window: Optional[Gtk.ApplicationWindow]
 
     def do_startup(self) -> None:
@@ -51,7 +60,7 @@ class Blueman(Gtk.Application):
     def do_activate(self) -> None:
         if not self.window:
             self.window = Gtk.ApplicationWindow(application=self, name="BluemanManager", icon_name="blueman",
-                                                title="Bluetooth Devices")
+                                                title=_("Bluetooth Devices"))
             w, h, x, y = self.Config["window-properties"]
             if w and h:
                 self.window.resize(w, h)
@@ -62,9 +71,10 @@ class Blueman(Gtk.Application):
             self.window.connect("configure-event", self._on_configure)
 
             self.builder = Builder("manager-main.ui")
+            box = self.builder.get_widget("box", Gtk.Box)
+            self.window.add(box)
 
             grid = self.builder.get_widget("grid", Gtk.Grid)
-            self.window.add(grid)
 
             toolbar = self.builder.get_widget("toolbar", Gtk.Toolbar)
             statusbar = self.builder.get_widget("statusbar", Gtk.Box)
@@ -73,7 +83,7 @@ class Blueman(Gtk.Application):
             self.Plugins.load_plugin()
 
             area = MessageArea()
-            grid.attach(area, 0, 3, 1, 1)
+            grid.attach(area, 0, 1, 1, 1)
 
             self._applethandlerid: Optional[int] = None
 
@@ -158,7 +168,7 @@ class Blueman(Gtk.Application):
                 self.Stats = ManagerStats(self)
 
                 if self.List.is_valid_adapter():
-                    self.List.display_known_devices(autoselect=True)
+                    self.List.populate_devices()
 
                 self.List.connect("adapter-changed", self.on_adapter_changed)
 
@@ -177,7 +187,7 @@ class Blueman(Gtk.Application):
 
     def on_adapter_changed(self, lst: ManagerDeviceList, adapter: str) -> None:
         if adapter is not None:
-            self.List.display_known_devices(autoselect=True)
+            self.List.populate_devices()
 
     def inquiry(self) -> None:
         def prop_changed(_lst: ManagerDeviceList, _adapter: Adapter, key_value: Tuple[str, Any]) -> None:
@@ -223,6 +233,10 @@ class Blueman(Gtk.Application):
     @staticmethod
     def toggle_trust(device: Device) -> None:
         device['Trusted'] = not device['Trusted']
+
+    @staticmethod
+    def toggle_blocked(device: Device) -> None:
+        device['Blocked'] = not device['Blocked']
 
     def send(self, device: Device) -> None:
         adapter = self.List.Adapter

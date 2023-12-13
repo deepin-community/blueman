@@ -5,6 +5,7 @@ from typing import Any
 from blueman.bluez.Device import Device
 from blueman.Functions import launch
 from blueman.plugins.AppletPlugin import AppletPlugin
+from blueman.plugins.errors import UnsupportedPlatformError
 
 import gi
 gi.require_version('GdkX11', '3.0')
@@ -12,13 +13,13 @@ gi.require_version('Gdk', '3.0')
 from gi.repository import Gdk, GdkX11
 
 if not isinstance(Gdk.Screen.get_default(), GdkX11.X11Screen):
-    raise ImportError('This is not an X11 screen')
+    raise UnsupportedPlatformError('Only X11 platform is supported')
 
 
 class GameControllerWakelock(AppletPlugin):
     __description__ = _("Temporarily suspends the screensaver when a bluetooth game controller is connected.")
     __author__ = "bwRavencl"
-    __icon__ = "input-gaming"
+    __icon__ = "input-gaming-symbolic"
 
     def on_load(self) -> None:
         self.wake_lock = 0

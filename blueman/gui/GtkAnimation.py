@@ -1,4 +1,4 @@
-from typing import List, Optional, Collection, Iterable
+from typing import List, Optional, Collection, Iterable, TYPE_CHECKING
 
 import cairo
 import gi
@@ -11,6 +11,10 @@ gi.require_version("Gdk", "3.0")
 from gi.repository import Gdk
 from gi.repository import GObject
 from gi.repository import GLib
+
+
+if TYPE_CHECKING:
+    from blueman.gui.manager.ManagerDeviceList import ManagerDeviceList
 
 
 class AnimBase(GObject.GObject):
@@ -96,15 +100,16 @@ class AnimBase(GObject.GObject):
 
 
 class TreeRowFade(AnimBase):
-    def __init__(self, tw: Gtk.TreeView, path: Gtk.TreePath, columns: Optional[Collection[Gtk.TreeViewColumn]] = None
-                 ) -> None:
+    def __init__(self, tw: "ManagerDeviceList",
+                 path: Gtk.TreePath,
+                 columns: Optional[Collection[Gtk.TreeViewColumn]] = None) -> None:
         super().__init__(1.0)
         self.tw = tw
+        assert self.tw.liststore is not None
 
         self.sig: Optional[int] = self.tw.connect_after("draw", self.on_draw)
 
-        assert tw.props.model is not None
-        self.row = Gtk.TreeRowReference.new(tw.props.model, path)
+        self.row = Gtk.TreeRowReference.new(self.tw.liststore, path)
         self.stylecontext = tw.get_style_context()
         self.columns = columns
 
@@ -112,12 +117,6 @@ class TreeRowFade(AnimBase):
         if self.sig is not None:
             self.tw.disconnect(self.sig)
             self.sig = None
-
-    def get_iter(self) -> Optional[Gtk.TreeIter]:
-        assert isinstance(self.tw.props.model, Gtk.TreeModel)
-        path = self.row.get_path()
-        assert path is not None
-        return self.tw.props.model.get_iter(path)
 
     def on_draw(self, widget: Gtk.Widget, cr: cairo.Context) -> bool:
         if self.frozen:
@@ -130,6 +129,12 @@ class TreeRowFade(AnimBase):
             return False
 
         path = self.row.get_path()
+        if path is None:
+            return False
+
+        path = self.tw.filter.convert_child_path_to_path(path)
+        if path is None:
+            return False
 
         color = self.stylecontext.get_background_color(Gtk.StateFlags.NORMAL)
 
@@ -154,14 +159,14 @@ class TreeRowFade(AnimBase):
 
 
 class CellFade(AnimBase):
-    def __init__(self, tw: Gtk.TreeView, path: Gtk.TreePath, columns: Iterable[int]) -> None:
+    def __init__(self, tw: "ManagerDeviceList", path: Gtk.TreePath, columns: Iterable[int]) -> None:
         super().__init__(1.0)
         self.tw = tw
+        assert self.tw.liststore is not None
 
         self.frozen = False
         self.sig: Optional[int] = tw.connect_after("draw", self.on_draw)
-        assert tw.props.model is not None
-        self.row = Gtk.TreeRowReference.new(tw.props.model, path)
+        self.row = Gtk.TreeRowReference.new(self.tw.liststore, path)
         self.selection = tw.get_selection()
         self.columns: List[Optional[Gtk.TreeViewColumn]] = []
         for i in columns:
@@ -172,12 +177,6 @@ class CellFade(AnimBase):
             self.tw.disconnect(self.sig)
             self.sig = None
 
-    def get_iter(self) -> Optional[Gtk.TreeIter]:
-        assert isinstance(self.tw.props.model, Gtk.TreeModel)
-        path = self.row.get_path()
-        assert path is not None
-        return self.tw.props.model.get_iter(path)
-
     def on_draw(self, _widget: Gtk.Widget, cr: cairo.Context) -> bool:
         if self.frozen:
             return False
@@ -187,7 +186,14 @@ class CellFade(AnimBase):
                 self.tw.disconnect(self.sig)
                 self.sig = None
 
+        assert self.tw.liststore is not None
         path = self.row.get_path()
+        if path is None:
+            return False
+
+        path = self.tw.filter.convert_child_path_to_path(path)
+        if path is None:
+            return False
 
         # FIXME Use Gtk.render_background to render background.
         # However it does not use the correct colors/gradient.
@@ -201,10 +207,9 @@ class CellFade(AnimBase):
 
         cr.clip()
 
-        assert self.tw.props.model is not None
-        maybe_selected = self.selection.get_selected()[1]
+        maybe_selected = self.tw.selected()
         if maybe_selected is not None:
-            selected = self.tw.props.model.get_path(maybe_selected) == path
+            selected = self.tw.liststore.get_path(maybe_selected) == path
         else:
             selected = False
 

@@ -160,10 +160,8 @@ am__uninstall_files_from_dir = { \
          $(am__cd) "$$dir" && rm -f $$files; }; \
   }
 am__installdirs = "$(DESTDIR)$(appdir)" "$(DESTDIR)$(autostartdir)" \
-	"$(DESTDIR)$(pindbdir)" "$(DESTDIR)$(settingsdir)" \
-	"$(DESTDIR)$(thunardir)"
-DATA = $(app_DATA) $(autostart_DATA) $(pindb_DATA) $(settings_DATA) \
-	$(thunar_DATA)
+	"$(DESTDIR)$(settingsdir)" "$(DESTDIR)$(thunardir)"
+DATA = $(app_DATA) $(autostart_DATA) $(settings_DATA) $(thunar_DATA)
 RECURSIVE_CLEAN_TARGETS = mostlyclean-recursive clean-recursive	\
   distclean-recursive maintainer-clean-recursive
 am__recursive_targets = \
@@ -410,14 +408,11 @@ gsettings_SCHEMAS = org.blueman.gschema.xml
 
 # GTK icon cache
 gtk_update_icon_cache = gtk-update-icon-cache -f -t $(datadir)/icons/hicolor
-pindbdir = $(pkgdatadir)
-pindb_DATA = pin-code-database.xml
 EXTRA_DIST = $(autostart_in_files)	\
 		$(app_in_files)		\
 		$(thunar_in_files)	\
 		$(settings_in_files)	\
 		$(gsettings_SCHEMAS)    \
-		pin-code-database.xml	\
 		meson.build
 
 SUBDIRS = \
@@ -517,27 +512,6 @@ uninstall-autostartDATA:
 	@list='$(autostart_DATA)'; test -n "$(autostartdir)" || list=; \
 	files=`for p in $$list; do echo $$p; done | sed -e 's|^.*/||'`; \
 	dir='$(DESTDIR)$(autostartdir)'; $(am__uninstall_files_from_dir)
-install-pindbDATA: $(pindb_DATA)
-	@$(NORMAL_INSTALL)
-	@list='$(pindb_DATA)'; test -n "$(pindbdir)" || list=; \
-	if test -n "$$list"; then \
-	  echo " $(MKDIR_P) '$(DESTDIR)$(pindbdir)'"; \
-	  $(MKDIR_P) "$(DESTDIR)$(pindbdir)" || exit 1; \
-	fi; \
-	for p in $$list; do \
-	  if test -f "$$p"; then d=; else d="$(srcdir)/"; fi; \
-	  echo "$$d$$p"; \
-	done | $(am__base_list) | \
-	while read files; do \
-	  echo " $(INSTALL_DATA) $$files '$(DESTDIR)$(pindbdir)'"; \
-	  $(INSTALL_DATA) $$files "$(DESTDIR)$(pindbdir)" || exit $$?; \
-	done
-
-uninstall-pindbDATA:
-	@$(NORMAL_UNINSTALL)
-	@list='$(pindb_DATA)'; test -n "$(pindbdir)" || list=; \
-	files=`for p in $$list; do echo $$p; done | sed -e 's|^.*/||'`; \
-	dir='$(DESTDIR)$(pindbdir)'; $(am__uninstall_files_from_dir)
 install-settingsDATA: $(settings_DATA)
 	@$(NORMAL_INSTALL)
 	@list='$(settings_DATA)'; test -n "$(settingsdir)" || list=; \
@@ -742,7 +716,7 @@ check: check-recursive
 all-am: Makefile $(DATA)
 installdirs: installdirs-recursive
 installdirs-am:
-	for dir in "$(DESTDIR)$(appdir)" "$(DESTDIR)$(autostartdir)" "$(DESTDIR)$(pindbdir)" "$(DESTDIR)$(settingsdir)" "$(DESTDIR)$(thunardir)"; do \
+	for dir in "$(DESTDIR)$(appdir)" "$(DESTDIR)$(autostartdir)" "$(DESTDIR)$(settingsdir)" "$(DESTDIR)$(thunardir)"; do \
 	  test -z "$$dir" || $(MKDIR_P) "$$dir"; \
 	done
 install: install-recursive
@@ -798,7 +772,7 @@ info: info-recursive
 info-am:
 
 install-data-am: install-appDATA install-autostartDATA \
-	install-pindbDATA install-settingsDATA install-thunarDATA
+	install-settingsDATA install-thunarDATA
 	@$(NORMAL_INSTALL)
 	$(MAKE) $(AM_MAKEFLAGS) install-data-hook
 install-dvi: install-dvi-recursive
@@ -844,8 +818,7 @@ ps: ps-recursive
 ps-am:
 
 uninstall-am: uninstall-appDATA uninstall-autostartDATA \
-	uninstall-pindbDATA uninstall-settingsDATA \
-	uninstall-thunarDATA
+	uninstall-settingsDATA uninstall-thunarDATA
 	@$(NORMAL_INSTALL)
 	$(MAKE) $(AM_MAKEFLAGS) uninstall-hook
 .MAKE: $(am__recursive_targets) install-am install-data-am \
@@ -859,14 +832,14 @@ uninstall-am: uninstall-appDATA uninstall-autostartDATA \
 	install-data install-data-am install-data-hook install-dvi \
 	install-dvi-am install-exec install-exec-am install-html \
 	install-html-am install-info install-info-am install-man \
-	install-pdf install-pdf-am install-pindbDATA install-ps \
-	install-ps-am install-settingsDATA install-strip \
-	install-thunarDATA installcheck installcheck-am installdirs \
-	installdirs-am maintainer-clean maintainer-clean-generic \
-	mostlyclean mostlyclean-generic mostlyclean-libtool pdf pdf-am \
-	ps ps-am tags tags-am uninstall uninstall-am uninstall-appDATA \
-	uninstall-autostartDATA uninstall-hook uninstall-pindbDATA \
-	uninstall-settingsDATA uninstall-thunarDATA
+	install-pdf install-pdf-am install-ps install-ps-am \
+	install-settingsDATA install-strip install-thunarDATA \
+	installcheck installcheck-am installdirs installdirs-am \
+	maintainer-clean maintainer-clean-generic mostlyclean \
+	mostlyclean-generic mostlyclean-libtool pdf pdf-am ps ps-am \
+	tags tags-am uninstall uninstall-am uninstall-appDATA \
+	uninstall-autostartDATA uninstall-hook uninstall-settingsDATA \
+	uninstall-thunarDATA
 
 .PRECIOUS: Makefile
 

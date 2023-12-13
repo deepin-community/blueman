@@ -95,12 +95,14 @@ class PluginDialog(Gtk.Window):
             title=_("Plugins"),
             icon_name="blueman",
             name="PluginDialog",
-            border_width=6,
+            border_width=10,
             default_width=490,
             default_height=380,
             resizable=False,
             visible=False
         )
+
+        self.set_position(Gtk.WindowPosition.CENTER)
 
         self.applet = applet
 
@@ -187,8 +189,8 @@ class PluginDialog(Gtk.Window):
         self.applet.Plugins.disconnect(self.sig_b)
         return False
 
-    def on_selection_changed(self, selection: Gtk.TreeSelection) -> None:
-        model, tree_iter = selection.get_selected()
+    def on_selection_changed(self, _selection: Gtk.TreeSelection) -> None:
+        tree_iter = self.list.selected()
         assert tree_iter is not None
 
         name = self.list.get(tree_iter, "name")["name"]
@@ -222,7 +224,7 @@ class PluginDialog(Gtk.Window):
         self.update_config_widget(cls)
 
     def on_prefs_toggled(self, _button: Gtk.ToggleButton) -> None:
-        model, tree_iter = self.list.selection.get_selected()
+        tree_iter = self.list.selected()
         assert tree_iter is not None
         name = self.list.get(tree_iter, "name")["name"]
         cls: Type[AppletPlugin] = self.applet.Plugins.get_classes()[name]

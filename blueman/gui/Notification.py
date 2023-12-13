@@ -87,6 +87,12 @@ class _NotificationDialog(Gtk.MessageDialog):
         self.connect("enter-notify-event", on_enter)
         self.connect("leave-notify-event", on_leave)
 
+    def set_message(self, message: str) -> None:
+        self.props.secondary_text = message
+
+    def set_notification_icon(self, icon_name: str) -> None:
+        self.set_icon_from_icon_name(icon_name, 48)
+
     def dialog_response(self, _dialog: Gtk.Dialog, response: int) -> None:
         if self.callback:
             self.callback(self.actions[response])
@@ -185,6 +191,16 @@ class _NotificationBubble(Gio.DBusProxy):
                 self.add_action(action[0], action[1], actions_cb)
 
         self._capabilities = self.GetCapabilities()
+
+    def set_message(self, message: str) -> None:
+        self._body = message
+        if self._return_id is not None:
+            self.show()
+
+    def set_notification_icon(self, icon_name: str) -> None:
+        self._app_icon = icon_name
+        if self._return_id is not None:
+            self.show()
 
     @property
     def server_information(self) -> Tuple[str, str, str, str]:

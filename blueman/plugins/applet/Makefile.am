@@ -4,7 +4,6 @@ blueman_PYTHON = \
     __init__.py \
     AuthAgent.py \
     AutoConnect.py \
-    Battery.py \
     ConnectionNotifier.py \
     DBusService.py \
     DhcpClient.py \
@@ -25,12 +24,9 @@ blueman_PYTHON = \
     ShowConnected.py \
     StatusIcon.py \
     StandardItems.py \
+    StatusNotifierItem.py \
     TransferService.py
 
-
-if HAVE_APPINDICATOR
-blueman_PYTHON += AppIndicator.py
-endif
 
 CLEANFILES =		\
 	$(BUILT_SOURCES)

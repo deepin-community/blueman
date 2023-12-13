@@ -1,11 +1,10 @@
-__all__ = ["VERSION", "PACKAGE", "WEBSITE", "ICON_PATH", "PIXMAP_PATH", "UI_PATH", "PKGDATA_DIR", "BIN_DIR"]
+__all__ = ["VERSION", "PACKAGE", "WEBSITE", "ICON_PATH", "PIXMAP_PATH", "UI_PATH", "BIN_DIR"]
 
 VERSION = "@VERSION@"
 PACKAGE = "@PACKAGE@"
 WEBSITE = "https://github.com/blueman-project/blueman"
 PREFIX = "@prefix@"
 BIN_DIR = "@BINDIR@"
-PKGDATA_DIR = "@pkgdatadir@"
 LOCALEDIR = "@LOCALEDIR@"
 ICON_PATH = "@icondir@"
 PIXMAP_PATH = "@pkgdatadir@/pixmaps"

@@ -17,7 +17,7 @@ from gi.repository import Gtk
 def send_note_cb(dialog: Gtk.Dialog, response_id: int, device_address: str, text_view: Gtk.Entry) -> None:
     text = text_view.get_buffer().props.text
     dialog.destroy()
-    if response_id == Gtk.ResponseType.CANCEL:
+    if response_id == Gtk.ResponseType.REJECT:
         return
 
     date = datetime.datetime.now().strftime('%Y%m%dT%H%M00')
@@ -48,7 +48,7 @@ def send_note(device: Device, parent: Gtk.Window) -> None:
 
 class Notes(ManagerPlugin, MenuItemsProvider):
     def on_request_menu_items(self, manager_menu: ManagerDeviceMenu, device: Device) -> List[DeviceMenuItem]:
-        item = create_menuitem(_("Send _note"), "dialog-information")
+        item = create_menuitem(_("Send _note"), "dialog-information-symbolic")
         item.props.tooltip_text = _("Send a text note")
         _window = manager_menu.get_toplevel()
         assert isinstance(_window, Gtk.Window)

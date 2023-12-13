@@ -155,9 +155,9 @@ am__py_compile = PYTHON=$(PYTHON) $(SHELL) $(py_compile)
 am__installdirs = "$(DESTDIR)$(bluemandir)"
 am__pep3147_tweak = \
   sed -e 's|\.py$$||' -e 's|[^/]*$$|__pycache__/&.*.pyc __pycache__/&.*.pyo|'
-py_compile = $(top_srcdir)/../py-compile
+py_compile = $(top_srcdir)/py-compile
 am__tagged_files = $(HEADERS) $(SOURCES) $(TAGS_FILES) $(LISP)
-am__DIST_COMMON = $(srcdir)/Makefile.in $(top_srcdir)/../py-compile
+am__DIST_COMMON = $(srcdir)/Makefile.in $(top_srcdir)/py-compile
 DISTFILES = $(DIST_COMMON) $(DIST_SOURCES) $(TEXINFOS) $(EXTRA_DIST)
 pkgdatadir = @pkgdatadir@
 ACLOCAL = @ACLOCAL@
@@ -339,8 +339,9 @@ top_srcdir = @top_srcdir@
 bluemandir = $(pythondir)/blueman/main/indicators
 blueman_PYTHON = \
 	__init__.py			\
-	AppIndicator.py		\
-	GtkStatusIcon.py
+	GtkStatusIcon.py	\
+	IndicatorInterface.py	\
+	StatusNotifierItem.py
 
 CLEANFILES = \
 	$(BUILT_SOURCES)

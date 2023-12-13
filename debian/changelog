@@ -1,3 +1,57 @@
+blueman (2.3.5-3) unstable; urgency=low
+
+  * Add a PipeWire alternative to recommendations
+
+ -- Christopher Schramm <debian@cschramm.eu>  Sun, 20 Aug 2023 08:22:00 +0200
+
+blueman (2.3.5-2) unstable; urgency=low
+
+  * Update polkit dependency (Closes: #1025546)
+
+ -- Christopher Schramm <debian@cschramm.eu>  Wed, 7 Dec 2022 20:37:00 +0100
+
+blueman (2.3.5-1) unstable; urgency=low
+
+  * New release
+
+ -- Christopher Schramm <debian@cschramm.eu>  Tue, 22 Nov 2022 20:12:00 +0100
+
+blueman (2.3.4-1) unstable; urgency=low
+
+  * New release
+
+ -- Christopher Schramm <debian@cschramm.eu>  Fri, 14 Oct 2022 16:15:00 +0200
+
+blueman (2.3.2-1) unstable; urgency=low
+
+  * New release
+
+ -- Christopher Schramm <debian@cschramm.eu>  Mon, 1 Aug 2022 11:40:00 +0200
+
+blueman (2.3.1-1) unstable; urgency=low
+
+  * New release
+
+ -- Christopher Schramm <debian@cschramm.eu>  Mon, 18 Jul 2022 08:32:00 +0200
+
+blueman (2.3-1) unstable; urgency=low
+
+  * New release
+
+ -- Christopher Schramm <debian@cschramm.eu>  Tue, 5 Jul 2022 14:16:00 +0200
+
+blueman (2.2.5-1) unstable; urgency=low
+
+  * New release
+
+ -- Christopher Schramm <debian@cschramm.eu>  Fri, 10 Jun 2022 08:39:00 +0200
+
+blueman (2.2.4-1) unstable; urgency=low
+
+  * New release
+
+ -- Christopher Schramm <debian@cschramm.eu>  Thu, 10 Feb 2022 13:27:00 +0200
+
 blueman (2.2.3-1) unstable; urgency=low
 
   * New release
