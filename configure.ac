@@ -1,9 +1,9 @@
 AC_PREREQ(2.61)
 
-AC_INIT([blueman], [2.2.3], [https://github.com/blueman-project/blueman/issues])
+AC_INIT([blueman], [2.3.5], [https://github.com/blueman-project/blueman/issues])
 AC_CONFIG_HEADERS(config.h)
 AC_CONFIG_MACRO_DIRS([m4])
-AM_INIT_AUTOMAKE([foreign dist-xz])
+AM_INIT_AUTOMAKE([1.16.3 foreign dist-xz])
 
 AM_MAINTAINER_MODE([enable])
 AC_PROG_CC
@@ -210,12 +210,6 @@ AM_CONDITIONAL([HAVE_PULSEAUDIO], [test "x$use_pulseaudio" = "xyes"])
 
 dnl ----------------------------
 
-AC_ARG_ENABLE([appindicator],
-  AS_HELP_STRING([--disable-appindicator], [Disable Libappindicator support]),
-  [use_appindicator=$enableval], [use_appindicator=yes])
-
-AM_CONDITIONAL([HAVE_APPINDICATOR], [test "x$use_appindicator" = "xyes"])
-
 AC_ARG_WITH([systemdsystemunitdir],
   AS_HELP_STRING([--with-systemdsystemunitdir=PATH],
     [Directory for systemd system unit files]
@@ -273,7 +267,6 @@ data/configs/Makefile
 data/icons/Makefile
 data/icons/hicolor/Makefile
 data/icons/hicolor/16x16/Makefile
-data/icons/hicolor/16x16/actions/Makefile
 data/icons/hicolor/16x16/devices/Makefile
 data/icons/hicolor/16x16/status/Makefile
 data/icons/hicolor/16x16/apps/Makefile
@@ -281,15 +274,12 @@ data/icons/hicolor/22x22/Makefile
 data/icons/hicolor/22x22/status/Makefile
 data/icons/hicolor/22x22/apps/Makefile
 data/icons/hicolor/24x24/Makefile
-data/icons/hicolor/24x24/actions/Makefile
 data/icons/hicolor/24x24/status/Makefile
 data/icons/hicolor/24x24/apps/Makefile
 data/icons/hicolor/32x32/Makefile
-data/icons/hicolor/32x32/actions/Makefile
 data/icons/hicolor/32x32/status/Makefile
 data/icons/hicolor/32x32/apps/Makefile
 data/icons/hicolor/48x48/Makefile
-data/icons/hicolor/48x48/actions/Makefile
 data/icons/hicolor/48x48/status/Makefile
 data/icons/hicolor/48x48/apps/Makefile
 data/icons/hicolor/64x64/Makefile
@@ -312,6 +302,7 @@ data/icons/hicolor/256x256/status/Makefile
 data/icons/hicolor/256x256/apps/Makefile
 data/icons/hicolor/scalable/Makefile
 data/icons/hicolor/scalable/devices/Makefile
+data/icons/hicolor/scalable/emblems/Makefile
 data/icons/hicolor/scalable/actions/Makefile
 data/icons/hicolor/scalable/status/Makefile
 data/icons/hicolor/scalable/apps/Makefile
@@ -327,6 +318,24 @@ data/configs/org.blueman.Mechanism.service
 module/Makefile
 po/Makefile.in
 sendto/Makefile
+test/Makefile
+test/apps/Makefile
+test/bluez/Makefile
+test/bluez/obex/Makefile
+test/gui/Makefile
+test/gui/applet/Makefile
+test/gui/manager/Makefile
+test/main/Makefile
+test/main/applet/Makefile
+test/main/indicators/Makefile
+test/module/Makefile
+test/plugins/Makefile
+test/plugins/applet/Makefile
+test/plugins/manager/Makefile
+test/plugins/mechanism/Makefile
+test/plugins/services/Makefile
+test/services/Makefile
+test/services/meta/Makefile
 ])
 
 
@@ -345,7 +354,6 @@ echo Nautilus sendto: $have_nautilus_python
 echo Settings menu integration enabled: $have_settings
 echo Dhcpd 3 configuration file: $dhconfig
 echo PulseAudio support: $use_pulseaudio
-echo AppIndicator support: $use_appindicator
 echo Systemd system unit dir: ${systemd_system_unit_dir}
 echo Systemd user unit dir: ${systemd_user_unit_dir}
 echo Icon theme: gnome-icon-theme, mate-icon-theme, adwaita-icon-theme, elementary-xfce, or Papirus

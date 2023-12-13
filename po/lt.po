@@ -6,17 +6,17 @@
 # brennus <jonas.ska@gmail.com>, 2014-2015
 # Moo, 2015-2019
 # Kornelijus Tvarijanavičius <kornelitvari@protonmail.com>, 2020.
-# Moo <hazap@hotmail.com>, 2020, 2021.
+# Moo <hazap@hotmail.com>, 2020, 2022.
 # Džiugas J <dziugas1959@hotmail.com>
 # Andrius Majauskas <komitetas@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: blueman-project\n"
 "Report-Msgid-Bugs-To: https://github.com/blueman-project/blueman/issues\n"
-"POT-Creation-Date: 2021-10-03 11:06+0200\n"
-"PO-Revision-Date: 2021-07-09 21:32+0000\n"
+"POT-Creation-Date: 2022-11-22 19:08+0000\n"
+"PO-Revision-Date: 2022-09-08 12:17+0000\n"
 "Last-Translator: Moo <hazap@hotmail.com>\n"
-"Language-Team: Lithuanian <https://hosted.weblate.org/projects/blueman/2-2/"
+"Language-Team: Lithuanian <https://hosted.weblate.org/projects/blueman/2-3/"
 "lt/>\n"
 "Language: lt\n"
 "MIME-Version: 1.0\n"
@@ -25,27 +25,27 @@ msgstr ""
 "Plural-Forms: nplurals=4; plural=(n % 10 == 1 && (n % 100 > 19 || n % 100 < "
 "11) ? 0 : (n % 10 >= 2 && n % 10 <=9) && (n % 100 > 19 || n % 100 < 11) ? "
 "1 : n % 1 != 0 ? 2: 3);\n"
-"X-Generator: Weblate 4.8-dev\n"
+"X-Generator: Weblate 4.14.1-dev\n"
 
-#: data/ui/adapters-tab.ui:29
+#: data/ui/adapters-tab.ui:30
 msgid "<b>Visibility Setting</b>"
 msgstr "<b>Matomumo Nustatymas</b>"
 
-#: data/ui/adapters-tab.ui:39 blueman/main/Adapter.py:145
+#: data/ui/adapters-tab.ui:40 blueman/main/Adapter.py:155
 msgid "Hidden"
 msgstr "Paslėptas"
 
-#: data/ui/adapters-tab.ui:54
+#: data/ui/adapters-tab.ui:57
 msgid "Always visible"
 msgstr "Visada matomas"
 
-#: data/ui/adapters-tab.ui:70
+#: data/ui/adapters-tab.ui:75
 msgid "Temporarily visible"
 msgstr "Laikinai matomas"
 
-#: data/ui/adapters-tab.ui:101
-msgid "<b>Friendly Name</b>"
-msgstr "<b>Draugiškas Pavadinimas</b>"
+#: data/ui/adapters-tab.ui:110
+msgid "<b>Name</b>"
+msgstr "<b>Pavadinimas</b>"
 
 #: data/ui/applet-passkey.ui:8
 msgid "Pairing request"
@@ -63,72 +63,86 @@ msgstr "Tai turėtų būti perrašyta"
 msgid "Show input"
 msgstr "Rodyti įvestį"
 
-#: data/ui/manager-main.ui:53
+#: data/ui/manager-main.ui:54
 msgid "_Adapter"
 msgstr "_Adapteris"
 
-#: data/ui/manager-main.ui:61
+#: data/ui/manager-main.ui:62
 msgid "_Device"
 msgstr "_Įrenginys"
 
-#: data/ui/manager-main.ui:69
+#: data/ui/manager-main.ui:70
 msgid "_View"
 msgstr "_Rodymas"
 
-#: data/ui/manager-main.ui:77 blueman/gui/manager/ManagerMenu.py:55
-#: blueman/plugins/applet/StandardItems.py:48
+#: data/ui/manager-main.ui:78 blueman/gui/manager/ManagerMenu.py:56
+#: blueman/plugins/applet/StandardItems.py:51
 msgid "_Help"
 msgstr "_Pagalba"
 
-#: data/ui/manager-main.ui:96
+#: data/ui/manager-main.ui:98
 msgid "Search for nearby devices"
 msgstr "Ieškoti įrenginių"
 
 #. translators: toolbar item: keep it as short as possible
-#: data/ui/manager-main.ui:98
+#: data/ui/manager-main.ui:100
 msgid "Search"
 msgstr "Ieškoti"
 
-#: data/ui/manager-main.ui:121 blueman/gui/manager/ManagerDeviceMenu.py:355
+#: data/ui/manager-main.ui:123 blueman/gui/manager/ManagerDeviceMenu.py:364
 msgid "Create pairing with the device"
 msgstr "Sukurti porą su įrenginiu"
 
 #. translators: toolbar item: keep it as short as possible
-#: data/ui/manager-main.ui:122
+#: data/ui/manager-main.ui:124
 msgid "Pair"
 msgstr "Poruoti"
 
-#: data/ui/manager-main.ui:135 blueman/gui/manager/ManagerDeviceMenu.py:373
+#: data/ui/manager-main.ui:137 blueman/gui/manager/ManagerDeviceMenu.py:382
 msgid "Mark/Unmark this device as trusted"
 msgstr "Pažymėti arba atžymėti įrenginį patikimu"
 
 #. translators: toolbar item: keep it as short as possible
-#: data/ui/manager-main.ui:136 blueman/gui/manager/ManagerToolbar.py:39
+#: data/ui/manager-main.ui:138 blueman/gui/manager/ManagerToolbar.py:39
 #: blueman/gui/manager/ManagerToolbar.py:99
 msgid "Trust"
 msgstr "Pasitikėti"
 
-#: data/ui/manager-main.ui:149 blueman/gui/manager/ManagerDeviceMenu.py:406
+#: data/ui/manager-main.ui:151 blueman/gui/manager/ManagerDeviceMenu.py:427
 msgid "Remove this device from the known devices list"
 msgstr "Pašalinti įrenginį iš žinomų įrenginų sąrašo"
 
 #. translators: toolbar item: keep it as short as possible
-#: data/ui/manager-main.ui:150
+#: data/ui/manager-main.ui:152
 msgid "Remove"
 msgstr "Šalinti"
 
-#: data/ui/manager-main.ui:172
+#: data/ui/manager-main.ui:174
 msgid "Send file(s) to the device"
 msgstr "Siųsti failus šiam įrenginiui"
 
 #. translators: toolbar item: keep it as short as possible
-#: data/ui/manager-main.ui:174
+#: data/ui/manager-main.ui:176
 msgid "Send File"
 msgstr "Siųsti"
 
 #: data/ui/rename-device.ui:8
 msgid "Rename device"
 msgstr "Pervadinti įrenginį"
+
+#: data/ui/rename-device.ui:26 data/ui/net-usage.ui:243
+msgid "_Reset"
+msgstr "_Atstatyti"
+
+#: data/ui/rename-device.ui:40 data/ui/note.ui:26 blueman/main/Sendto.py:235
+#: blueman/gui/DeviceSelectorDialog.py:17
+msgid "_Cancel"
+msgstr "_Atsisakyti"
+
+#: data/ui/rename-device.ui:54 data/ui/note.ui:41
+#: blueman/gui/DeviceSelectorDialog.py:17
+msgid "_OK"
+msgstr "_Gerai"
 
 #: data/ui/services-network.ui:37
 msgid "Network Access Point (NAP)"
@@ -174,23 +188,23 @@ msgstr "<b>DUN palaikymas</b>"
 msgid "<b>Network Settings</b>"
 msgstr "<b>Tinklo nustatymai</b>"
 
-#: data/ui/services-transfer.ui:24
+#: data/ui/services-transfer.ui:25
 msgid "<b>File Receiving (Object Push)</b>"
 msgstr "<b>Failų priėmimas (OP)</b>"
 
-#: data/ui/services-transfer.ui:37
+#: data/ui/services-transfer.ui:38
 msgid "Incoming Folder:"
 msgstr "Atsiuntimo aplankas:"
 
-#: data/ui/services-transfer.ui:49
+#: data/ui/services-transfer.ui:50
 msgid "Select folder for incoming file transfers"
 msgstr "Pasirinkite aplanką atsiunčiamiems failams"
 
-#: data/ui/services-transfer.ui:58
+#: data/ui/services-transfer.ui:59
 msgid "Accept files from trusted devices"
 msgstr "Priimti failus iš patikimų įrenginių"
 
-#: data/ui/services-transfer.ui:96
+#: data/ui/services-transfer.ui:106
 msgid "<b>Transfer Settings</b>"
 msgstr "<b>Siuntimo nustatymai</b>"
 
@@ -229,8 +243,8 @@ msgstr "<b>Autorius:</b>"
 
 #. translators: device class
 #: data/ui/applet-plugins-widget.ui:161
-#: blueman/gui/manager/ManagerDeviceList.py:301
-#: blueman/gui/manager/ManagerDeviceList.py:303 blueman/DeviceClass.py:86
+#: blueman/gui/manager/ManagerDeviceList.py:355
+#: blueman/gui/manager/ManagerDeviceList.py:357 blueman/DeviceClass.py:86
 #: blueman/DeviceClass.py:114 blueman/DeviceClass.py:168
 #: blueman/DeviceClass.py:242 blueman/DeviceClass.py:291 blueman/Sdp.py:376
 #: blueman/plugins/applet/NetUsage.py:209
@@ -262,7 +276,7 @@ msgstr "APN:"
 msgid "Traffic statistics"
 msgstr "Duom. perdavimo statistika"
 
-#: data/ui/net-usage.ui:33
+#: data/ui/net-usage.ui:33 blueman/gui/GsmSettings.py:38
 msgid "_Close"
 msgstr "_Užverti"
 
@@ -286,27 +300,23 @@ msgstr "<b>Žurnalas pradėtas:</b>"
 msgid "<b>Log duration:</b>"
 msgstr "<b>Žurnalo trukmė:</b>"
 
-#: data/ui/net-usage.ui:243
-msgid "_Reset"
-msgstr "_Atstatyti"
-
 #: data/ui/note.ui:8
 msgid "Send note"
 msgstr "Siųsti raštelį"
 
-#: blueman/main/Adapter.py:50
+#: blueman/main/Adapter.py:59
 msgid "Bluetooth needs to be turned on for the adapter manager to work"
 msgstr "„Bluetooth“ turi būti įjungtas, kad adapterio nustatymai veiktų"
 
-#: blueman/main/Adapter.py:86 data/blueman-adapters.desktop.in:3
+#: blueman/main/Adapter.py:95 data/blueman-adapters.desktop.in:3
 msgid "Bluetooth Adapters"
 msgstr "„Bluetooth“ adapteriai"
 
-#: blueman/main/Adapter.py:143
+#: blueman/main/Adapter.py:153
 msgid "Always"
 msgstr "Visada"
 
-#: blueman/main/Adapter.py:147 blueman/main/Sendto.py:189
+#: blueman/main/Adapter.py:157 blueman/main/Sendto.py:189
 #, python-format
 msgid "%(minutes)d Minute"
 msgid_plural "%(minutes)d Minutes"
@@ -315,19 +325,23 @@ msgstr[1] "%(minutes)d minutės"
 msgstr[2] "%(minutes)d minučių"
 msgstr[3] "%(minutes)d minučių"
 
-#: blueman/main/Adapter.py:212
+#: blueman/main/Adapter.py:222
 msgid "Adapter"
 msgstr "Adapteris"
 
-#: blueman/main/Manager.py:89 blueman/main/Manager.py:130
+#: blueman/main/Manager.py:63
+msgid "Bluetooth Devices"
+msgstr "„Bluetooth“ įrenginiai"
+
+#: blueman/main/Manager.py:99 blueman/main/Manager.py:140
 msgid "Bluetooth needs to be turned on for the device manager to function"
 msgstr "„Bluetooth“ turi būti įjungtas, kad įrenginių tvarkytuvė veiktų"
 
-#: blueman/main/Manager.py:109
+#: blueman/main/Manager.py:119
 msgid "Connection to BlueZ failed"
 msgstr "Nepavyko prisijungti prie „BlueZ“"
 
-#: blueman/main/Manager.py:110
+#: blueman/main/Manager.py:120
 msgid ""
 "Bluez daemon is not running, blueman-manager cannot continue.\n"
 "This probably means that there were no Bluetooth adapters detected or "
@@ -337,22 +351,26 @@ msgstr ""
 "Tai gali reikšti, kad nebuvo aptikta „Bluetooth“ adapterių, arba kad BT "
 "paslauga nebuvo paleista."
 
-#: blueman/main/Manager.py:198
+#: blueman/main/Manager.py:208
 msgid "Searching"
 msgstr "Ieškoma"
 
-#: blueman/main/Manager.py:221 blueman/plugins/applet/StandardItems.py:79
+#: blueman/main/Manager.py:231 blueman/plugins/applet/StandardItems.py:84
 msgid "Adapter Preferences"
 msgstr "Adapterio nustatymai"
 
-#: blueman/main/Manager.py:233 blueman/gui/manager/ManagerDeviceList.py:143
-#: blueman/plugins/applet/StandardItems.py:72
+#: blueman/main/Manager.py:247 blueman/gui/manager/ManagerDeviceList.py:169
+#: blueman/plugins/applet/StandardItems.py:77
 msgid "File Sender"
 msgstr "Failų siuntėjas"
 
 #: blueman/main/Sendto.py:33
 msgid "Bluetooth File Transfer"
 msgstr "Bluetooth failų siuntimas"
+
+#: blueman/main/Sendto.py:42
+msgid "_Stop"
+msgstr "_Stabdyti"
 
 #: blueman/main/Sendto.py:57 blueman/gui/manager/ManagerProgressbar.py:27
 msgid "Connecting"
@@ -384,10 +402,10 @@ msgstr "Liko:"
 #, python-format
 msgid "%(seconds)d Second"
 msgid_plural "%(seconds)d Seconds"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
+msgstr[0] "%(seconds)d sekundė"
+msgstr[1] "%(seconds)d sekundės"
+msgstr[2] "%(seconds)d sekundžių"
+msgstr[3] "%(seconds)d sekundė"
 
 #: blueman/main/Sendto.py:229
 #, python-format
@@ -406,65 +424,65 @@ msgstr "Bandyti vėl"
 msgid "Error occurred"
 msgstr "Įvyko klaida"
 
-#: blueman/main/applet/BluezAgent.py:193
+#: blueman/main/applet/BluezAgent.py:123
 #, python-format
 msgid "Pairing request for %s"
 msgstr "Poravimo užklausa iš %s"
 
-#: blueman/main/applet/BluezAgent.py:204 blueman/main/applet/BluezAgent.py:322
+#: blueman/main/applet/BluezAgent.py:134 blueman/main/applet/BluezAgent.py:246
 msgid "Bluetooth Authentication"
 msgstr "Bluetooth atpažinimas"
 
-#: blueman/main/applet/BluezAgent.py:235
+#: blueman/main/applet/BluezAgent.py:165
 msgid "Enter PIN code for authentication:"
 msgstr "Įveskite PIN kodą atpažinimui:"
 
-#: blueman/main/applet/BluezAgent.py:250
+#: blueman/main/applet/BluezAgent.py:174
 msgid "Enter passkey for authentication:"
 msgstr "Įveskite slaptą frazę atpažinimui:"
 
-#: blueman/main/applet/BluezAgent.py:261
+#: blueman/main/applet/BluezAgent.py:185
 msgid "Pairing passkey for"
 msgstr "Poruojamas raktas įrenginiui"
 
-#: blueman/main/applet/BluezAgent.py:272
+#: blueman/main/applet/BluezAgent.py:196
 msgid "Pairing PIN code for"
 msgstr "Poruojamas PIN kodas įrenginiui"
 
-#: blueman/main/applet/BluezAgent.py:285
+#: blueman/main/applet/BluezAgent.py:209
 msgid "Pairing request for:"
 msgstr "Poravimo užklausa įrenginiui:"
 
-#: blueman/main/applet/BluezAgent.py:288
+#: blueman/main/applet/BluezAgent.py:212
 msgid "Confirm value for authentication:"
 msgstr "Patvirtinkite reikšmę atpažinimui:"
 
-#: blueman/main/applet/BluezAgent.py:289
+#: blueman/main/applet/BluezAgent.py:213
 msgid "Confirm"
 msgstr "Patvirtinti"
 
-#: blueman/main/applet/BluezAgent.py:289 blueman/main/applet/BluezAgent.py:320
+#: blueman/main/applet/BluezAgent.py:213 blueman/main/applet/BluezAgent.py:244
 msgid "Deny"
 msgstr "Drausti"
 
-#: blueman/main/applet/BluezAgent.py:317
+#: blueman/main/applet/BluezAgent.py:241
 msgid "Authorization request for:"
 msgstr "Prieigos teisės užklausa įrenginiui:"
 
-#: blueman/main/applet/BluezAgent.py:317
+#: blueman/main/applet/BluezAgent.py:241
 msgid "Service:"
 msgstr "Paslauga:"
 
-#: blueman/main/applet/BluezAgent.py:318
+#: blueman/main/applet/BluezAgent.py:242
 msgid "Always accept"
 msgstr "Visada leisti"
 
-#: blueman/main/applet/BluezAgent.py:319
+#: blueman/main/applet/BluezAgent.py:243
 #: blueman/plugins/applet/TransferService.py:130
 msgid "Accept"
 msgstr "Priimti"
 
-#: blueman/main/PluginManager.py:67
+#: blueman/main/PluginManager.py:68
 msgid ""
 "<b>An error has occured while loading a plugin. Please notify the developers "
 "with the content of this message to our </b>\n"
@@ -474,6 +492,14 @@ msgstr ""
 "pranešti kūrėjams mūsų </b>\n"
 "<a href=\"http://github.com/blueman-project/blueman/issues\">internetinėje "
 "svetainėje.</a>"
+
+#: blueman/main/Services.py:33
+msgid "Local Services"
+msgstr "Paslaugos"
+
+#: blueman/main/Services.py:47
+msgid "_Apply"
+msgstr "_Taikyti"
 
 #: blueman/Functions.py:71
 msgid "Bluetooth Turned Off"
@@ -499,247 +525,273 @@ msgstr "Taip"
 msgid "No"
 msgstr "Ne"
 
-#: blueman/gui/manager/ManagerMenu.py:45
+#: blueman/Functions.py:181
+msgid "B"
+msgstr "B"
+
+#: blueman/Functions.py:184
+msgid "KB"
+msgstr "KB"
+
+#: blueman/Functions.py:187
+msgid "MB"
+msgstr "MB"
+
+#: blueman/Functions.py:190
+msgid "GB"
+msgstr "GB"
+
+#: blueman/gui/manager/ManagerMenu.py:46
 msgid "_Report a Problem"
 msgstr "Pranešti nesklandumus"
 
-#: blueman/gui/manager/ManagerMenu.py:62
+#: blueman/gui/manager/ManagerMenu.py:63
 msgid "Device Manager"
 msgstr "Įrenginių tvarkytuvė"
 
-#: blueman/gui/manager/ManagerMenu.py:68
+#: blueman/gui/manager/ManagerMenu.py:69
 msgid "Show _Toolbar"
 msgstr "Rodyti į_rankių juostą"
 
-#: blueman/gui/manager/ManagerMenu.py:73
+#: blueman/gui/manager/ManagerMenu.py:74
 msgid "Show _Statusbar"
 msgstr "Rodyti _būsenos juostą"
 
-#: blueman/gui/manager/ManagerMenu.py:78
+#: blueman/gui/manager/ManagerMenu.py:79
 #, fuzzy
-#| msgid "Rename device"
 msgid "Hide _unnamed devices"
 msgstr "Pervadinti įrenginį"
 
-#: blueman/gui/manager/ManagerMenu.py:88
+#: blueman/gui/manager/ManagerMenu.py:89
 msgid "S_ort By"
 msgstr "Rikiu_oti pagal"
 
-#: blueman/gui/manager/ManagerMenu.py:95
+#: blueman/gui/manager/ManagerMenu.py:96
 msgid "_Name"
 msgstr "_Pavadinimas"
 
-#: blueman/gui/manager/ManagerMenu.py:100
+#: blueman/gui/manager/ManagerMenu.py:101
 msgid "_Added"
 msgstr "_Pridėta"
 
-#: blueman/gui/manager/ManagerMenu.py:114
+#: blueman/gui/manager/ManagerMenu.py:115
 msgid "_Descending"
 msgstr "_Mažėjančiai"
 
-#: blueman/gui/manager/ManagerMenu.py:127
-#: blueman/plugins/applet/StandardItems.py:50
+#: blueman/gui/manager/ManagerMenu.py:128
+#: blueman/plugins/applet/StandardItems.py:54
 msgid "_Plugins"
 msgstr "Į_skiepiai"
 
-#: blueman/gui/manager/ManagerMenu.py:132
-#: blueman/plugins/applet/StandardItems.py:43
+#: blueman/gui/manager/ManagerMenu.py:133
+#: blueman/plugins/applet/StandardItems.py:45
 msgid "_Local Services"
 msgstr "_Paslaugos"
 
-#: blueman/gui/manager/ManagerMenu.py:133
-#: blueman/plugins/applet/StandardItems.py:82
+#: blueman/gui/manager/ManagerMenu.py:134
+#: blueman/plugins/applet/StandardItems.py:87
 msgid "Service Preferences"
 msgstr "Paslaugų nustatymai"
 
-#: blueman/gui/manager/ManagerMenu.py:141
+#: blueman/gui/manager/ManagerMenu.py:142
 msgid "_Search"
 msgstr "Pa_ieška"
 
-#: blueman/gui/manager/ManagerMenu.py:155
+#: blueman/gui/manager/ManagerMenu.py:156
 msgid "_Preferences"
 msgstr "_Nuostatos"
 
-#: blueman/gui/manager/ManagerMenu.py:164 blueman/plugins/applet/ExitItem.py:12
+#: blueman/gui/manager/ManagerMenu.py:165 blueman/plugins/applet/ExitItem.py:12
 msgid "_Exit"
 msgstr "_Išeiti"
 
 #. translators: device class
-#: blueman/gui/manager/ManagerDeviceList.py:276
-#: blueman/gui/manager/ManagerDeviceList.py:301 blueman/DeviceClass.py:24
+#: blueman/gui/manager/ManagerDeviceList.py:326
+#: blueman/gui/manager/ManagerDeviceList.py:355 blueman/DeviceClass.py:24
 #: blueman/DeviceClass.py:29 blueman/DeviceClass.py:46
 #: blueman/DeviceClass.py:80 blueman/DeviceClass.py:121
 msgid "Uncategorized"
 msgstr "Nežinomas"
 
-#: blueman/gui/manager/ManagerDeviceList.py:479
-msgid "<b>Trusted and Paired</b>"
-msgstr "<b>Patikimas ir suporuotas</b>"
+#: blueman/gui/manager/ManagerDeviceList.py:544
+msgid "Trusted"
+msgstr "Patikimas"
 
-#: blueman/gui/manager/ManagerDeviceList.py:481
-msgid "<b>Paired</b>"
-msgstr "<b>Suporuotas</b>"
+#: blueman/gui/manager/ManagerDeviceList.py:546
+msgid "Paired"
+msgstr "Suporuotas"
 
-#: blueman/gui/manager/ManagerDeviceList.py:483
-msgid "<b>Trusted</b>"
-msgstr "<b>Patikimas</b>"
+#: blueman/gui/manager/ManagerDeviceList.py:548
+msgid "Blocked"
+msgstr "Užblokuotas"
 
-#: blueman/gui/manager/ManagerDeviceList.py:502
+#: blueman/gui/manager/ManagerDeviceList.py:571
 #, fuzzy
-#| msgid "_<b>Connect</b>"
 msgid "<b>Connected</b>"
 msgstr "_<b>Prisijungti</b>"
 
-#: blueman/gui/manager/ManagerDeviceList.py:517
+#: blueman/gui/manager/ManagerDeviceList.py:586
 msgid "Poor"
 msgstr "Prastas"
 
-#: blueman/gui/manager/ManagerDeviceList.py:519
-#: blueman/gui/manager/ManagerDeviceList.py:544
+#: blueman/gui/manager/ManagerDeviceList.py:588
+#: blueman/gui/manager/ManagerDeviceList.py:613
 msgid "Sub-optimal"
 msgstr "Silpnas"
 
-#: blueman/gui/manager/ManagerDeviceList.py:521
-#: blueman/gui/manager/ManagerDeviceList.py:546
+#: blueman/gui/manager/ManagerDeviceList.py:590
+#: blueman/gui/manager/ManagerDeviceList.py:615
 msgid "Optimal"
 msgstr "Optimalus"
 
-#: blueman/gui/manager/ManagerDeviceList.py:523
+#: blueman/gui/manager/ManagerDeviceList.py:592
 msgid "Much"
 msgstr "Didelis"
 
-#: blueman/gui/manager/ManagerDeviceList.py:525
+#: blueman/gui/manager/ManagerDeviceList.py:594
 msgid "Too much"
 msgstr "Per didelis"
 
-#: blueman/gui/manager/ManagerDeviceList.py:528
+#: blueman/gui/manager/ManagerDeviceList.py:597
 #, python-format
 msgid "<b>Received Signal Strength: %(rssi)u%%</b> <i>(%(rssi_state)s)</i>"
 msgstr ""
 
-#: blueman/gui/manager/ManagerDeviceList.py:531
+#: blueman/gui/manager/ManagerDeviceList.py:600
 #, python-format
 msgid "Received Signal Strength: %(rssi)u%% <i>(%(rssi_state)s)</i>"
 msgstr ""
 
-#: blueman/gui/manager/ManagerDeviceList.py:536
+#: blueman/gui/manager/ManagerDeviceList.py:605
 #, python-format
 msgid "<b>Link Quality: %(lq)u%%</b>"
 msgstr ""
 
-#: blueman/gui/manager/ManagerDeviceList.py:538
+#: blueman/gui/manager/ManagerDeviceList.py:607
 #, python-format
 msgid "Link Quality: %(lq)u%%"
 msgstr ""
 
-#: blueman/gui/manager/ManagerDeviceList.py:542
+#: blueman/gui/manager/ManagerDeviceList.py:611
 msgid "Low"
 msgstr "Žemas"
 
-#: blueman/gui/manager/ManagerDeviceList.py:548
+#: blueman/gui/manager/ManagerDeviceList.py:617
 msgid "High"
 msgstr "Aukštas"
 
-#: blueman/gui/manager/ManagerDeviceList.py:550
+#: blueman/gui/manager/ManagerDeviceList.py:619
 msgid "Very High"
 msgstr "Labai aukštas"
 
-#: blueman/gui/manager/ManagerDeviceList.py:553
+#: blueman/gui/manager/ManagerDeviceList.py:622
 #, python-format
 msgid "<b>Transmit Power Level: %(tpl)u%%</b> <i>(%(tpl_state)s)</i>"
 msgstr ""
 
-#: blueman/gui/manager/ManagerDeviceList.py:556
+#: blueman/gui/manager/ManagerDeviceList.py:625
 #, python-format
 msgid "Transmit Power Level: %(tpl)u%% <i>(%(tpl_state)s)</i>"
 msgstr ""
 
-#: blueman/gui/manager/ManagerDeviceMenu.py:131
+#: blueman/gui/manager/ManagerDeviceMenu.py:135
 msgid "Success!"
 msgstr "Sėkminga!"
 
-#: blueman/gui/manager/ManagerDeviceMenu.py:138
+#: blueman/gui/manager/ManagerDeviceMenu.py:142
 msgid "Failed"
 msgstr "Nepavyko"
 
-#: blueman/gui/manager/ManagerDeviceMenu.py:144
+#: blueman/gui/manager/ManagerDeviceMenu.py:148
 msgid "Connecting…"
 msgstr "Jungiamasi…"
 
-#: blueman/gui/manager/ManagerDeviceMenu.py:180
+#: blueman/gui/manager/ManagerDeviceMenu.py:184
 msgid "Disconnection Failed: "
 msgstr "Atsijungimas nepavyko: "
 
-#: blueman/gui/manager/ManagerDeviceMenu.py:204
+#: blueman/gui/manager/ManagerDeviceMenu.py:208
 msgid "No audio endpoints registered"
 msgstr ""
 
-#: blueman/gui/manager/ManagerDeviceMenu.py:207
+#: blueman/gui/manager/ManagerDeviceMenu.py:211
 msgid "Input/output error"
 msgstr ""
 
-#: blueman/gui/manager/ManagerDeviceMenu.py:209
+#: blueman/gui/manager/ManagerDeviceMenu.py:213
 msgid "Device did not respond"
 msgstr "Įrenginys neatsakė"
 
-#: blueman/gui/manager/ManagerDeviceMenu.py:213
+#: blueman/gui/manager/ManagerDeviceMenu.py:217
 msgid "Resource temporarily unavailable"
 msgstr "Išteklius laikinai neprieinamas"
 
-#: blueman/gui/manager/ManagerDeviceMenu.py:218
+#: blueman/gui/manager/ManagerDeviceMenu.py:222
 msgid "Connection Failed: "
 msgstr "Prisijungimas nepavyko: "
 
-#: blueman/gui/manager/ManagerDeviceMenu.py:285
-msgid "_<b>_Connect</b>"
-msgstr "_<b>_Prisijungti</b>"
+#: blueman/gui/manager/ManagerDeviceMenu.py:294
+msgid "<b>_Connect</b>"
+msgstr "<b>_Prisijungti</b>"
 
-#: blueman/gui/manager/ManagerDeviceMenu.py:287
+#: blueman/gui/manager/ManagerDeviceMenu.py:296
 msgid "Connects auto connect profiles A2DP source, A2DP sink, and HID"
 msgstr ""
 "Prijungia automatinio prijungimo profilius A2DP šaltinį, A2DP rinktuvą ir HID"
 
-#: blueman/gui/manager/ManagerDeviceMenu.py:291
-msgid "_<b>Disconnect</b>"
-msgstr "_<b>Atsijungti</b>"
+#: blueman/gui/manager/ManagerDeviceMenu.py:300
+msgid "<b>_Disconnect</b>"
+msgstr "<b>_Atsijungti</b>"
 
-#: blueman/gui/manager/ManagerDeviceMenu.py:292
+#: blueman/gui/manager/ManagerDeviceMenu.py:301
 msgid "Forcefully disconnect the device"
 msgstr "Priverstinai atsijungti"
 
-#: blueman/gui/manager/ManagerDeviceMenu.py:308
+#: blueman/gui/manager/ManagerDeviceMenu.py:317
 msgid "<b>Connect To:</b>"
 msgstr "<b>Jungtis prie:</b>"
 
-#: blueman/gui/manager/ManagerDeviceMenu.py:313
+#: blueman/gui/manager/ManagerDeviceMenu.py:322
 msgid "<b>Disconnect:</b>"
 msgstr "<b>Atsijungti:</b>"
 
-#: blueman/gui/manager/ManagerDeviceMenu.py:322
+#: blueman/gui/manager/ManagerDeviceMenu.py:331
 msgid "<b>Auto-connect:</b>"
-msgstr "<b>Automatiškai prisijungti:</b>"
+msgstr "<b>Automatinis prisijungimas:</b>"
 
-#: blueman/gui/manager/ManagerDeviceMenu.py:341
+#: blueman/gui/manager/ManagerDeviceMenu.py:350
 msgid "Send a _File…"
 msgstr "Siųsti _failą…"
 
-#: blueman/gui/manager/ManagerDeviceMenu.py:354
+#: blueman/gui/manager/ManagerDeviceMenu.py:363
 msgid "_Pair"
 msgstr "_Pora"
 
-#: blueman/gui/manager/ManagerDeviceMenu.py:364
+#: blueman/gui/manager/ManagerDeviceMenu.py:373
 msgid "_Trust"
 msgstr "_Pasitikėti"
 
-#: blueman/gui/manager/ManagerDeviceMenu.py:369
+#: blueman/gui/manager/ManagerDeviceMenu.py:378
 msgid "_Untrust"
 msgstr "_Nepasitikėti"
 
-#: blueman/gui/manager/ManagerDeviceMenu.py:393
+#: blueman/gui/manager/ManagerDeviceMenu.py:385
+msgid "_Block"
+msgstr "Už_blokuoti"
+
+#: blueman/gui/manager/ManagerDeviceMenu.py:390
+msgid "_Unblock"
+msgstr "_Atblokuoti"
+
+#: blueman/gui/manager/ManagerDeviceMenu.py:394
+msgid "Block/Unblock this device"
+msgstr "Užblokuoti/Atblokuoti šį įrenginį"
+
+#: blueman/gui/manager/ManagerDeviceMenu.py:414
 msgid "R_ename device…"
 msgstr "Pervadinti įrenginį…"
 
-#: blueman/gui/manager/ManagerDeviceMenu.py:402
+#: blueman/gui/manager/ManagerDeviceMenu.py:423
 msgid "_Remove…"
 msgstr "_Šalinti…"
 
@@ -753,12 +805,12 @@ msgid "Data activity indication"
 msgstr "Duomenų aktyvumas"
 
 #: blueman/gui/manager/ManagerStats.py:43
-#: blueman/gui/manager/ManagerStats.py:53
+#: blueman/gui/manager/ManagerStats.py:55
 msgid "Total data received and rate of transmission"
 msgstr "Visi priimti duomenys ir priėmimo sparta"
 
 #: blueman/gui/manager/ManagerStats.py:47
-#: blueman/gui/manager/ManagerStats.py:51
+#: blueman/gui/manager/ManagerStats.py:52
 msgid "Total data sent and rate of transmission"
 msgstr "Visi išsiųsti duomenys ir išsiuntimo sparta"
 
@@ -775,7 +827,7 @@ msgstr "Parinkite įrenginį"
 msgid "More"
 msgstr "Daugiau"
 
-#: blueman/gui/CommonUi.py:62
+#: blueman/gui/CommonUi.py:65
 msgid "Blueman is a GTK+ Bluetooth manager"
 msgstr "Blueman yra GTK+ Bluetooth tvarkytuvė"
 
@@ -784,16 +836,16 @@ msgid "GSM Settings"
 msgstr "GSM nustatymai"
 
 #: blueman/gui/applet/PluginDialog.py:95
-#: blueman/plugins/applet/StandardItems.py:88
+#: blueman/plugins/applet/StandardItems.py:93
 msgid "Plugins"
 msgstr "Papildiniai"
 
-#: blueman/gui/applet/PluginDialog.py:294
-#: blueman/gui/applet/PluginDialog.py:316
+#: blueman/gui/applet/PluginDialog.py:296
+#: blueman/gui/applet/PluginDialog.py:318
 msgid "Dependency issue"
 msgstr "Priklausomybių problema"
 
-#: blueman/gui/applet/PluginDialog.py:296
+#: blueman/gui/applet/PluginDialog.py:298
 #, python-format
 msgid ""
 "Plugin <b>\"%(0)s\"</b> depends on <b>%(1)s</b>. Unloading <b>%(1)s</b> will "
@@ -804,7 +856,7 @@ msgstr ""
 "bus išjungtas ir <b>\"%(0)s\"</b>.\n"
 "Tęsti?"
 
-#: blueman/gui/applet/PluginDialog.py:318
+#: blueman/gui/applet/PluginDialog.py:320
 #, python-format
 msgid ""
 "Plugin <b>%(0)s</b> conflicts with <b>%(1)s</b>. Loading <b>%(1)s</b> will "
@@ -821,14 +873,13 @@ msgstr "Adapterio pasirinkimas"
 
 #: blueman/gui/DeviceSelectorWidget.py:45
 #, fuzzy
-#| msgid "Discoverable… %ss"
 msgid "Discovering…"
 msgstr "Matomas…"
 
 #. translators: device class
 #: blueman/DeviceClass.py:6
 msgid "Miscellaneous"
-msgstr ""
+msgstr "Įvairūs"
 
 #. translators: device class
 #: blueman/DeviceClass.py:8
@@ -907,7 +958,7 @@ msgstr "Belaidis"
 
 #. translators: device class
 #: blueman/DeviceClass.py:52
-msgid "Smart phone"
+msgid "Smartphone"
 msgstr "Išmanusis telefonas"
 
 #. translators: device class
@@ -917,8 +968,8 @@ msgstr "Modemas"
 
 #. translators: device class
 #: blueman/DeviceClass.py:56
-msgid "Isdn"
-msgstr "Isdn"
+msgid "ISDN"
+msgstr ""
 
 #. translators: device class
 #: blueman/DeviceClass.py:61
@@ -927,32 +978,38 @@ msgstr ""
 
 #. translators: device class
 #: blueman/DeviceClass.py:63
-msgid "1-17 percent"
+#, fuzzy
+msgid "1–17 percent"
 msgstr "1-17 procentų"
 
 #. translators: device class
 #: blueman/DeviceClass.py:65
-msgid "17-33 percent"
+#, fuzzy
+msgid "17–33 percent"
 msgstr "17-33 procentai"
 
 #. translators: device class
 #: blueman/DeviceClass.py:67
-msgid "33-50 percent"
+#, fuzzy
+msgid "33–50 percent"
 msgstr "33-50 procentų"
 
 #. translators: device class
 #: blueman/DeviceClass.py:69
-msgid "50-67 percent"
+#, fuzzy
+msgid "50–67 percent"
 msgstr "50-67 procentai"
 
 #. translators: device class
 #: blueman/DeviceClass.py:71
-msgid "67-83 percent"
+#, fuzzy
+msgid "67–83 percent"
 msgstr "67-83 procentai"
 
 #. translators: device class
 #: blueman/DeviceClass.py:73
-msgid "83-99 percent"
+#, fuzzy
+msgid "83–99 percent"
 msgstr "83-99 procentai"
 
 #. translators: device class
@@ -1002,12 +1059,12 @@ msgstr ""
 
 #. translators: device class
 #: blueman/DeviceClass.py:100
-msgid "Hifi audio"
+msgid "Hi-Fi audio"
 msgstr ""
 
 #. translators: device class
 #: blueman/DeviceClass.py:102
-msgid "Vcr"
+msgid "VCR"
 msgstr ""
 
 #. translators: device class
@@ -1033,7 +1090,6 @@ msgstr "Vaizdo monitorius ir garsiakalbis"
 #. translators: device class
 #: blueman/DeviceClass.py:112
 #, fuzzy
-#| msgid "Audio Source"
 msgid "Video conferencing"
 msgstr "Garso šaltinis"
 
@@ -1129,19 +1185,16 @@ msgstr "Žaidimas"
 
 #: blueman/DeviceClass.py:169
 #, fuzzy
-#| msgid "Connect"
 msgid "Generic Phone"
 msgstr "Prisijungti"
 
 #: blueman/DeviceClass.py:170
 #, fuzzy
-#| msgid "Connect"
 msgid "Generic Computer"
 msgstr "Prisijungti"
 
 #: blueman/DeviceClass.py:171
 #, fuzzy
-#| msgid "Connect"
 msgid "Generic Watch"
 msgstr "Prisijungti"
 
@@ -1151,55 +1204,46 @@ msgstr "Laikrodis: Sporto Laikrodis"
 
 #: blueman/DeviceClass.py:173
 #, fuzzy
-#| msgid "Connect"
 msgid "Generic Clock"
 msgstr "Prisijungti"
 
 #: blueman/DeviceClass.py:174
 #, fuzzy
-#| msgid "Bluetooth File Transfer"
 msgid "Generic Display"
 msgstr "Bluetooth failų siuntimas"
 
 #: blueman/DeviceClass.py:175
 #, fuzzy
-#| msgid "Connect"
 msgid "Generic Remote Control"
 msgstr "Prisijungti"
 
 #: blueman/DeviceClass.py:176
 #, fuzzy
-#| msgid "Bluetooth File Transfer"
 msgid "Generic Eye-glasses"
 msgstr "Bluetooth failų siuntimas"
 
 #: blueman/DeviceClass.py:177
 #, fuzzy
-#| msgid "Bluetooth File Transfer"
 msgid "Generic Tag"
 msgstr "Bluetooth failų siuntimas"
 
 #: blueman/DeviceClass.py:178
 #, fuzzy
-#| msgid "Group Network"
 msgid "Generic Keyring"
 msgstr "Grupinis tinklas"
 
 #: blueman/DeviceClass.py:179
 #, fuzzy
-#| msgid "Bluetooth File Transfer"
 msgid "Generic Media Player"
 msgstr "Bluetooth failų siuntimas"
 
 #: blueman/DeviceClass.py:180
 #, fuzzy
-#| msgid "Connect"
 msgid "Generic Barcode Scanner"
 msgstr "Prisijungti"
 
 #: blueman/DeviceClass.py:181
 #, fuzzy
-#| msgid "Connect"
 msgid "Generic Thermometer"
 msgstr "Prisijungti"
 
@@ -1209,7 +1253,6 @@ msgstr ""
 
 #: blueman/DeviceClass.py:183
 #, fuzzy
-#| msgid "Bluetooth File Transfer"
 msgid "Generic Heart rate Sensor"
 msgstr "Bluetooth failų siuntimas"
 
@@ -1263,7 +1306,6 @@ msgstr ""
 
 #: blueman/DeviceClass.py:197
 #, fuzzy
-#| msgid "Connect"
 msgid "Generic Glucose Meter"
 msgstr "Prisijungti"
 
@@ -1285,7 +1327,6 @@ msgstr ""
 
 #: blueman/DeviceClass.py:202
 #, fuzzy
-#| msgid "Group Network"
 msgid "Generic: Cycling"
 msgstr "Grupinis tinklas"
 
@@ -1319,7 +1360,7 @@ msgid "Fingertip"
 msgstr ""
 
 #: blueman/DeviceClass.py:211
-msgid "Wrist Worn"
+msgid "Wrist-Worn"
 msgstr ""
 
 #: blueman/DeviceClass.py:212
@@ -1513,7 +1554,6 @@ msgstr ""
 
 #: blueman/Sdp.py:121
 #, fuzzy
-#| msgid "Bluetooth File Transfer"
 msgid "OBEX File Transfer"
 msgstr "Bluetooth failų siuntimas"
 
@@ -1675,7 +1715,6 @@ msgstr ""
 
 #: blueman/Sdp.py:163
 #, fuzzy
-#| msgid "Network Access Point (NAP)"
 msgid "Phonebook Access (PBAP)"
 msgstr "Tinklo prieigos taškas (NAP)"
 
@@ -1689,7 +1728,6 @@ msgstr ""
 
 #: blueman/Sdp.py:167
 #, fuzzy
-#| msgid "Network Access Point (NAP)"
 msgid "Message Access Profile (MAP)"
 msgstr "Tinklo prieigos taškas (NAP)"
 
@@ -1739,13 +1777,11 @@ msgstr ""
 
 #: blueman/Sdp.py:179
 #, fuzzy
-#| msgid "Group Network"
 msgid "Generic Networking"
 msgstr "Grupinis tinklas"
 
 #: blueman/Sdp.py:180
 #, fuzzy
-#| msgid "Bluetooth File Transfer"
 msgid "Generic FileTransfer"
 msgstr "Bluetooth failų siuntimas"
 
@@ -1759,13 +1795,11 @@ msgstr ""
 
 #: blueman/Sdp.py:183
 #, fuzzy
-#| msgid "Audio Source"
 msgid "Video Source"
 msgstr "Garso šaltinis"
 
 #: blueman/Sdp.py:184
 #, fuzzy
-#| msgid "Audio Sink"
 msgid "Video Sink"
 msgstr "Garso Paslauga"
 
@@ -1779,7 +1813,6 @@ msgstr ""
 
 #: blueman/Sdp.py:187
 #, fuzzy
-#| msgid "Audio Source"
 msgid "HDP Source"
 msgstr "Garso šaltinis"
 
@@ -1809,7 +1842,6 @@ msgstr ""
 
 #: blueman/Sdp.py:194
 #, fuzzy
-#| msgid "Rename device"
 msgid "Current Time Service"
 msgstr "Pervadinti įrenginį"
 
@@ -1831,7 +1863,6 @@ msgstr ""
 
 #: blueman/Sdp.py:199
 #, fuzzy
-#| msgid "Show device information"
 msgid "Device Information"
 msgstr "Rodyti įrenginio informaciją"
 
@@ -1845,7 +1876,6 @@ msgstr ""
 
 #: blueman/Sdp.py:202
 #, fuzzy
-#| msgid "Local Services"
 msgid "Battery Service"
 msgstr "Paslaugos"
 
@@ -1931,25 +1961,21 @@ msgstr ""
 
 #: blueman/Sdp.py:223
 #, fuzzy
-#| msgid "Transfer"
 msgid "Object Transfer"
 msgstr "Siuntimas"
 
 #: blueman/Sdp.py:224
 #, fuzzy
-#| msgid "applet"
 msgid "AppleAgent"
 msgstr "įskiepis"
 
 #: blueman/Sdp.py:225
 #, fuzzy
-#| msgid "Pair Device"
 msgid "Primary Service"
 msgstr "Suporuoti įrenginį"
 
 #: blueman/Sdp.py:226
 #, fuzzy
-#| msgid "Search for nearby devices"
 msgid "Secondary Service"
 msgstr "Ieškoti įrenginių"
 
@@ -1963,7 +1989,6 @@ msgstr ""
 
 #: blueman/Sdp.py:229
 #, fuzzy
-#| msgid "Device Manager"
 msgid "Device Name"
 msgstr "Įrenginių tvarkytuvė"
 
@@ -1977,7 +2002,6 @@ msgstr ""
 
 #: blueman/Sdp.py:232
 #, fuzzy
-#| msgid "Recent _Connections"
 msgid "Reconnection Address"
 msgstr "Vėliausi _ryšiai"
 
@@ -1987,7 +2011,6 @@ msgstr ""
 
 #: blueman/Sdp.py:234
 #, fuzzy
-#| msgid "Device Manager"
 msgid "Service Changed"
 msgstr "Įrenginių tvarkytuvė"
 
@@ -2057,13 +2080,11 @@ msgstr ""
 
 #: blueman/Sdp.py:251
 #, fuzzy
-#| msgid "Adapter Preferences"
 msgid "Report Reference"
 msgstr "Adapterio nustatymai"
 
 #: blueman/Sdp.py:378
 #, fuzzy
-#| msgid "Auto connect profiles"
 msgid "Audio and input profiles"
 msgstr "Automatinio prisijungimo profiliai"
 
@@ -2123,8 +2144,8 @@ msgstr ""
 
 #. https://github.com/python/mypy/issues/2608
 #: blueman/plugins/applet/AutoConnect.py:50
-#: blueman/plugins/applet/ConnectionNotifier.py:21
-#: blueman/plugins/applet/RecentConns.py:223
+#: blueman/plugins/applet/ConnectionNotifier.py:36
+#: blueman/plugins/applet/RecentConns.py:155
 #: blueman/plugins/applet/PPPSupport.py:75
 msgid "Connected"
 msgstr "Prisijungta"
@@ -2134,13 +2155,12 @@ msgstr "Prisijungta"
 msgid "Automatically connected to %(service)s on %(device)s"
 msgstr "Automatiškai prisijungta prie %(service)s, įrenginyje %(device)s"
 
-#: blueman/plugins/applet/ConnectionNotifier.py:13
+#: blueman/plugins/applet/ConnectionNotifier.py:15
 msgid "Shows desktop notifications when devices get connected or disconnected."
 msgstr ""
 
-#: blueman/plugins/applet/ConnectionNotifier.py:21
+#: blueman/plugins/applet/ConnectionNotifier.py:48
 #, fuzzy
-#| msgid "Disconnecting…"
 msgid "Disconnected"
 msgstr "Atsijungiama…"
 
@@ -2212,9 +2232,9 @@ msgstr "Tinklo _vartojimas"
 msgid "Shows network traffic usage"
 msgstr "Parodo perduotų duomenų kiekį"
 
-#: blueman/plugins/applet/StatusIcon.py:42
-#: blueman/plugins/applet/ShowConnected.py:72
-#: blueman/plugins/applet/PowerManager.py:189
+#: blueman/plugins/applet/StatusIcon.py:43
+#: blueman/plugins/applet/ShowConnected.py:71
+#: blueman/plugins/applet/PowerManager.py:190
 msgid "Bluetooth Enabled"
 msgstr "Bluetooth įjungtas"
 
@@ -2243,25 +2263,25 @@ msgstr "Maksimalus elementų skaičius"
 msgid "The maximum number of items recent connections menu will display."
 msgstr "Maksimalus vėliausių ryšių meniu rodomų elementų skaičius."
 
-#: blueman/plugins/applet/RecentConns.py:64
+#: blueman/plugins/applet/RecentConns.py:63
 msgid "Recent _Connections"
 msgstr "Vėliausi _ryšiai"
 
-#: blueman/plugins/applet/RecentConns.py:223
+#: blueman/plugins/applet/RecentConns.py:155
 #, python-format
 msgid "Connected to %s"
 msgstr "Prisijungta prie %s"
 
-#: blueman/plugins/applet/RecentConns.py:229
+#: blueman/plugins/applet/RecentConns.py:161
 msgid "Failed to connect"
 msgstr "Nepavyko prisijungti"
 
-#: blueman/plugins/applet/RecentConns.py:249
+#: blueman/plugins/applet/RecentConns.py:171
 #, python-format
 msgid "%(service)s on %(device)s"
 msgstr "%(device)s: %(service)s"
 
-#: blueman/plugins/applet/RecentConns.py:253
+#: blueman/plugins/applet/RecentConns.py:175
 msgid "Adapter for this connection is not available"
 msgstr "Šio prisijungimo adapteris neprijungtas"
 
@@ -2325,6 +2345,10 @@ msgstr "Failas priimtas"
 msgid "File %(0)s from %(1)s successfully received"
 msgstr "Failas %(0)s iš %(1)s sėkmingai priimtas"
 
+#: blueman/plugins/applet/TransferService.py:308
+msgid "Open"
+msgstr ""
+
 #: blueman/plugins/applet/TransferService.py:312
 msgid "Transfer failed"
 msgstr "Siuntimas nepavyko"
@@ -2348,6 +2372,11 @@ msgstr[1] "Priimti %(files)d failai fone"
 msgstr[2] "Priimta %(files)d failų fone"
 msgstr[3] "Priimta %(files)d failų fone"
 
+#: blueman/plugins/applet/TransferService.py:339
+#: blueman/plugins/applet/TransferService.py:347
+msgid "Open Location"
+msgstr ""
+
 #: blueman/plugins/applet/TransferService.py:343
 #, python-format
 msgid "Received %(files)d more file in the background"
@@ -2359,7 +2388,7 @@ msgstr[3] "Priimta dar %(files)d failų fone"
 
 #: blueman/plugins/applet/KillSwitch.py:37
 msgid ""
-"Switches Bluetooth killswitch status to match Bluetooth power state.Allows "
+"Switches Bluetooth killswitch status to match Bluetooth power state. Allows "
 "turning Bluetooth back on from an icon that shows its status; provided it "
 "isn't unplugged by the system, or physically."
 msgstr ""
@@ -2376,11 +2405,11 @@ msgstr "Siųsti _failus į įrenginį"
 msgid "_Devices"
 msgstr "Į_renginiai"
 
-#: blueman/plugins/applet/StandardItems.py:40
+#: blueman/plugins/applet/StandardItems.py:41
 msgid "Adap_ters"
 msgstr "Adap_teriai"
 
-#: blueman/plugins/applet/StandardItems.py:85
+#: blueman/plugins/applet/StandardItems.py:90
 msgid "applet"
 msgstr "įskiepis"
 
@@ -2433,7 +2462,7 @@ msgstr ""
 msgid "Bluetooth Active"
 msgstr "Bluetooth aktyvus"
 
-#: blueman/plugins/applet/ShowConnected.py:64
+#: blueman/plugins/applet/ShowConnected.py:63
 #, python-format
 msgid "<b>%(connections)d Active Connection</b>"
 msgid_plural "<b>%(connections)d Active Connections</b>"
@@ -2442,20 +2471,10 @@ msgstr[1] "<b>%(connections)d Aktyvūs Prisijungimai</b>"
 msgstr[2] "<b>%(connections)d Aktyvių prisijungimų</b>"
 msgstr[3] "<b>%(connections)d Aktyvių prisijungimų</b>"
 
-#: blueman/plugins/applet/ShowConnected.py:74
-#: blueman/plugins/applet/PowerManager.py:192
+#: blueman/plugins/applet/ShowConnected.py:73
+#: blueman/plugins/applet/PowerManager.py:193
 msgid "Bluetooth Disabled"
 msgstr "Bluetooth išjungtas"
-
-#: blueman/plugins/applet/AppIndicator.py:17
-msgid "Uses libappindicator to show a statusicon"
-msgstr "Būsenos indikatoriui naudoja libappindicator"
-
-#: blueman/plugins/applet/Battery.py:14
-msgid ""
-"Shows desktop notifications with battery percentage when devices get "
-"connected."
-msgstr ""
 
 #: blueman/plugins/applet/DisconnectItems.py:14
 msgid "Adds disconnect menu items"
@@ -2463,7 +2482,6 @@ msgstr ""
 
 #: blueman/plugins/applet/DisconnectItems.py:40
 #, fuzzy, python-format
-#| msgid "Disconnecting…"
 msgid "Disconnect %s"
 msgstr "Atsijungiama…"
 
@@ -2497,7 +2515,7 @@ msgstr "Padaryti numatytąjį adapterį laikinai matomu"
 msgid "Discoverable… %ss"
 msgstr "Matomas… %ss"
 
-#: blueman/plugins/applet/Menu.py:113
+#: blueman/plugins/applet/Menu.py:115
 msgid ""
 "Provides a menu for the applet and an API for other plugins to manipulate it"
 msgstr ""
@@ -2583,30 +2601,35 @@ msgid "Automatically power on adapters"
 msgstr "Automatiškai įjungti adapterius"
 
 #: blueman/plugins/applet/PowerManager.py:55
-#: blueman/plugins/applet/PowerManager.py:171
+#: blueman/plugins/applet/PowerManager.py:172
 msgid "<b>Turn Bluetooth _Off</b>"
 msgstr "<b>Išjungti Bluet_ooth</b>"
 
-#: blueman/plugins/applet/PowerManager.py:56
-#: blueman/plugins/applet/PowerManager.py:173
+#: blueman/plugins/applet/PowerManager.py:57
+#: blueman/plugins/applet/PowerManager.py:174
 msgid "Turn off all adapters"
 msgstr "Išjungti visus adapterius"
 
-#: blueman/plugins/applet/PowerManager.py:162
+#: blueman/plugins/applet/PowerManager.py:163
 msgid "<b>Turn Bluetooth _On</b>"
 msgstr "<b>Į_jungti Bluetooth</b>"
 
-#: blueman/plugins/applet/PowerManager.py:164
+#: blueman/plugins/applet/PowerManager.py:165
 msgid "Turn on all adapters"
 msgstr "Įjungti visus adapterius"
 
-#: blueman/plugins/applet/GameControllerWakelock.py:19
+#: blueman/plugins/applet/GameControllerWakelock.py:20
 msgid ""
 "Temporarily suspends the screensaver when a bluetooth game controller is "
 "connected."
 msgstr ""
 "Laikinai pristabdo ekrano užsklandą, kai yra prijungiamas bluetooth žaidimų "
 "manipuliatorius."
+
+#: blueman/plugins/applet/StatusNotifierItem.py:10
+#, fuzzy
+msgid "Provides a StatusNotifierItem to show a statusicon"
+msgstr "Būsenos indikatoriui naudoja libappindicator"
 
 #: blueman/plugins/services/Network.py:25
 msgid "Network"
@@ -2663,7 +2686,6 @@ msgstr "Nustatyti „Bluetooth“ adapterio savybes"
 
 #: data/blueman.desktop.in:3
 #, fuzzy
-#| msgid "applet"
 msgid "Blueman Applet"
 msgstr "įskiepis"
 
@@ -2711,11 +2733,23 @@ msgstr "Nustatyti RfKill būseną"
 msgid "Setting RfKill State requires privileges"
 msgstr "RfKill būsenos nustatymas reikalauja privilegijų"
 
+#~ msgid "Isdn"
+#~ msgstr "Isdn"
+
+#~ msgid "<b>Trusted and Paired</b>"
+#~ msgstr "<b>Patikimas ir suporuotas</b>"
+
+#~ msgid "<b>Paired</b>"
+#~ msgstr "<b>Suporuotas</b>"
+
+#~ msgid "<b>Trusted</b>"
+#~ msgstr "<b>Patikimas</b>"
+
+#~ msgid "<b>Friendly Name</b>"
+#~ msgstr "<b>Draugiškas Pavadinimas</b>"
+
 #~ msgid "Disconnecting…"
 #~ msgstr "Atsijungiama…"
-
-#~ msgid "Local Services"
-#~ msgstr "Paslaugos"
 
 #~ msgid "Serial Ports"
 #~ msgstr "Nuoseklieji prievadai"
@@ -2814,9 +2848,6 @@ msgstr "RfKill būsenos nustatymas reikalauja privilegijų"
 #~ msgid "Serial port connected to %s"
 #~ msgstr "Nuoseklioji jungtis (port) prijungta prie %s"
 
-#~ msgid "Bluetooth Devices"
-#~ msgstr "„Bluetooth“ įrenginiai"
-
 #~ msgid "%.0f Minute"
 #~ msgid_plural "%.0f Minutes"
 #~ msgstr[0] "%.0f minutė"
@@ -2852,9 +2883,6 @@ msgstr "RfKill būsenos nustatymas reikalauja privilegijų"
 #~ msgid "Select files to send"
 #~ msgstr "Pasirinkite failus siuntimui"
 
-#~ msgid "Send files to this device"
-#~ msgstr "Siųsti failus šiam įrenginiui"
-
 #~ msgid "Source adapter. Takes address or adapter's name eg. hci0"
 #~ msgstr "Šaltinio adapteris. Naudoja adresą arba pavadinimą, pvz, hci0"
 
@@ -2888,3 +2916,6 @@ msgstr "RfKill būsenos nustatymas reikalauja privilegijų"
 
 #~ msgid "Start configuration assistant for this device"
 #~ msgstr "Paleisti konfiguravimo pagalbininką šiam įrenginiui"
+
+#~ msgid "Uses libappindicator to show a statusicon"
+#~ msgstr "Būsenos indikatoriui naudoja libappindicator"

@@ -1,16 +1,17 @@
 from gettext import gettext as _
-from typing import Optional
+from typing import Optional, Tuple, List
 
-from gi.repository import GObject, GLib
+from gi.repository import GObject, GLib, Gio
 
 from blueman.Functions import launch
+from blueman.main.Config import Config
 from blueman.main.PluginManager import PluginManager
 from blueman.plugins.AppletPlugin import AppletPlugin
 from blueman.bluemantyping import GSignals
 
 
 class StatusIconImplementationProvider:
-    def on_query_status_icon_implementation(self) -> Optional[str]:
+    def on_query_status_icon_implementation(self) -> Tuple[str, int]:
         ...
 
 
@@ -28,18 +29,22 @@ class StatusIcon(AppletPlugin, GObject.GObject):
     __gsignals__: GSignals = {'activate': (GObject.SignalFlags.NO_HOOKS, None, ())}
 
     __unloadable__ = False
-    __icon__ = "blueman-tray"
+    __icon__ = "bluetooth-symbolic"
     __depends__ = ['Menu']
 
     visible = None
 
     visibility_timeout = None
 
-    _implementation = None
+    _implementations = None
 
     def on_load(self) -> None:
         GObject.GObject.__init__(self)
-        self.lines = {0: _("Bluetooth Enabled")}
+        self._tooltip_title = _("Bluetooth Enabled")
+        self._tooltip_text = ""
+
+        self.general_config = Config("org.blueman.general")
+        self.general_config.connect("changed::symbolic-status-icons", self.on_symbolic_config_change)
 
         self.query_visibility(emit=False)
 
@@ -48,10 +53,12 @@ class StatusIcon(AppletPlugin, GObject.GObject):
 
         self._add_dbus_method("GetVisibility", (), "b", lambda: self.visible)
         self._add_dbus_signal("VisibilityChanged", "b")
-        self._add_dbus_signal("TextChanged", "s")
-        self._add_dbus_method("GetText", (), "s", self._get_text)
+        self._add_dbus_signal("ToolTipTitleChanged", "s")
+        self._add_dbus_signal("ToolTipTextChanged", "s")
+        self._add_dbus_method("GetToolTipTitle", (), "s", lambda: self._tooltip_title)
+        self._add_dbus_method("GetToolTipText", (), "s", lambda: self._tooltip_text)
         self._add_dbus_signal("IconNameChanged", "s")
-        self._add_dbus_method("GetStatusIconImplementation", (), "s", self._get_status_icon_implementation)
+        self._add_dbus_method("GetStatusIconImplementations", (), "as", self._get_status_icon_implementations)
         self._add_dbus_method("GetIconName", (), "s", self._get_icon_name)
         self._add_dbus_method("Activate", (), "", lambda: self.emit("activate"))
 
@@ -62,7 +69,7 @@ class StatusIcon(AppletPlugin, GObject.GObject):
             self.set_visible(True, emit)
         elif not self.visibility_timeout:
             if delay_hiding:
-                self.visibility_timeout = GLib.timeout_add(1000, self.on_visibility_timeout)
+                self.visibility_timeout = GLib.timeout_add(2500, self.on_visibility_timeout)
             else:
                 self.set_visible(False, emit)
 
@@ -78,16 +85,16 @@ class StatusIcon(AppletPlugin, GObject.GObject):
         if emit:
             self._emit_dbus_signal("VisibilityChanged", visible)
 
-    def set_text_line(self, lineid: int, text: str) -> None:
-        if text:
-            self.lines[lineid] = text
-        else:
-            self.lines.pop(lineid, None)
+    def set_tooltip_title(self, title: str) -> None:
+        self._tooltip_title = title
+        self._emit_dbus_signal("ToolTipTitleChanged", title)
 
-        self._emit_dbus_signal("TextChanged", self._get_text())
+    def set_tooltip_text(self, text: Optional[str]) -> None:
+        self._tooltip_text = "" if text is None else text
+        self._emit_dbus_signal("ToolTipTextChanged", self._tooltip_text)
 
-    def _get_text(self) -> str:
-        return '\n'.join([self.lines[key] for key in sorted(self.lines)])
+    def on_symbolic_config_change(self, settings: Gio.Settings, key: str) -> None:
+        self.icon_should_change()
 
     def icon_should_change(self) -> None:
         self._emit_dbus_signal("IconNameChanged", self._get_icon_name())
@@ -105,23 +112,34 @@ class StatusIcon(AppletPlugin, GObject.GObject):
             launch('blueman-tray', icon_name='blueman', sn=False)
 
     def _on_plugins_changed(self, _plugins: PluginManager, _name: str) -> None:
-        implementation = self._get_status_icon_implementation()
-        if not self._implementation or self._implementation != implementation:
-            self._implementation = implementation
+        implementations = self._get_status_icon_implementations()
+        if not self._implementations or self._implementations != implementations:
+            self._implementations = implementations
 
         if self.parent.manager_state:
             launch('blueman-tray', icon_name='blueman', sn=False)
 
-    def _get_status_icon_implementation(self) -> str:
-        for plugin in self.parent.Plugins.get_loaded_plugins(StatusIconImplementationProvider):
-            implementation = plugin.on_query_status_icon_implementation()
-            if implementation:
-                return implementation
-        return "GtkStatusIcon"
+    def _get_status_icon_implementations(self) -> List[str]:
+        return [implementation for implementation, _ in sorted(
+            (plugin.on_query_status_icon_implementation()
+             for plugin in self.parent.Plugins.get_loaded_plugins(StatusIconImplementationProvider)),
+            key=lambda implementation_priority: implementation_priority[1],
+            reverse=True
+        )] + ["GtkStatusIcon"]
 
     def _get_icon_name(self) -> str:
+        # default icon name
+        name = "blueman-tray"
         for plugin in self.parent.Plugins.get_loaded_plugins(StatusIconProvider):
             icon = plugin.on_status_icon_query_icon()
             if icon is not None:
-                return icon
-        return "blueman-tray"
+                # status icon
+                name = icon
+
+        # depending on configuration, ensure fullcolor icons..
+        name = name.replace("-symbolic", "")
+        if self.general_config.get_boolean("symbolic-status-icons"):
+            # or symbolic
+            name = f"{name}-symbolic"
+
+        return name

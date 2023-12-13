@@ -71,7 +71,8 @@ class DeviceList(GenericList):
         data = tabledata + [
             {"id": "device", "type": object},
             {"id": "dbus_path", "type": str},
-            {"id": "timestamp", "type": float}
+            {"id": "timestamp", "type": float},
+            {"id": "no_name", "type": bool}
         ]
 
         super().__init__(data, headers_visible=headers_visible)
@@ -125,8 +126,9 @@ class DeviceList(GenericList):
                 self.device_remove_event(dev)
 
     def on_selection_changed(self, selection: Gtk.TreeSelection) -> None:
-        _model, tree_iter = selection.get_selected()
+        model, tree_iter = selection.get_selected()
         if tree_iter:
+            tree_iter = model.convert_iter_to_child_iter(tree_iter)
             row = self.get(tree_iter, "device")
             dev = row["device"]
             self.emit("device-selected", dev, tree_iter)
@@ -237,17 +239,12 @@ class DeviceList(GenericList):
 
         object_path = device.get_object_path()
         timestamp = datetime.strftime(datetime.now(), '%Y%m%d%H%M%S%f')
-        self.set(tree_iter, dbus_path=object_path, timestamp=float(timestamp))
+        no_name = "Name" not in device
+        self.set(tree_iter, dbus_path=object_path, timestamp=float(timestamp), no_name=no_name)
 
-    def display_known_devices(self, autoselect: bool = False) -> None:
+    def populate_devices(self) -> None:
         self.clear()
-        if self.Adapter:
-            devices = self.manager.get_devices(self.Adapter.get_object_path())
-            for device in devices:
-                self.device_add_event(device)
-
-        if autoselect:
-            self.selection.select_path(0)
+        self.manager.populate_devices()
 
     def discover_devices(self, time: float = 10.24,
                          error_handler: Optional[Callable[[BluezDBusException], None]] = None) -> None:

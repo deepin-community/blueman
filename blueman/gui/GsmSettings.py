@@ -20,7 +20,7 @@ class GsmSettings(Gtk.Dialog):
         gsm_grid = builder.get_widget("gsm_grid", Gtk.Grid)
 
         self.config = Config("org.blueman.gsmsetting", f"/org/blueman/gsmsettings/{bd_address}/")
-        self.props.icon_name = "network-wireless"
+        self.props.icon_name = "network-wireless-symbolic"
         self.props.title = _("GSM Settings")
 
         self.props.resizable = False
@@ -35,4 +35,4 @@ class GsmSettings(Gtk.Dialog):
         self.config.bind_to_widget("apn", self.e_apn, "text")
         self.config.bind_to_widget("number", self.e_number, "text")
 
-        self.add_button("_Close", Gtk.ResponseType.CLOSE)
+        self.add_button(_("_Close"), Gtk.ResponseType.CLOSE)

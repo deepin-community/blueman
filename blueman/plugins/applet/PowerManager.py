@@ -30,7 +30,7 @@ class PowerManager(AppletPlugin, StatusIconProvider):
     __unloadable__ = True
     __description__ = _("Controls Bluetooth adapter power states")
     __author__ = "Walmis"
-    __icon__ = "gnome-power-manager"
+    __icon__ = "gnome-power-manager-symbolic"
 
     __gsettings__ = {
         "schema": "org.blueman.plugins.powermanager",
@@ -52,8 +52,9 @@ class PowerManager(AppletPlugin, StatusIconProvider):
         OFF_FORCED = 0
 
     def on_load(self) -> None:
-        self.item = self.parent.Plugins.Menu.add(self, 0, text=_("<b>Turn Bluetooth _Off</b>"), markup=True,
-                                                 icon_name="blueman-disabled", tooltip=_("Turn off all adapters"),
+        self.item = self.parent.Plugins.Menu.add(self, 1, text=_("<b>Turn Bluetooth _Off</b>"), markup=True,
+                                                 icon_name="bluetooth-disabled-symbolic",
+                                                 tooltip=_("Turn off all adapters"),
                                                  callback=self.on_bluetooth_toggled)
         self.adapter_state = True
         self.current_state = True
@@ -160,7 +161,7 @@ class PowerManager(AppletPlugin, StatusIconProvider):
         if foff or off:
 
             self.item.set_text(_("<b>Turn Bluetooth _On</b>"), markup=True)
-            self.item.set_icon_name("blueman")
+            self.item.set_icon_name("bluetooth-symbolic")
             self.item.set_tooltip(_("Turn on all adapters"))
             self.item.set_sensitive(not foff)
 
@@ -169,7 +170,7 @@ class PowerManager(AppletPlugin, StatusIconProvider):
         elif on and not self.current_state:
 
             self.item.set_text(_("<b>Turn Bluetooth _Off</b>"), markup=True)
-            self.item.set_icon_name("blueman-disabled")
+            self.item.set_icon_name("bluetooth-disabled-symbolic")
             self.item.set_tooltip(_("Turn off all adapters"))
             self.item.set_sensitive(True)
 
@@ -186,10 +187,10 @@ class PowerManager(AppletPlugin, StatusIconProvider):
                 plugin.on_power_state_changed(self, new_state)
 
             if new_state:
-                self.parent.Plugins.StatusIcon.set_text_line(0, _("Bluetooth Enabled"))
+                self.parent.Plugins.StatusIcon.set_tooltip_title(_("Bluetooth Enabled"))
                 self.parent.Plugins.StatusIcon.query_visibility(delay_hiding=True)
             else:
-                self.parent.Plugins.StatusIcon.set_text_line(0, _("Bluetooth Disabled"))
+                self.parent.Plugins.StatusIcon.set_tooltip_title(_("Bluetooth Disabled"))
                 self.parent.Plugins.StatusIcon.query_visibility()
             self.parent.Plugins.StatusIcon.icon_should_change()
 

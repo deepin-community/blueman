@@ -4,39 +4,43 @@
 # Translators:
 # Арангел Ангов <ufo@linux.net.mk>
 # exoos <mince.lesovski@gmail.com>, 2014
+# Kristijan Fremen Velkovski <me@krisfremen.com>, 2022.
+# Christopher Schramm <github@cschramm.eu>, 2022.
 msgid ""
 msgstr ""
 "Project-Id-Version: blueman-project\n"
 "Report-Msgid-Bugs-To: https://github.com/blueman-project/blueman/issues\n"
-"POT-Creation-Date: 2021-10-03 11:06+0200\n"
-"PO-Revision-Date: 2020-04-14 10:14+0000\n"
-"Last-Translator: Christopher Schramm <transifex@cschramm.eu>\n"
-"Language-Team: Macedonian (http://www.transifex.com/mate/MATE/language/mk/)\n"
+"POT-Creation-Date: 2022-11-22 19:08+0000\n"
+"PO-Revision-Date: 2022-10-24 14:40+0000\n"
+"Last-Translator: Kristijan Fremen Velkovski <me@krisfremen.com>\n"
+"Language-Team: Macedonian <https://hosted.weblate.org/projects/blueman/2-3/"
+"mk/>\n"
 "Language: mk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n % 10 == 1 && n % 100 != 11) ? 0 : 1;\n"
+"X-Generator: Weblate 4.14.2-dev\n"
 
-#: data/ui/adapters-tab.ui:29
+#: data/ui/adapters-tab.ui:30
 msgid "<b>Visibility Setting</b>"
 msgstr "<b>Подесувања за видливост</b>"
 
-#: data/ui/adapters-tab.ui:39 blueman/main/Adapter.py:145
+#: data/ui/adapters-tab.ui:40 blueman/main/Adapter.py:155
 msgid "Hidden"
 msgstr "Сокриено"
 
-#: data/ui/adapters-tab.ui:54
+#: data/ui/adapters-tab.ui:57
 msgid "Always visible"
 msgstr "Секогаш видливо"
 
-#: data/ui/adapters-tab.ui:70
+#: data/ui/adapters-tab.ui:75
 msgid "Temporarily visible"
 msgstr "Привремено видливо"
 
-#: data/ui/adapters-tab.ui:101
-msgid "<b>Friendly Name</b>"
-msgstr "<b>Пријателско име</b>"
+#: data/ui/adapters-tab.ui:110
+msgid "<b>Name</b>"
+msgstr "<b>Име</b>"
 
 #: data/ui/applet-passkey.ui:8
 msgid "Pairing request"
@@ -48,78 +52,92 @@ msgstr "Барање за спојување за уредот:"
 
 #: data/ui/applet-passkey.ui:120
 msgid "This should be overwritten"
-msgstr ""
+msgstr "Ова треба да биде препишано"
 
 #: data/ui/applet-passkey.ui:140
 msgid "Show input"
 msgstr "Прикажи влез"
 
-#: data/ui/manager-main.ui:53
+#: data/ui/manager-main.ui:54
 msgid "_Adapter"
 msgstr "_Адаптер"
 
-#: data/ui/manager-main.ui:61
+#: data/ui/manager-main.ui:62
 msgid "_Device"
 msgstr "_Уред"
 
-#: data/ui/manager-main.ui:69
+#: data/ui/manager-main.ui:70
 msgid "_View"
 msgstr "_Поглед"
 
-#: data/ui/manager-main.ui:77 blueman/gui/manager/ManagerMenu.py:55
-#: blueman/plugins/applet/StandardItems.py:48
+#: data/ui/manager-main.ui:78 blueman/gui/manager/ManagerMenu.py:56
+#: blueman/plugins/applet/StandardItems.py:51
 msgid "_Help"
 msgstr "_Помош"
 
-#: data/ui/manager-main.ui:96
+#: data/ui/manager-main.ui:98
 msgid "Search for nearby devices"
 msgstr "Пребарај уреди во близина"
 
 #. translators: toolbar item: keep it as short as possible
-#: data/ui/manager-main.ui:98
+#: data/ui/manager-main.ui:100
 msgid "Search"
 msgstr "Пребарувај"
 
-#: data/ui/manager-main.ui:121 blueman/gui/manager/ManagerDeviceMenu.py:355
+#: data/ui/manager-main.ui:123 blueman/gui/manager/ManagerDeviceMenu.py:364
 msgid "Create pairing with the device"
 msgstr "Креирај спојување со уредот"
 
 #. translators: toolbar item: keep it as short as possible
-#: data/ui/manager-main.ui:122
+#: data/ui/manager-main.ui:124
 msgid "Pair"
 msgstr "Спојување"
 
-#: data/ui/manager-main.ui:135 blueman/gui/manager/ManagerDeviceMenu.py:373
+#: data/ui/manager-main.ui:137 blueman/gui/manager/ManagerDeviceMenu.py:382
 msgid "Mark/Unmark this device as trusted"
 msgstr "Штиклрај/одштиклирај го овој уред како сигурен"
 
 #. translators: toolbar item: keep it as short as possible
-#: data/ui/manager-main.ui:136 blueman/gui/manager/ManagerToolbar.py:39
+#: data/ui/manager-main.ui:138 blueman/gui/manager/ManagerToolbar.py:39
 #: blueman/gui/manager/ManagerToolbar.py:99
 msgid "Trust"
 msgstr "Сигурен"
 
-#: data/ui/manager-main.ui:149 blueman/gui/manager/ManagerDeviceMenu.py:406
+#: data/ui/manager-main.ui:151 blueman/gui/manager/ManagerDeviceMenu.py:427
 msgid "Remove this device from the known devices list"
 msgstr "Отстрани го овој уред од листата на познати уреди"
 
 #. translators: toolbar item: keep it as short as possible
-#: data/ui/manager-main.ui:150
+#: data/ui/manager-main.ui:152
 msgid "Remove"
 msgstr "Отстрани"
 
-#: data/ui/manager-main.ui:172
+#: data/ui/manager-main.ui:174
 msgid "Send file(s) to the device"
 msgstr "Испрати датотека(и) на уредот"
 
 #. translators: toolbar item: keep it as short as possible
-#: data/ui/manager-main.ui:174
+#: data/ui/manager-main.ui:176
 msgid "Send File"
 msgstr "Испрати датотека"
 
 #: data/ui/rename-device.ui:8
 msgid "Rename device"
-msgstr ""
+msgstr "Преименувај уред"
+
+#: data/ui/rename-device.ui:26 data/ui/net-usage.ui:243
+msgid "_Reset"
+msgstr "_Ресетирај"
+
+#: data/ui/rename-device.ui:40 data/ui/note.ui:26 blueman/main/Sendto.py:235
+#: blueman/gui/DeviceSelectorDialog.py:17
+msgid "_Cancel"
+msgstr "_Откажи"
+
+#: data/ui/rename-device.ui:54 data/ui/note.ui:41
+#: blueman/gui/DeviceSelectorDialog.py:17
+msgid "_OK"
+msgstr "_ОК"
 
 #: data/ui/services-network.ui:37
 msgid "Network Access Point (NAP)"
@@ -147,7 +165,7 @@ msgstr "<b>Нема инсталирано DHCP сервери</b>"
 
 #: data/ui/services-network.ui:199
 msgid "udhcpd"
-msgstr ""
+msgstr "udhcpd"
 
 #: data/ui/services-network.ui:218
 msgid "<b>NAP Settings</b>"
@@ -165,23 +183,23 @@ msgstr "<b>DUN подршка</b>"
 msgid "<b>Network Settings</b>"
 msgstr "<b>Подесувања на мрежата</b>"
 
-#: data/ui/services-transfer.ui:24
+#: data/ui/services-transfer.ui:25
 msgid "<b>File Receiving (Object Push)</b>"
 msgstr "<b>Примање на датотека (Object Push)</b>"
 
-#: data/ui/services-transfer.ui:37
+#: data/ui/services-transfer.ui:38
 msgid "Incoming Folder:"
-msgstr ""
+msgstr "Дојдовна Папка:"
 
-#: data/ui/services-transfer.ui:49
+#: data/ui/services-transfer.ui:50
 msgid "Select folder for incoming file transfers"
-msgstr ""
+msgstr "Изберете папка за дојдовни фајл преноси"
 
-#: data/ui/services-transfer.ui:58
+#: data/ui/services-transfer.ui:59
 msgid "Accept files from trusted devices"
 msgstr "Прифати датотеки од сигурни уреди"
 
-#: data/ui/services-transfer.ui:96
+#: data/ui/services-transfer.ui:106
 msgid "<b>Transfer Settings</b>"
 msgstr "<b>подесувања за пренос на податоци</b>"
 
@@ -220,8 +238,8 @@ msgstr "<b>Автор:</b>"
 
 #. translators: device class
 #: data/ui/applet-plugins-widget.ui:161
-#: blueman/gui/manager/ManagerDeviceList.py:301
-#: blueman/gui/manager/ManagerDeviceList.py:303 blueman/DeviceClass.py:86
+#: blueman/gui/manager/ManagerDeviceList.py:355
+#: blueman/gui/manager/ManagerDeviceList.py:357 blueman/DeviceClass.py:86
 #: blueman/DeviceClass.py:114 blueman/DeviceClass.py:168
 #: blueman/DeviceClass.py:242 blueman/DeviceClass.py:291 blueman/Sdp.py:376
 #: blueman/plugins/applet/NetUsage.py:209
@@ -253,7 +271,7 @@ msgstr "APN:"
 msgid "Traffic statistics"
 msgstr "Статистика за сообраќајот"
 
-#: data/ui/net-usage.ui:33
+#: data/ui/net-usage.ui:33 blueman/gui/GsmSettings.py:38
 msgid "_Close"
 msgstr "_Затвори"
 
@@ -277,48 +295,46 @@ msgstr "<b>Записникот е започнат:</b>"
 msgid "<b>Log duration:</b>"
 msgstr "<b>Времетраење на записникот:</b>"
 
-#: data/ui/net-usage.ui:243
-msgid "_Reset"
-msgstr "_Ресетирај"
-
 #: data/ui/note.ui:8
 msgid "Send note"
-msgstr ""
+msgstr "Испратете белешка"
 
-#: blueman/main/Adapter.py:50
+#: blueman/main/Adapter.py:59
 msgid "Bluetooth needs to be turned on for the adapter manager to work"
 msgstr "Блутутот мора да биде вклучен за управувачот со адаптерот да работи"
 
-#: blueman/main/Adapter.py:86 data/blueman-adapters.desktop.in:3
+#: blueman/main/Adapter.py:95 data/blueman-adapters.desktop.in:3
 msgid "Bluetooth Adapters"
 msgstr "Блутут адаптери"
 
-#: blueman/main/Adapter.py:143
+#: blueman/main/Adapter.py:153
 msgid "Always"
 msgstr "Секогаш"
 
-#: blueman/main/Adapter.py:147 blueman/main/Sendto.py:189
-#, fuzzy, python-format
-#| msgid "%d Minute"
-#| msgid_plural "%d Minutes"
+#: blueman/main/Adapter.py:157 blueman/main/Sendto.py:189
+#, python-format
 msgid "%(minutes)d Minute"
 msgid_plural "%(minutes)d Minutes"
-msgstr[0] "%d Минута"
-msgstr[1] "%d Минути"
+msgstr[0] "%(minutes)d Минута"
+msgstr[1] "%(minutes)d Минути"
 
-#: blueman/main/Adapter.py:212
+#: blueman/main/Adapter.py:222
 msgid "Adapter"
-msgstr ""
+msgstr "Адаптер"
 
-#: blueman/main/Manager.py:89 blueman/main/Manager.py:130
+#: blueman/main/Manager.py:63
+msgid "Bluetooth Devices"
+msgstr "Блутут уреди"
+
+#: blueman/main/Manager.py:99 blueman/main/Manager.py:140
 msgid "Bluetooth needs to be turned on for the device manager to function"
 msgstr "Блутутот мора да биде вклучен за управувачот со уредот да работи"
 
-#: blueman/main/Manager.py:109
+#: blueman/main/Manager.py:119
 msgid "Connection to BlueZ failed"
 msgstr "Поврзувањето со BlueZ е неуспешно"
 
-#: blueman/main/Manager.py:110
+#: blueman/main/Manager.py:120
 msgid ""
 "Bluez daemon is not running, blueman-manager cannot continue.\n"
 "This probably means that there were no Bluetooth adapters detected or "
@@ -328,22 +344,26 @@ msgstr ""
 "Ова најверојатно значи дека не се пронајдени блутут адаптери или блутутот не "
 "е вклучен."
 
-#: blueman/main/Manager.py:198
+#: blueman/main/Manager.py:208
 msgid "Searching"
 msgstr "Пребарување"
 
-#: blueman/main/Manager.py:221 blueman/plugins/applet/StandardItems.py:79
+#: blueman/main/Manager.py:231 blueman/plugins/applet/StandardItems.py:84
 msgid "Adapter Preferences"
-msgstr ""
+msgstr "Подесувања на Адаптер"
 
-#: blueman/main/Manager.py:233 blueman/gui/manager/ManagerDeviceList.py:143
-#: blueman/plugins/applet/StandardItems.py:72
+#: blueman/main/Manager.py:247 blueman/gui/manager/ManagerDeviceList.py:169
+#: blueman/plugins/applet/StandardItems.py:77
 msgid "File Sender"
-msgstr ""
+msgstr "Испраќач на Фајлови"
 
 #: blueman/main/Sendto.py:33
 msgid "Bluetooth File Transfer"
 msgstr "Пренос на податоци преку блутут"
+
+#: blueman/main/Sendto.py:42
+msgid "_Stop"
+msgstr "_Стоп"
 
 #: blueman/main/Sendto.py:57 blueman/gui/manager/ManagerProgressbar.py:27
 msgid "Connecting"
@@ -351,7 +371,7 @@ msgstr "Поврзување"
 
 #: blueman/main/Sendto.py:111
 msgid "obexd not available"
-msgstr ""
+msgstr "obexd е недостапен"
 
 #: blueman/main/Sendto.py:111
 msgid "Failed to autostart obex service. Make sure the obex daemon is running"
@@ -373,8 +393,8 @@ msgstr "ETA:"
 #, python-format
 msgid "%(seconds)d Second"
 msgid_plural "%(seconds)d Seconds"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%(seconds)d секунда"
+msgstr[1] "%(seconds)d секунди"
 
 #: blueman/main/Sendto.py:229
 #, python-format
@@ -393,69 +413,77 @@ msgstr "Обиди се повторно"
 msgid "Error occurred"
 msgstr "Се појави грешка"
 
-#: blueman/main/applet/BluezAgent.py:193
+#: blueman/main/applet/BluezAgent.py:123
 #, python-format
 msgid "Pairing request for %s"
 msgstr "Барање за поврзување за %s "
 
-#: blueman/main/applet/BluezAgent.py:204 blueman/main/applet/BluezAgent.py:322
+#: blueman/main/applet/BluezAgent.py:134 blueman/main/applet/BluezAgent.py:246
 msgid "Bluetooth Authentication"
 msgstr "Блутут проверка"
 
-#: blueman/main/applet/BluezAgent.py:235
+#: blueman/main/applet/BluezAgent.py:165
 msgid "Enter PIN code for authentication:"
 msgstr "Внеси го PIN кодот за проверка:"
 
-#: blueman/main/applet/BluezAgent.py:250
+#: blueman/main/applet/BluezAgent.py:174
 msgid "Enter passkey for authentication:"
 msgstr "Внеси лозинка за проверка:"
 
-#: blueman/main/applet/BluezAgent.py:261
+#: blueman/main/applet/BluezAgent.py:185
 msgid "Pairing passkey for"
-msgstr ""
+msgstr "Лозинка за спарување на"
 
-#: blueman/main/applet/BluezAgent.py:272
+#: blueman/main/applet/BluezAgent.py:196
 msgid "Pairing PIN code for"
-msgstr ""
+msgstr "ПИН код за спарување на"
 
-#: blueman/main/applet/BluezAgent.py:285
+#: blueman/main/applet/BluezAgent.py:209
 msgid "Pairing request for:"
 msgstr "Барање за спојување за:"
 
-#: blueman/main/applet/BluezAgent.py:288
+#: blueman/main/applet/BluezAgent.py:212
 msgid "Confirm value for authentication:"
 msgstr "Потврди ја вредноста за проверка:"
 
-#: blueman/main/applet/BluezAgent.py:289
+#: blueman/main/applet/BluezAgent.py:213
 msgid "Confirm"
 msgstr "Потврди"
 
-#: blueman/main/applet/BluezAgent.py:289 blueman/main/applet/BluezAgent.py:320
+#: blueman/main/applet/BluezAgent.py:213 blueman/main/applet/BluezAgent.py:244
 msgid "Deny"
 msgstr "Одбиј"
 
-#: blueman/main/applet/BluezAgent.py:317
+#: blueman/main/applet/BluezAgent.py:241
 msgid "Authorization request for:"
 msgstr "Барање за проверка за:"
 
-#: blueman/main/applet/BluezAgent.py:317
+#: blueman/main/applet/BluezAgent.py:241
 msgid "Service:"
 msgstr "Сервис:"
 
-#: blueman/main/applet/BluezAgent.py:318
+#: blueman/main/applet/BluezAgent.py:242
 msgid "Always accept"
 msgstr "Секогаш прифати"
 
-#: blueman/main/applet/BluezAgent.py:319
+#: blueman/main/applet/BluezAgent.py:243
 #: blueman/plugins/applet/TransferService.py:130
 msgid "Accept"
 msgstr "Прифати"
 
-#: blueman/main/PluginManager.py:67
+#: blueman/main/PluginManager.py:68
 msgid ""
 "<b>An error has occured while loading a plugin. Please notify the developers "
 "with the content of this message to our </b>\n"
 "<a href=\"http://github.com/blueman-project/blueman/issues\">website.</a>"
+msgstr ""
+
+#: blueman/main/Services.py:33
+msgid "Local Services"
+msgstr "Локални сервиси"
+
+#: blueman/main/Services.py:47
+msgid "_Apply"
 msgstr ""
 
 #: blueman/Functions.py:71
@@ -482,260 +510,272 @@ msgstr "Да"
 msgid "No"
 msgstr "Не"
 
-#: blueman/gui/manager/ManagerMenu.py:45
+#: blueman/Functions.py:181
+msgid "B"
+msgstr ""
+
+#: blueman/Functions.py:184
+msgid "KB"
+msgstr ""
+
+#: blueman/Functions.py:187
+msgid "MB"
+msgstr ""
+
+#: blueman/Functions.py:190
+msgid "GB"
+msgstr ""
+
+#: blueman/gui/manager/ManagerMenu.py:46
 msgid "_Report a Problem"
 msgstr "_Пријави проблем"
 
-#: blueman/gui/manager/ManagerMenu.py:62
+#: blueman/gui/manager/ManagerMenu.py:63
 msgid "Device Manager"
 msgstr "Управувач со уреди"
 
-#: blueman/gui/manager/ManagerMenu.py:68
+#: blueman/gui/manager/ManagerMenu.py:69
 msgid "Show _Toolbar"
 msgstr ""
 
-#: blueman/gui/manager/ManagerMenu.py:73
+#: blueman/gui/manager/ManagerMenu.py:74
 msgid "Show _Statusbar"
 msgstr ""
 
-#: blueman/gui/manager/ManagerMenu.py:78
+#: blueman/gui/manager/ManagerMenu.py:79
 msgid "Hide _unnamed devices"
 msgstr ""
 
-#: blueman/gui/manager/ManagerMenu.py:88
+#: blueman/gui/manager/ManagerMenu.py:89
 msgid "S_ort By"
 msgstr ""
 
-#: blueman/gui/manager/ManagerMenu.py:95
+#: blueman/gui/manager/ManagerMenu.py:96
 msgid "_Name"
 msgstr ""
 
-#: blueman/gui/manager/ManagerMenu.py:100
+#: blueman/gui/manager/ManagerMenu.py:101
 msgid "_Added"
 msgstr ""
 
-#: blueman/gui/manager/ManagerMenu.py:114
+#: blueman/gui/manager/ManagerMenu.py:115
 msgid "_Descending"
 msgstr ""
 
-#: blueman/gui/manager/ManagerMenu.py:127
-#: blueman/plugins/applet/StandardItems.py:50
+#: blueman/gui/manager/ManagerMenu.py:128
+#: blueman/plugins/applet/StandardItems.py:54
 msgid "_Plugins"
 msgstr "_Додатоци"
 
-#: blueman/gui/manager/ManagerMenu.py:132
-#: blueman/plugins/applet/StandardItems.py:43
+#: blueman/gui/manager/ManagerMenu.py:133
+#: blueman/plugins/applet/StandardItems.py:45
 msgid "_Local Services"
 msgstr "_Локални сервиси"
 
-#: blueman/gui/manager/ManagerMenu.py:133
-#: blueman/plugins/applet/StandardItems.py:82
+#: blueman/gui/manager/ManagerMenu.py:134
+#: blueman/plugins/applet/StandardItems.py:87
 msgid "Service Preferences"
 msgstr ""
 
-#: blueman/gui/manager/ManagerMenu.py:141
+#: blueman/gui/manager/ManagerMenu.py:142
 msgid "_Search"
 msgstr "Барај"
 
-#: blueman/gui/manager/ManagerMenu.py:155
+#: blueman/gui/manager/ManagerMenu.py:156
 msgid "_Preferences"
 msgstr ""
 
-#: blueman/gui/manager/ManagerMenu.py:164 blueman/plugins/applet/ExitItem.py:12
+#: blueman/gui/manager/ManagerMenu.py:165 blueman/plugins/applet/ExitItem.py:12
 msgid "_Exit"
 msgstr ""
 
 #. translators: device class
-#: blueman/gui/manager/ManagerDeviceList.py:276
-#: blueman/gui/manager/ManagerDeviceList.py:301 blueman/DeviceClass.py:24
+#: blueman/gui/manager/ManagerDeviceList.py:326
+#: blueman/gui/manager/ManagerDeviceList.py:355 blueman/DeviceClass.py:24
 #: blueman/DeviceClass.py:29 blueman/DeviceClass.py:46
 #: blueman/DeviceClass.py:80 blueman/DeviceClass.py:121
-#, fuzzy
-#| msgid "uncategorized"
 msgid "Uncategorized"
 msgstr "Некатегоризирано"
 
-#: blueman/gui/manager/ManagerDeviceList.py:479
-msgid "<b>Trusted and Paired</b>"
+#: blueman/gui/manager/ManagerDeviceList.py:544
+msgid "Trusted"
+msgstr "Доверлив"
+
+#: blueman/gui/manager/ManagerDeviceList.py:546
+msgid "Paired"
+msgstr "Споен"
+
+#: blueman/gui/manager/ManagerDeviceList.py:548
+msgid "Blocked"
 msgstr ""
 
-#: blueman/gui/manager/ManagerDeviceList.py:481
-msgid "<b>Paired</b>"
-msgstr ""
-
-#: blueman/gui/manager/ManagerDeviceList.py:483
-msgid "<b>Trusted</b>"
-msgstr "<b>Сигурно</b>"
-
-#: blueman/gui/manager/ManagerDeviceList.py:502
-#, fuzzy
-#| msgid "<b>Connect To:</b>"
+#: blueman/gui/manager/ManagerDeviceList.py:571
 msgid "<b>Connected</b>"
-msgstr "<b>Поврзи се со:</b>"
+msgstr "<b>Поврзени:</b>"
 
-#: blueman/gui/manager/ManagerDeviceList.py:517
+#: blueman/gui/manager/ManagerDeviceList.py:586
 msgid "Poor"
 msgstr "Слабо"
 
-#: blueman/gui/manager/ManagerDeviceList.py:519
-#: blueman/gui/manager/ManagerDeviceList.py:544
+#: blueman/gui/manager/ManagerDeviceList.py:588
+#: blueman/gui/manager/ManagerDeviceList.py:613
 msgid "Sub-optimal"
 msgstr "Под-оптимално"
 
-#: blueman/gui/manager/ManagerDeviceList.py:521
-#: blueman/gui/manager/ManagerDeviceList.py:546
+#: blueman/gui/manager/ManagerDeviceList.py:590
+#: blueman/gui/manager/ManagerDeviceList.py:615
 msgid "Optimal"
 msgstr "Оптимално"
 
-#: blueman/gui/manager/ManagerDeviceList.py:523
+#: blueman/gui/manager/ManagerDeviceList.py:592
 msgid "Much"
 msgstr "Повеќе"
 
-#: blueman/gui/manager/ManagerDeviceList.py:525
+#: blueman/gui/manager/ManagerDeviceList.py:594
 msgid "Too much"
 msgstr "Премногу"
 
-#: blueman/gui/manager/ManagerDeviceList.py:528
+#: blueman/gui/manager/ManagerDeviceList.py:597
 #, python-format
 msgid "<b>Received Signal Strength: %(rssi)u%%</b> <i>(%(rssi_state)s)</i>"
 msgstr ""
 
-#: blueman/gui/manager/ManagerDeviceList.py:531
+#: blueman/gui/manager/ManagerDeviceList.py:600
 #, python-format
 msgid "Received Signal Strength: %(rssi)u%% <i>(%(rssi_state)s)</i>"
 msgstr ""
 
-#: blueman/gui/manager/ManagerDeviceList.py:536
+#: blueman/gui/manager/ManagerDeviceList.py:605
 #, python-format
 msgid "<b>Link Quality: %(lq)u%%</b>"
 msgstr ""
 
-#: blueman/gui/manager/ManagerDeviceList.py:538
+#: blueman/gui/manager/ManagerDeviceList.py:607
 #, python-format
 msgid "Link Quality: %(lq)u%%"
 msgstr ""
 
-#: blueman/gui/manager/ManagerDeviceList.py:542
+#: blueman/gui/manager/ManagerDeviceList.py:611
 msgid "Low"
 msgstr "Ниско"
 
-#: blueman/gui/manager/ManagerDeviceList.py:548
+#: blueman/gui/manager/ManagerDeviceList.py:617
 msgid "High"
 msgstr "Високо"
 
-#: blueman/gui/manager/ManagerDeviceList.py:550
+#: blueman/gui/manager/ManagerDeviceList.py:619
 msgid "Very High"
 msgstr "Многу високо"
 
-#: blueman/gui/manager/ManagerDeviceList.py:553
+#: blueman/gui/manager/ManagerDeviceList.py:622
 #, python-format
 msgid "<b>Transmit Power Level: %(tpl)u%%</b> <i>(%(tpl_state)s)</i>"
 msgstr ""
 
-#: blueman/gui/manager/ManagerDeviceList.py:556
+#: blueman/gui/manager/ManagerDeviceList.py:625
 #, python-format
 msgid "Transmit Power Level: %(tpl)u%% <i>(%(tpl_state)s)</i>"
 msgstr ""
 
-#: blueman/gui/manager/ManagerDeviceMenu.py:131
+#: blueman/gui/manager/ManagerDeviceMenu.py:135
 msgid "Success!"
 msgstr "Успешно!"
 
-#: blueman/gui/manager/ManagerDeviceMenu.py:138
+#: blueman/gui/manager/ManagerDeviceMenu.py:142
 msgid "Failed"
 msgstr "Неуспешно"
 
-#: blueman/gui/manager/ManagerDeviceMenu.py:144
-#, fuzzy
-#| msgid "Connecting"
+#: blueman/gui/manager/ManagerDeviceMenu.py:148
 msgid "Connecting…"
-msgstr "Поврзување"
+msgstr "Поврзување…"
 
-#: blueman/gui/manager/ManagerDeviceMenu.py:180
+#: blueman/gui/manager/ManagerDeviceMenu.py:184
 msgid "Disconnection Failed: "
 msgstr ""
 
-#: blueman/gui/manager/ManagerDeviceMenu.py:204
+#: blueman/gui/manager/ManagerDeviceMenu.py:208
 msgid "No audio endpoints registered"
 msgstr ""
 
-#: blueman/gui/manager/ManagerDeviceMenu.py:207
+#: blueman/gui/manager/ManagerDeviceMenu.py:211
 msgid "Input/output error"
 msgstr ""
 
-#: blueman/gui/manager/ManagerDeviceMenu.py:209
+#: blueman/gui/manager/ManagerDeviceMenu.py:213
 msgid "Device did not respond"
 msgstr ""
 
-#: blueman/gui/manager/ManagerDeviceMenu.py:213
-#, fuzzy
-#| msgid "Temporarily visible"
+#: blueman/gui/manager/ManagerDeviceMenu.py:217
 msgid "Resource temporarily unavailable"
-msgstr "Привремено видливо"
+msgstr "Ресурсот е привремено недостапен"
 
-#: blueman/gui/manager/ManagerDeviceMenu.py:218
+#: blueman/gui/manager/ManagerDeviceMenu.py:222
 msgid "Connection Failed: "
 msgstr "Врската е неуспешна:"
 
-#: blueman/gui/manager/ManagerDeviceMenu.py:285
-#, fuzzy
-#| msgid "<b>Connect To:</b>"
-msgid "_<b>_Connect</b>"
-msgstr "<b>Поврзи се со:</b>"
+#: blueman/gui/manager/ManagerDeviceMenu.py:294
+msgid "<b>_Connect</b>"
+msgstr "<b>_Поврзи се со:</b>"
 
-#: blueman/gui/manager/ManagerDeviceMenu.py:287
+#: blueman/gui/manager/ManagerDeviceMenu.py:296
 msgid "Connects auto connect profiles A2DP source, A2DP sink, and HID"
 msgstr ""
 
-#: blueman/gui/manager/ManagerDeviceMenu.py:291
-msgid "_<b>Disconnect</b>"
-msgstr ""
+#: blueman/gui/manager/ManagerDeviceMenu.py:300
+msgid "<b>_Disconnect</b>"
+msgstr "<b>_Одврзи:</b>"
 
-#: blueman/gui/manager/ManagerDeviceMenu.py:292
+#: blueman/gui/manager/ManagerDeviceMenu.py:301
 msgid "Forcefully disconnect the device"
 msgstr "Одврзи го уредот на сила"
 
-#: blueman/gui/manager/ManagerDeviceMenu.py:308
+#: blueman/gui/manager/ManagerDeviceMenu.py:317
 msgid "<b>Connect To:</b>"
 msgstr "<b>Поврзи се со:</b>"
 
-#: blueman/gui/manager/ManagerDeviceMenu.py:313
+#: blueman/gui/manager/ManagerDeviceMenu.py:322
 msgid "<b>Disconnect:</b>"
 msgstr "<b>Одврзување:</b>"
 
-#: blueman/gui/manager/ManagerDeviceMenu.py:322
-#, fuzzy
-#| msgid "<b>Disconnect:</b>"
+#: blueman/gui/manager/ManagerDeviceMenu.py:331
 msgid "<b>Auto-connect:</b>"
-msgstr "<b>Одврзување:</b>"
+msgstr "<b>Автоматско поврзување:</b>"
 
-#: blueman/gui/manager/ManagerDeviceMenu.py:341
-#, fuzzy
-#| msgid "Send a _File..."
+#: blueman/gui/manager/ManagerDeviceMenu.py:350
 msgid "Send a _File…"
-msgstr "Испрати _датотека..."
+msgstr "Испрати _фајл…"
 
-#: blueman/gui/manager/ManagerDeviceMenu.py:354
+#: blueman/gui/manager/ManagerDeviceMenu.py:363
 msgid "_Pair"
 msgstr "_Спојување"
 
-#: blueman/gui/manager/ManagerDeviceMenu.py:364
+#: blueman/gui/manager/ManagerDeviceMenu.py:373
 msgid "_Trust"
 msgstr "_Сигурно"
 
-#: blueman/gui/manager/ManagerDeviceMenu.py:369
+#: blueman/gui/manager/ManagerDeviceMenu.py:378
 msgid "_Untrust"
 msgstr "_Несигурно"
 
-#: blueman/gui/manager/ManagerDeviceMenu.py:393
+#: blueman/gui/manager/ManagerDeviceMenu.py:385
+msgid "_Block"
+msgstr ""
+
+#: blueman/gui/manager/ManagerDeviceMenu.py:390
+msgid "_Unblock"
+msgstr ""
+
+#: blueman/gui/manager/ManagerDeviceMenu.py:394
+msgid "Block/Unblock this device"
+msgstr "Блокирај/Одблокирај го овој уред"
+
+#: blueman/gui/manager/ManagerDeviceMenu.py:414
 msgid "R_ename device…"
 msgstr ""
 
-#: blueman/gui/manager/ManagerDeviceMenu.py:402
-#, fuzzy
-#| msgid "Remove"
+#: blueman/gui/manager/ManagerDeviceMenu.py:423
 msgid "_Remove…"
-msgstr "Отстрани"
+msgstr "_Отстрани…"
 
 #: blueman/gui/manager/ManagerProgressbar.py:44
 msgid "Cancel Operation"
@@ -747,12 +787,12 @@ msgid "Data activity indication"
 msgstr "Приказ на активност на податоци"
 
 #: blueman/gui/manager/ManagerStats.py:43
-#: blueman/gui/manager/ManagerStats.py:53
+#: blueman/gui/manager/ManagerStats.py:55
 msgid "Total data received and rate of transmission"
 msgstr "Вкупно примени податоци и степен на пренос"
 
 #: blueman/gui/manager/ManagerStats.py:47
-#: blueman/gui/manager/ManagerStats.py:51
+#: blueman/gui/manager/ManagerStats.py:52
 msgid "Total data sent and rate of transmission"
 msgstr "Вкупно испратени податоци и степен на пренос"
 
@@ -769,7 +809,7 @@ msgstr "Одбери уред"
 msgid "More"
 msgstr "Повеќе"
 
-#: blueman/gui/CommonUi.py:62
+#: blueman/gui/CommonUi.py:65
 msgid "Blueman is a GTK+ Bluetooth manager"
 msgstr ""
 
@@ -778,35 +818,35 @@ msgid "GSM Settings"
 msgstr "GSM подесувања"
 
 #: blueman/gui/applet/PluginDialog.py:95
-#: blueman/plugins/applet/StandardItems.py:88
+#: blueman/plugins/applet/StandardItems.py:93
 msgid "Plugins"
 msgstr "Додатоци"
 
-#: blueman/gui/applet/PluginDialog.py:294
-#: blueman/gui/applet/PluginDialog.py:316
+#: blueman/gui/applet/PluginDialog.py:296
+#: blueman/gui/applet/PluginDialog.py:318
 msgid "Dependency issue"
 msgstr "За меѓузависностите"
 
-#: blueman/gui/applet/PluginDialog.py:296
+#: blueman/gui/applet/PluginDialog.py:298
 #, python-format
 msgid ""
 "Plugin <b>\"%(0)s\"</b> depends on <b>%(1)s</b>. Unloading <b>%(1)s</b> will "
 "also unload <b>\"%(0)s\"</b>.\n"
 "Proceed?"
 msgstr ""
-"Додатокот <b>\"%(0)s\"</b> зависи од <b>%(1)s</b>. Со исклучување на <b>"
-"%(1)s</b> исто така ќе се исклучи <b>\"%(0)s\"</b>.\n"
+"Додатокот <b>\"%(0)s\"</b> зависи од <b>%(1)s</b>. Со исклучување на "
+"<b>%(1)s</b> исто така ќе се исклучи <b>\"%(0)s\"</b>.\n"
 "Да продолжам?"
 
-#: blueman/gui/applet/PluginDialog.py:318
+#: blueman/gui/applet/PluginDialog.py:320
 #, python-format
 msgid ""
 "Plugin <b>%(0)s</b> conflicts with <b>%(1)s</b>. Loading <b>%(1)s</b> will "
 "unload <b>%(0)s</b>.\n"
 "Proceed?"
 msgstr ""
-"Додатокот <b>%(0)s</b> е во конфликт со <b>%(1)s</b>. Вчитувањето на <b>"
-"%(1)s</b> ќе го исклучи <b>%(0)s</b>.\n"
+"Додатокот <b>%(0)s</b> е во конфликт со <b>%(1)s</b>. Вчитувањето на "
+"<b>%(1)s</b> ќе го исклучи <b>%(0)s</b>.\n"
 "Да продолжам?"
 
 #: blueman/gui/DeviceSelectorWidget.py:39
@@ -814,10 +854,8 @@ msgid "Adapter selection"
 msgstr "Одбирање на адаптер"
 
 #: blueman/gui/DeviceSelectorWidget.py:45
-#, fuzzy
-#| msgid "Disconnecting..."
 msgid "Discovering…"
-msgstr "Одврзување..."
+msgstr "Откривање…"
 
 #. translators: device class
 #: blueman/DeviceClass.py:6
@@ -836,8 +874,6 @@ msgstr ""
 
 #. translators: device class
 #: blueman/DeviceClass.py:12
-#, fuzzy
-#| msgid "Network Access Point"
 msgid "Access point"
 msgstr "Точка за пристап на мрежата"
 
@@ -868,31 +904,23 @@ msgstr ""
 
 #. translators: device class
 #: blueman/DeviceClass.py:31
-#, fuzzy
-#| msgid "desktop"
 msgid "Desktop"
 msgstr "Десктоп компјутер"
 
 #. translators: device class
 #: blueman/DeviceClass.py:33
-#, fuzzy
-#| msgid "server"
 msgid "Server"
-msgstr "сервер"
+msgstr "Сервер"
 
 #. translators: device class
 #: blueman/DeviceClass.py:35
-#, fuzzy
-#| msgid "laptop"
 msgid "Laptop"
-msgstr "лаптоп"
+msgstr "Лаптоп"
 
 #. translators: device class
 #: blueman/DeviceClass.py:37
-#, fuzzy
-#| msgid "handheld"
 msgid "Handheld"
-msgstr "Мобилен уред"
+msgstr "Мобилен"
 
 #. translators: device class
 #: blueman/DeviceClass.py:39
@@ -901,35 +929,27 @@ msgstr ""
 
 #. translators: device class
 #: blueman/DeviceClass.py:48
-#, fuzzy
-#| msgid "cellular"
 msgid "Cellular"
-msgstr "мобилен телефон"
+msgstr "Мобилен Телефон"
 
 #. translators: device class
 #: blueman/DeviceClass.py:50
-#, fuzzy
-#| msgid "cordless"
 msgid "Cordless"
-msgstr "безжичен уред"
+msgstr "Безжичен уред"
 
 #. translators: device class
 #: blueman/DeviceClass.py:52
-#, fuzzy
-#| msgid "smart phone"
-msgid "Smart phone"
+msgid "Smartphone"
 msgstr "Паметен телефон"
 
 #. translators: device class
 #: blueman/DeviceClass.py:54
-#, fuzzy
-#| msgid "modem"
 msgid "Modem"
-msgstr "модем"
+msgstr "Модем"
 
 #. translators: device class
 #: blueman/DeviceClass.py:56
-msgid "Isdn"
+msgid "ISDN"
 msgstr ""
 
 #. translators: device class
@@ -939,32 +959,32 @@ msgstr ""
 
 #. translators: device class
 #: blueman/DeviceClass.py:63
-msgid "1-17 percent"
+msgid "1–17 percent"
 msgstr ""
 
 #. translators: device class
 #: blueman/DeviceClass.py:65
-msgid "17-33 percent"
+msgid "17–33 percent"
 msgstr ""
 
 #. translators: device class
 #: blueman/DeviceClass.py:67
-msgid "33-50 percent"
+msgid "33–50 percent"
 msgstr ""
 
 #. translators: device class
 #: blueman/DeviceClass.py:69
-msgid "50-67 percent"
+msgid "50–67 percent"
 msgstr ""
 
 #. translators: device class
 #: blueman/DeviceClass.py:71
-msgid "67-83 percent"
+msgid "67–83 percent"
 msgstr ""
 
 #. translators: device class
 #: blueman/DeviceClass.py:73
-msgid "83-99 percent"
+msgid "83–99 percent"
 msgstr ""
 
 #. translators: device class
@@ -974,24 +994,18 @@ msgstr ""
 
 #. translators: device class
 #: blueman/DeviceClass.py:82 blueman/Sdp.py:123 blueman/Sdp.py:164
-#, fuzzy
-#| msgid "headset"
 msgid "Headset"
-msgstr "слушалки"
+msgstr "Слушалки"
 
 #. translators: device class
 #: blueman/DeviceClass.py:84 blueman/Sdp.py:145
-#, fuzzy
-#| msgid "handsfree"
 msgid "Handsfree"
-msgstr "интерфон слушалки"
+msgstr "Интерфон"
 
 #. translators: device class
 #: blueman/DeviceClass.py:88
-#, fuzzy
-#| msgid "microphone"
 msgid "Microphone"
-msgstr "микрофон"
+msgstr "Микрофон"
 
 #. translators: device class
 #: blueman/DeviceClass.py:90
@@ -1020,20 +1034,18 @@ msgstr ""
 
 #. translators: device class
 #: blueman/DeviceClass.py:100
-msgid "Hifi audio"
+msgid "Hi-Fi audio"
 msgstr ""
 
 #. translators: device class
 #: blueman/DeviceClass.py:102
-msgid "Vcr"
+msgid "VCR"
 msgstr ""
 
 #. translators: device class
 #: blueman/DeviceClass.py:104
-#, fuzzy
-#| msgid "Audio Source"
 msgid "Video camera"
-msgstr "Аудио извор"
+msgstr "Видео камера"
 
 #. translators: device class
 #: blueman/DeviceClass.py:106
@@ -1042,10 +1054,8 @@ msgstr ""
 
 #. translators: device class
 #: blueman/DeviceClass.py:108
-#, fuzzy
-#| msgid "Audio Source"
 msgid "Video monitor"
-msgstr "Аудио извор"
+msgstr "Видео монитор"
 
 #. translators: device class
 #: blueman/DeviceClass.py:110
@@ -1054,10 +1064,8 @@ msgstr ""
 
 #. translators: device class
 #: blueman/DeviceClass.py:112
-#, fuzzy
-#| msgid "Audio Source"
 msgid "Video conferencing"
-msgstr "Аудио извор"
+msgstr "Видео конференција"
 
 #. translators: device class
 #: blueman/DeviceClass.py:116
@@ -1066,17 +1074,13 @@ msgstr ""
 
 #. translators: device class
 #: blueman/DeviceClass.py:123 blueman/DeviceClass.py:189
-#, fuzzy
-#| msgid "keyboard"
 msgid "Keyboard"
-msgstr "тастатура"
+msgstr "Тастатура"
 
 #. translators: device class
 #: blueman/DeviceClass.py:125
-#, fuzzy
-#| msgid "pointing"
 msgid "Pointing"
-msgstr "уред за покажување"
+msgstr "Уред за Покажување"
 
 #. translators: device class
 #: blueman/DeviceClass.py:127
@@ -1154,78 +1158,61 @@ msgid "Game"
 msgstr ""
 
 #: blueman/DeviceClass.py:169
-#, fuzzy
-#| msgid "Connect"
 msgid "Generic Phone"
-msgstr "Поврзи се"
+msgstr "Обичен Телефон"
 
 #: blueman/DeviceClass.py:170
-#, fuzzy
-#| msgid "Connect"
 msgid "Generic Computer"
-msgstr "Поврзи се"
+msgstr "Обичен Компјутер"
 
 #: blueman/DeviceClass.py:171
-#, fuzzy
-#| msgid "Connect"
 msgid "Generic Watch"
-msgstr "Поврзи се"
+msgstr "Обичен Саат"
 
 #: blueman/DeviceClass.py:172
 msgid "Watch: Sports Watch"
 msgstr ""
 
 #: blueman/DeviceClass.py:173
-#, fuzzy
-#| msgid "Connect"
 msgid "Generic Clock"
-msgstr "Поврзи се"
+msgstr "Обичен Саат"
 
 #: blueman/DeviceClass.py:174
-#, fuzzy
-#| msgid "Bluetooth File Transfer"
 msgid "Generic Display"
-msgstr "Пренос на податоци преку блутут"
+msgstr "Обичен Дисплеј"
 
 #: blueman/DeviceClass.py:175
 #, fuzzy
-#| msgid "Connect"
 msgid "Generic Remote Control"
 msgstr "Поврзи се"
 
 #: blueman/DeviceClass.py:176
 #, fuzzy
-#| msgid "Bluetooth File Transfer"
 msgid "Generic Eye-glasses"
 msgstr "Пренос на податоци преку блутут"
 
 #: blueman/DeviceClass.py:177
 #, fuzzy
-#| msgid "Bluetooth File Transfer"
 msgid "Generic Tag"
 msgstr "Пренос на податоци преку блутут"
 
 #: blueman/DeviceClass.py:178
 #, fuzzy
-#| msgid "Group Network"
 msgid "Generic Keyring"
 msgstr "Групна мрежа"
 
 #: blueman/DeviceClass.py:179
 #, fuzzy
-#| msgid "Bluetooth File Transfer"
 msgid "Generic Media Player"
 msgstr "Пренос на податоци преку блутут"
 
 #: blueman/DeviceClass.py:180
 #, fuzzy
-#| msgid "Connect"
 msgid "Generic Barcode Scanner"
 msgstr "Поврзи се"
 
 #: blueman/DeviceClass.py:181
 #, fuzzy
-#| msgid "Connect"
 msgid "Generic Thermometer"
 msgstr "Поврзи се"
 
@@ -1235,7 +1222,6 @@ msgstr ""
 
 #: blueman/DeviceClass.py:183
 #, fuzzy
-#| msgid "Bluetooth File Transfer"
 msgid "Generic Heart rate Sensor"
 msgstr "Пренос на податоци преку блутут"
 
@@ -1289,7 +1275,6 @@ msgstr ""
 
 #: blueman/DeviceClass.py:197
 #, fuzzy
-#| msgid "Connect"
 msgid "Generic Glucose Meter"
 msgstr "Поврзи се"
 
@@ -1311,7 +1296,6 @@ msgstr ""
 
 #: blueman/DeviceClass.py:202
 #, fuzzy
-#| msgid "Group Network"
 msgid "Generic: Cycling"
 msgstr "Групна мрежа"
 
@@ -1345,7 +1329,7 @@ msgid "Fingertip"
 msgstr ""
 
 #: blueman/DeviceClass.py:211
-msgid "Wrist Worn"
+msgid "Wrist-Worn"
 msgstr ""
 
 #: blueman/DeviceClass.py:212
@@ -1519,7 +1503,6 @@ msgstr ""
 
 #: blueman/Sdp.py:116
 #, fuzzy
-#| msgid "Serial Ports"
 msgid "Serial Port"
 msgstr "Сериски портови"
 
@@ -1541,7 +1524,6 @@ msgstr ""
 
 #: blueman/Sdp.py:121
 #, fuzzy
-#| msgid "Bluetooth File Transfer"
 msgid "OBEX File Transfer"
 msgstr "Пренос на податоци преку блутут"
 
@@ -1703,7 +1685,6 @@ msgstr ""
 
 #: blueman/Sdp.py:163
 #, fuzzy
-#| msgid "Network Access Point (NAP)"
 msgid "Phonebook Access (PBAP)"
 msgstr "Точка за пристап на мрежата (NAP)"
 
@@ -1717,7 +1698,6 @@ msgstr ""
 
 #: blueman/Sdp.py:167
 #, fuzzy
-#| msgid "Network Access Point (NAP)"
 msgid "Message Access Profile (MAP)"
 msgstr "Точка за пристап на мрежата (NAP)"
 
@@ -1767,13 +1747,11 @@ msgstr ""
 
 #: blueman/Sdp.py:179
 #, fuzzy
-#| msgid "Group Network"
 msgid "Generic Networking"
 msgstr "Групна мрежа"
 
 #: blueman/Sdp.py:180
 #, fuzzy
-#| msgid "Bluetooth File Transfer"
 msgid "Generic FileTransfer"
 msgstr "Пренос на податоци преку блутут"
 
@@ -1787,13 +1765,11 @@ msgstr ""
 
 #: blueman/Sdp.py:183
 #, fuzzy
-#| msgid "Audio Source"
 msgid "Video Source"
 msgstr "Аудио извор"
 
 #: blueman/Sdp.py:184
 #, fuzzy
-#| msgid "Audio Sink"
 msgid "Video Sink"
 msgstr "Аудио Sink"
 
@@ -1807,7 +1783,6 @@ msgstr ""
 
 #: blueman/Sdp.py:187
 #, fuzzy
-#| msgid "Audio Source"
 msgid "HDP Source"
 msgstr "Аудио извор"
 
@@ -1869,7 +1844,6 @@ msgstr ""
 
 #: blueman/Sdp.py:202
 #, fuzzy
-#| msgid "Local Services"
 msgid "Battery Service"
 msgstr "Локални сервиси"
 
@@ -1955,25 +1929,21 @@ msgstr ""
 
 #: blueman/Sdp.py:223
 #, fuzzy
-#| msgid "Transfer"
 msgid "Object Transfer"
 msgstr "Пренос"
 
 #: blueman/Sdp.py:224
 #, fuzzy
-#| msgid "applet"
 msgid "AppleAgent"
 msgstr "аплет"
 
 #: blueman/Sdp.py:225
 #, fuzzy
-#| msgid "Local Services"
 msgid "Primary Service"
 msgstr "Локални сервиси"
 
 #: blueman/Sdp.py:226
 #, fuzzy
-#| msgid "Search for nearby devices"
 msgid "Secondary Service"
 msgstr "Пребарај уреди во близина"
 
@@ -1987,7 +1957,6 @@ msgstr ""
 
 #: blueman/Sdp.py:229
 #, fuzzy
-#| msgid "Device Manager"
 msgid "Device Name"
 msgstr "Управувач со уреди"
 
@@ -2001,7 +1970,6 @@ msgstr ""
 
 #: blueman/Sdp.py:232
 #, fuzzy
-#| msgid "Recent _Connections"
 msgid "Reconnection Address"
 msgstr "Скорешни _врски"
 
@@ -2011,7 +1979,6 @@ msgstr ""
 
 #: blueman/Sdp.py:234
 #, fuzzy
-#| msgid "Device Manager"
 msgid "Service Changed"
 msgstr "Управувач со уреди"
 
@@ -2085,7 +2052,6 @@ msgstr ""
 
 #: blueman/Sdp.py:378
 #, fuzzy
-#| msgid "Audio Profile"
 msgid "Audio and input profiles"
 msgstr "Аудио профил"
 
@@ -2145,8 +2111,8 @@ msgstr ""
 
 #. https://github.com/python/mypy/issues/2608
 #: blueman/plugins/applet/AutoConnect.py:50
-#: blueman/plugins/applet/ConnectionNotifier.py:21
-#: blueman/plugins/applet/RecentConns.py:223
+#: blueman/plugins/applet/ConnectionNotifier.py:36
+#: blueman/plugins/applet/RecentConns.py:155
 #: blueman/plugins/applet/PPPSupport.py:75
 msgid "Connected"
 msgstr "Поврзано"
@@ -2156,13 +2122,12 @@ msgstr "Поврзано"
 msgid "Automatically connected to %(service)s on %(device)s"
 msgstr ""
 
-#: blueman/plugins/applet/ConnectionNotifier.py:13
+#: blueman/plugins/applet/ConnectionNotifier.py:15
 msgid "Shows desktop notifications when devices get connected or disconnected."
 msgstr ""
 
-#: blueman/plugins/applet/ConnectionNotifier.py:21
+#: blueman/plugins/applet/ConnectionNotifier.py:48
 #, fuzzy
-#| msgid "Disconnecting..."
 msgid "Disconnected"
 msgstr "Одврзување..."
 
@@ -2229,9 +2194,9 @@ msgstr ""
 msgid "Shows network traffic usage"
 msgstr "Прикажува искористеност на мрежниот сообраќај"
 
-#: blueman/plugins/applet/StatusIcon.py:42
-#: blueman/plugins/applet/ShowConnected.py:72
-#: blueman/plugins/applet/PowerManager.py:189
+#: blueman/plugins/applet/StatusIcon.py:43
+#: blueman/plugins/applet/ShowConnected.py:71
+#: blueman/plugins/applet/PowerManager.py:190
 msgid "Bluetooth Enabled"
 msgstr "Блутутот е овозможен"
 
@@ -2262,25 +2227,25 @@ msgid "The maximum number of items recent connections menu will display."
 msgstr ""
 "Ќе биде прикажано максималниот број на ставки на менито за скорешни врски."
 
-#: blueman/plugins/applet/RecentConns.py:64
+#: blueman/plugins/applet/RecentConns.py:63
 msgid "Recent _Connections"
 msgstr "Скорешни _врски"
 
-#: blueman/plugins/applet/RecentConns.py:223
+#: blueman/plugins/applet/RecentConns.py:155
 #, python-format
 msgid "Connected to %s"
 msgstr "Поврзано со %s"
 
-#: blueman/plugins/applet/RecentConns.py:229
+#: blueman/plugins/applet/RecentConns.py:161
 msgid "Failed to connect"
 msgstr "Неуспешно поврзување"
 
-#: blueman/plugins/applet/RecentConns.py:249
+#: blueman/plugins/applet/RecentConns.py:171
 #, python-format
 msgid "%(service)s on %(device)s"
 msgstr "%(service)s на %(device)s"
 
-#: blueman/plugins/applet/RecentConns.py:253
+#: blueman/plugins/applet/RecentConns.py:175
 msgid "Adapter for this connection is not available"
 msgstr "Адаптерот за оваа врска е недостапен"
 
@@ -2342,6 +2307,10 @@ msgstr "Датотеката е примена"
 msgid "File %(0)s from %(1)s successfully received"
 msgstr "Датотеката %(0)s од %(1)s е успешно примена"
 
+#: blueman/plugins/applet/TransferService.py:308
+msgid "Open"
+msgstr ""
+
 #: blueman/plugins/applet/TransferService.py:312
 msgid "Transfer failed"
 msgstr "Преносот е неуспешен"
@@ -2358,25 +2327,26 @@ msgstr "Датотеките се примени"
 
 #: blueman/plugins/applet/TransferService.py:334
 #, fuzzy, python-format
-#| msgid "Received %d file in the background"
-#| msgid_plural "Received %d files in the background"
 msgid "Received %(files)d file in the background"
 msgid_plural "Received %(files)d files in the background"
-msgstr[0] "Датотеката %d е примена во позадина"
-msgstr[1] "Датотеките %d се примени во позадина"
+msgstr[0] "Датотеката %(files)d е примена во позадина"
+msgstr[1] "Датотеките %(files)d се примени во позадина"
+
+#: blueman/plugins/applet/TransferService.py:339
+#: blueman/plugins/applet/TransferService.py:347
+msgid "Open Location"
+msgstr ""
 
 #: blueman/plugins/applet/TransferService.py:343
 #, fuzzy, python-format
-#| msgid "Received %d more file in the background"
-#| msgid_plural "Received %d more files in the background"
 msgid "Received %(files)d more file in the background"
 msgid_plural "Received %(files)d more files in the background"
-msgstr[0] "Примена %d повеќе датотека во позадина"
-msgstr[1] "Примени се %d повеќе датотеки во позадина"
+msgstr[0] "Примена %(files)d повеќе датотека во позадина"
+msgstr[1] "Примени се %(files)d повеќе датотеки во позадина"
 
 #: blueman/plugins/applet/KillSwitch.py:37
 msgid ""
-"Switches Bluetooth killswitch status to match Bluetooth power state.Allows "
+"Switches Bluetooth killswitch status to match Bluetooth power state. Allows "
 "turning Bluetooth back on from an icon that shows its status; provided it "
 "isn't unplugged by the system, or physically."
 msgstr ""
@@ -2393,11 +2363,11 @@ msgstr "Испрати _датотеки на уредот"
 msgid "_Devices"
 msgstr "_Уреди"
 
-#: blueman/plugins/applet/StandardItems.py:40
+#: blueman/plugins/applet/StandardItems.py:41
 msgid "Adap_ters"
 msgstr "Адаптери"
 
-#: blueman/plugins/applet/StandardItems.py:85
+#: blueman/plugins/applet/StandardItems.py:90
 msgid "applet"
 msgstr "аплет"
 
@@ -2448,39 +2418,26 @@ msgstr ""
 msgid "Bluetooth Active"
 msgstr "Блутутот е активен"
 
-#: blueman/plugins/applet/ShowConnected.py:64
+#: blueman/plugins/applet/ShowConnected.py:63
 #, fuzzy, python-format
-#| msgid "<b>%d Active Connection</b>"
-#| msgid_plural "<b>%d Active Connections</b>"
 msgid "<b>%(connections)d Active Connection</b>"
 msgid_plural "<b>%(connections)d Active Connections</b>"
-msgstr[0] "<b>%d Активна врска</b>"
-msgstr[1] "<b>%d Активни врски</b>"
+msgstr[0] "<b>%(connections)d Активна врска</b>"
+msgstr[1] "<b>%(connections)d Активни врски</b>"
 
-#: blueman/plugins/applet/ShowConnected.py:74
-#: blueman/plugins/applet/PowerManager.py:192
+#: blueman/plugins/applet/ShowConnected.py:73
+#: blueman/plugins/applet/PowerManager.py:193
 msgid "Bluetooth Disabled"
 msgstr "Блутутот е оневозможен"
-
-#: blueman/plugins/applet/AppIndicator.py:17
-msgid "Uses libappindicator to show a statusicon"
-msgstr "Го користи libappindicator за да ја прикаже статусната икона"
-
-#: blueman/plugins/applet/Battery.py:14
-msgid ""
-"Shows desktop notifications with battery percentage when devices get "
-"connected."
-msgstr ""
 
 #: blueman/plugins/applet/DisconnectItems.py:14
 msgid "Adds disconnect menu items"
 msgstr ""
 
 #: blueman/plugins/applet/DisconnectItems.py:40
-#, fuzzy, python-format
-#| msgid "Disconnecting..."
+#, python-format
 msgid "Disconnect %s"
-msgstr "Одврзување..."
+msgstr ""
 
 #: blueman/plugins/applet/DiscvManager.py:16
 msgid ""
@@ -2512,7 +2469,7 @@ msgstr "Направи го стандардниот адаптер привре
 msgid "Discoverable… %ss"
 msgstr ""
 
-#: blueman/plugins/applet/Menu.py:113
+#: blueman/plugins/applet/Menu.py:115
 msgid ""
 "Provides a menu for the applet and an API for other plugins to manipulate it"
 msgstr "Обезбедува мени за аплетот и API за другите плагини да го манипулираат"
@@ -2596,28 +2553,33 @@ msgid "Automatically power on adapters"
 msgstr ""
 
 #: blueman/plugins/applet/PowerManager.py:55
-#: blueman/plugins/applet/PowerManager.py:171
+#: blueman/plugins/applet/PowerManager.py:172
 msgid "<b>Turn Bluetooth _Off</b>"
 msgstr ""
 
-#: blueman/plugins/applet/PowerManager.py:56
-#: blueman/plugins/applet/PowerManager.py:173
+#: blueman/plugins/applet/PowerManager.py:57
+#: blueman/plugins/applet/PowerManager.py:174
 msgid "Turn off all adapters"
 msgstr "Исклучи ги сите адаптери"
 
-#: blueman/plugins/applet/PowerManager.py:162
+#: blueman/plugins/applet/PowerManager.py:163
 msgid "<b>Turn Bluetooth _On</b>"
 msgstr ""
 
-#: blueman/plugins/applet/PowerManager.py:164
+#: blueman/plugins/applet/PowerManager.py:165
 msgid "Turn on all adapters"
 msgstr "Вклучи ги сите адаптери"
 
-#: blueman/plugins/applet/GameControllerWakelock.py:19
+#: blueman/plugins/applet/GameControllerWakelock.py:20
 msgid ""
 "Temporarily suspends the screensaver when a bluetooth game controller is "
 "connected."
 msgstr ""
+
+#: blueman/plugins/applet/StatusNotifierItem.py:10
+#, fuzzy
+msgid "Provides a StatusNotifierItem to show a statusicon"
+msgstr "Го користи libappindicator за да ја прикаже статусната икона"
 
 #: blueman/plugins/services/Network.py:25
 msgid "Network"
@@ -2668,31 +2630,26 @@ msgstr "Обнови ја IP адресата"
 
 #: data/blueman-adapters.desktop.in:4
 #, fuzzy
-#| msgid "Bluetooth Adapters"
 msgid "Set Bluetooth Adapter Properties"
 msgstr "Блутут адаптери"
 
 #: data/blueman.desktop.in:3
 #, fuzzy
-#| msgid "applet"
 msgid "Blueman Applet"
 msgstr "аплет"
 
 #: data/blueman.desktop.in:4 data/blueman-manager.desktop.in:4
 #, fuzzy
-#| msgid "Bluetooth Enabled"
 msgid "Blueman Bluetooth Manager"
 msgstr "Блутутот е овозможен"
 
 #: data/blueman-manager.desktop.in:3
 #, fuzzy
-#| msgid "Bluetooth Enabled"
 msgid "Bluetooth Manager"
 msgstr "Блутутот е овозможен"
 
 #: data/thunar-sendto-blueman.desktop.in:5
 #, fuzzy
-#| msgid "Bluetooth Devices"
 msgid "Bluetooth Device"
 msgstr "Блутут уреди"
 
@@ -2728,13 +2685,15 @@ msgstr ""
 msgid "Setting RfKill State requires privileges"
 msgstr ""
 
+#~ msgid "<b>Trusted</b>"
+#~ msgstr "<b>Сигурно</b>"
+
+#~ msgid "<b>Friendly Name</b>"
+#~ msgstr "<b>Пријателско име</b>"
+
 #, fuzzy
-#~| msgid "Disconnecting..."
 #~ msgid "Disconnecting…"
 #~ msgstr "Одврзување..."
-
-#~ msgid "Local Services"
-#~ msgstr "Локални сервиси"
 
 #~ msgid "Serial Ports"
 #~ msgstr "Сериски портови"
@@ -2815,9 +2774,6 @@ msgstr ""
 #~ msgid "Serial port connected to %s"
 #~ msgstr "Серискиот порт е поврзан со %s"
 
-#~ msgid "Bluetooth Devices"
-#~ msgstr "Блутут уреди"
-
 #~ msgid "%.0f Minute"
 #~ msgid_plural "%.0f Minutes"
 #~ msgstr[0] "%.0f Минута"
@@ -2837,9 +2793,6 @@ msgstr ""
 #~ msgid "Select files to send"
 #~ msgstr "Одберете датотеки за праќање"
 
-#~ msgid "Send files to this device"
-#~ msgstr "Испрати датотеки на овој уред"
-
 #~ msgid "Source adapter. Takes address or adapter's name eg. hci0"
 #~ msgstr ""
 #~ "Изворен адаптер. Ја зима адресата или името на адаптерот на пр. hci0"
@@ -2858,3 +2811,6 @@ msgstr ""
 
 #~ msgid "Start configuration assistant for this device"
 #~ msgstr "Стартувај го помошникот за подесување за овој уред"
+
+#~ msgid "Uses libappindicator to show a statusicon"
+#~ msgstr "Го користи libappindicator за да ја прикаже статусната икона"

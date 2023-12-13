@@ -2,6 +2,7 @@ from gettext import gettext as _
 import os
 import logging
 import importlib
+import signal
 from typing import List, Optional
 
 from blueman.gui.GenericList import GenericList, ListDataDict
@@ -11,7 +12,7 @@ from blueman.main.Config import Config
 
 import gi
 gi.require_version("Gtk", "3.0")
-from gi.repository import Gtk
+from gi.repository import Gtk, GLib
 
 
 class BluemanServices(Gtk.Application):
@@ -19,10 +20,20 @@ class BluemanServices(Gtk.Application):
         super().__init__(application_id="org.blueman.Services")
         self.window: Optional[Gtk.Window] = None
 
+        def do_quit(_: object) -> bool:
+            self.quit()
+            return False
+
+        s = GLib.unix_signal_source_new(signal.SIGINT)
+        s.set_callback(do_quit)
+        s.attach()
+
     def do_activate(self) -> None:
         if not self.window:
             self.window = Gtk.ApplicationWindow(application=self, title=_("Local Services"), icon_name="blueman",
-                                                border_width=5)
+                                                border_width=10)
+
+            self.window.set_position(Gtk.WindowPosition.CENTER)
 
             grid = Gtk.Grid(orientation=Gtk.Orientation.VERTICAL, visible=True, row_spacing=10)
             self.window.add(grid)
@@ -33,7 +44,7 @@ class BluemanServices(Gtk.Application):
             button_box = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL, halign=Gtk.Align.END, visible=True)
             grid.add(button_box)
 
-            self.b_apply = Gtk.Button(label="_Apply", receives_default=True, use_underline=True,
+            self.b_apply = Gtk.Button(label=_("_Apply"), receives_default=True, use_underline=True,
                                       sensitive=False, visible=True, width_request=80)
             button_box.add(self.b_apply)
 

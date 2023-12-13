@@ -16,6 +16,7 @@ import gi
 gi.require_version("Gtk", "3.0")
 from gi.repository import Gtk
 from gi.repository import GLib
+from gi.repository import Gio
 
 if TYPE_CHECKING:
     from blueman.main.Manager import Blueman
@@ -42,7 +43,7 @@ class ManagerMenu:
         self.item_help.set_submenu(help_menu)
         help_menu.show()
 
-        report_item = create_menuitem(_("_Report a Problem"), "dialog-warning")
+        report_item = create_menuitem(_("_Report a Problem"), "dialog-warning-symbolic")
         report_item.show()
         help_menu.append(report_item)
 
@@ -52,7 +53,7 @@ class ManagerMenu:
         sep.show()
         help_menu.append(sep)
 
-        help_item = create_menuitem(_("_Help"), "help-about")
+        help_item = create_menuitem(_("_Help"), "help-about-symbolic")
         help_item.show()
         help_menu.append(help_item)
         assert self.blueman.window is not None
@@ -124,12 +125,12 @@ class ManagerMenu:
         sep.show()
         view_menu.append(sep)
 
-        item_plugins = create_menuitem(_("_Plugins"), 'blueman-plugin')
+        item_plugins = create_menuitem(_("_Plugins"), 'application-x-addon-symbolic')
         item_plugins.show()
         view_menu.append(item_plugins)
         item_plugins.connect('activate', self._on_plugin_dialog_activate)
 
-        item_services = create_menuitem(_("_Local Services") + "…", "preferences-desktop")
+        item_services = create_menuitem(_("_Local Services") + "…", "document-properties-symbolic")
         item_services.connect('activate', lambda *args: launch("blueman-services", name=_("Service Preferences")))
         view_menu.append(item_services)
         item_services.show()
@@ -138,7 +139,7 @@ class ManagerMenu:
         self.item_adapter.set_submenu(adapter_menu)
         self.item_adapter.props.sensitive = False
 
-        search_item = create_menuitem(_("_Search"), "edit-find")
+        search_item = create_menuitem(_("_Search"), "edit-find-symbolic")
         search_item.connect("activate", lambda x: self.blueman.inquiry())
         search_item.show()
         adapter_menu.prepend(search_item)
@@ -152,7 +153,7 @@ class ManagerMenu:
         sep.show()
         adapter_menu.append(sep)
 
-        adapter_settings = create_menuitem(_("_Preferences"), "preferences-system")
+        adapter_settings = create_menuitem(_("_Preferences"), "document-properties-symbolic")
         adapter_settings.connect("activate", lambda x: self.blueman.adapter_properties())
         adapter_settings.show()
         adapter_menu.append(adapter_settings)
@@ -161,7 +162,7 @@ class ManagerMenu:
         sep.show()
         adapter_menu.append(sep)
 
-        exit_item = create_menuitem(_("_Exit"), "application-exit")
+        exit_item = create_menuitem(_("_Exit"), "application-exit-symbolic")
         exit_item.connect("activate", lambda x: self.blueman.quit())
         exit_item.show()
         adapter_menu.append(exit_item)
@@ -217,7 +218,8 @@ class ManagerMenu:
                 if not self._sort_type_item.props.active:
                     self._sort_type_item.props.active = False
         elif key == "hide-unnamed":
-            self.blueman.List.display_known_devices()
+            logging.debug("refilter")
+            self.blueman.List.filter.refilter()
 
     def on_device_selected(self, _lst: ManagerDeviceList, device: Device, tree_iter: Gtk.TreeIter) -> None:
         if tree_iter and device:
@@ -259,19 +261,18 @@ class ManagerMenu:
         adapter = Adapter(obj_path=adapter_path)
         menu = self.item_adapter.get_submenu()
         assert isinstance(menu, Gtk.Menu)
-        object_path = adapter.get_object_path()
 
         item = Gtk.RadioMenuItem.new_with_label(self._adapters_group, adapter.get_name())
         item.show()
         self._adapters_group = item.get_group()
 
-        self._itemhandler = item.connect("activate", self.on_adapter_selected, object_path)
+        self._itemhandler = item.connect("activate", self.on_adapter_selected, adapter_path)
         self._adapterhandler = adapter.connect_signal("property-changed", self.on_adapter_property_changed)
 
         menu.insert(item, self._insert_adapter_item_pos)
         self._insert_adapter_item_pos += 1
 
-        self.adapter_items[object_path] = (item, adapter)
+        self.adapter_items[adapter_path] = (item, adapter)
 
         assert self.blueman.List.Adapter is not None
         if adapter_path == self.blueman.List.Adapter.get_object_path():
@@ -295,6 +296,6 @@ class ManagerMenu:
             self.item_adapter.props.sensitive = False
 
     def _on_plugin_dialog_activate(self, _item: Gtk.MenuItem) -> None:
-        def cb() -> None:
+        def cb(_proxy: Gio.DBusProxy, _res: Any, _userdata: Any) -> None:
             pass
         self.blueman.Applet.OpenPluginDialog(result_handler=cb)

@@ -24,6 +24,7 @@ blueman/main/applet/__init__.py
 blueman/main/applet/BluezAgent.py
 blueman/main/PluginManager.py
 blueman/main/DbusService.py
+blueman/main/Services.py
 blueman/Functions.py
 blueman/gui/manager/ManagerMenu.py
 blueman/gui/manager/ManagerDeviceList.py
@@ -85,8 +86,6 @@ blueman/plugins/applet/__init__.py
 blueman/plugins/applet/ExitItem.py
 blueman/plugins/applet/DhcpClient.py
 blueman/plugins/applet/ShowConnected.py
-blueman/plugins/applet/AppIndicator.py
-blueman/plugins/applet/Battery.py
 blueman/plugins/applet/DisconnectItems.py
 blueman/plugins/applet/DiscvManager.py
 blueman/plugins/applet/Menu.py
@@ -94,6 +93,7 @@ blueman/plugins/applet/PPPSupport.py
 blueman/plugins/applet/SerialManager.py
 blueman/plugins/applet/PowerManager.py
 blueman/plugins/applet/GameControllerWakelock.py
+blueman/plugins/applet/StatusNotifierItem.py
 blueman/plugins/MechanismPlugin.py
 blueman/plugins/services/Network.py
 blueman/plugins/services/__init__.py

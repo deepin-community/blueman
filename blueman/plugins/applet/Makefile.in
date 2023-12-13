@@ -86,7 +86,6 @@ PRE_UNINSTALL = :
 POST_UNINSTALL = :
 build_triplet = @build@
 host_triplet = @host@
-@HAVE_APPINDICATOR_TRUE@am__append_1 = AppIndicator.py
 subdir = blueman/plugins/applet
 ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
 am__aclocal_m4_deps = $(top_srcdir)/m4/gettext.m4 \
@@ -100,7 +99,7 @@ am__aclocal_m4_deps = $(top_srcdir)/m4/gettext.m4 \
 	$(top_srcdir)/configure.ac
 am__configure_deps = $(am__aclocal_m4_deps) $(CONFIGURE_DEPENDENCIES) \
 	$(ACLOCAL_M4)
-DIST_COMMON = $(srcdir)/Makefile.am $(am__blueman_PYTHON_DIST) \
+DIST_COMMON = $(srcdir)/Makefile.am $(blueman_PYTHON) \
 	$(am__DIST_COMMON)
 mkinstalldirs = $(install_sh) -d
 CONFIG_HEADER = $(top_builddir)/config.h
@@ -125,14 +124,6 @@ am__can_run_installinfo = \
     n|no|NO) false;; \
     *) (install-info --version) >/dev/null 2>&1;; \
   esac
-am__blueman_PYTHON_DIST = __init__.py AuthAgent.py AutoConnect.py \
-	Battery.py ConnectionNotifier.py DBusService.py DhcpClient.py \
-	DisconnectItems.py DiscvManager.py ExitItem.py \
-	GameControllerWakelock.py KillSwitch.py Menu.py NetUsage.py \
-	Networking.py NMDUNSupport.py NMPANSupport.py PowerManager.py \
-	PPPSupport.py RecentConns.py SerialManager.py ShowConnected.py \
-	StatusIcon.py StandardItems.py TransferService.py \
-	AppIndicator.py
 am__vpath_adj_setup = srcdirstrip=`echo "$(srcdir)" | sed 's|.|.|g'`;
 am__vpath_adj = case $$p in \
     $(srcdir)/*) f=`echo "$$p" | sed "s|^$$srcdirstrip/||"`;; \
@@ -164,9 +155,9 @@ am__py_compile = PYTHON=$(PYTHON) $(SHELL) $(py_compile)
 am__installdirs = "$(DESTDIR)$(bluemandir)"
 am__pep3147_tweak = \
   sed -e 's|\.py$$||' -e 's|[^/]*$$|__pycache__/&.*.pyc __pycache__/&.*.pyo|'
-py_compile = $(top_srcdir)/../py-compile
+py_compile = $(top_srcdir)/py-compile
 am__tagged_files = $(HEADERS) $(SOURCES) $(TAGS_FILES) $(LISP)
-am__DIST_COMMON = $(srcdir)/Makefile.in $(top_srcdir)/../py-compile
+am__DIST_COMMON = $(srcdir)/Makefile.in $(top_srcdir)/py-compile
 DISTFILES = $(DIST_COMMON) $(DIST_SOURCES) $(TEXINFOS) $(EXTRA_DIST)
 pkgdatadir = @pkgdatadir@
 ACLOCAL = @ACLOCAL@
@@ -346,14 +337,33 @@ top_build_prefix = @top_build_prefix@
 top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
 bluemandir = $(pythondir)/blueman/plugins/applet
-blueman_PYTHON = __init__.py AuthAgent.py AutoConnect.py Battery.py \
-	ConnectionNotifier.py DBusService.py DhcpClient.py \
-	DisconnectItems.py DiscvManager.py ExitItem.py \
-	GameControllerWakelock.py KillSwitch.py Menu.py NetUsage.py \
-	Networking.py NMDUNSupport.py NMPANSupport.py PowerManager.py \
-	PPPSupport.py RecentConns.py SerialManager.py ShowConnected.py \
-	StatusIcon.py StandardItems.py TransferService.py \
-	$(am__append_1)
+blueman_PYTHON = \
+    __init__.py \
+    AuthAgent.py \
+    AutoConnect.py \
+    ConnectionNotifier.py \
+    DBusService.py \
+    DhcpClient.py \
+    DisconnectItems.py \
+    DiscvManager.py \
+    ExitItem.py \
+    GameControllerWakelock.py \
+    KillSwitch.py \
+    Menu.py \
+    NetUsage.py \
+    Networking.py \
+    NMDUNSupport.py \
+    NMPANSupport.py \
+    PowerManager.py \
+    PPPSupport.py \
+    RecentConns.py \
+    SerialManager.py \
+    ShowConnected.py \
+    StatusIcon.py \
+    StandardItems.py \
+    StatusNotifierItem.py \
+    TransferService.py
+
 CLEANFILES = \
 	$(BUILT_SOURCES)
 

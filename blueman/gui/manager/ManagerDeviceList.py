@@ -1,5 +1,5 @@
 from gettext import gettext as _
-from typing import Optional, TYPE_CHECKING, List, Any, cast, Callable, Set
+from typing import Optional, TYPE_CHECKING, List, Any, cast, Callable, Set, Dict
 import html
 import logging
 import cairo
@@ -7,13 +7,14 @@ import os
 
 from blueman.bluez.Battery import Battery
 from blueman.bluez.Device import Device
+from blueman.bluez.Manager import Manager
 from blueman.gui.DeviceList import DeviceList
 from blueman.DeviceClass import get_minor_class, get_major_class, gatt_appearance_to_name
 from blueman.gui.GenericList import ListDataDict
 from blueman.gui.manager.ManagerDeviceMenu import ManagerDeviceMenu
 from blueman.Constants import PIXMAP_PATH
 from blueman.Functions import launch
-from blueman.Sdp import ServiceUUID, OBEX_OBJPUSH_SVCLASS_ID, BATTERY_SERVICE_SVCLASS_ID
+from blueman.Sdp import ServiceUUID, OBEX_OBJPUSH_SVCLASS_ID
 from blueman.gui.GtkAnimation import TreeRowFade, CellFade, AnimBase
 from blueman.main.Config import Config
 from _blueman import ConnInfoReadError, conn_info
@@ -66,6 +67,7 @@ class ManagerDeviceList(DeviceList):
             {"id": "cell_fader", "type": CellFade},
             {"id": "row_fader", "type": TreeRowFade},
             {"id": "initial_anim", "type": bool},
+            {"id": "blocked", "type": bool}
         ]
         super().__init__(adapter, tabledata)
         self.set_name("ManagerDeviceList")
@@ -74,6 +76,10 @@ class ManagerDeviceList(DeviceList):
         self.Blueman = inst
 
         self._monitored_devices: Set[str] = set()
+
+        self.manager.connect_signal("battery-created", self.on_battery_created)
+        self.manager.connect_signal("battery-removed", self.on_battery_removed)
+        self._batteries: Dict[str, Battery] = {}
 
         self.Config = Config("org.blueman.general")
         self.Config.connect('changed', self._on_settings_changed)
@@ -98,6 +104,7 @@ class ManagerDeviceList(DeviceList):
         Gtk.Widget.drag_dest_add_uri_targets(self)
 
         self.set_search_equal_func(self.search_func)
+        self.filter.set_visible_func(self.filter_func)
 
     def _on_settings_changed(self, settings: Config, key: str) -> None:
         if key in ('sort-by', 'sort-order'):
@@ -119,12 +126,31 @@ class ManagerDeviceList(DeviceList):
             device = self.get(row.iter, "device")["device"]
             self.row_setup_event(row.iter, device)
 
+    def on_battery_created(self, _manager: Manager, obj_path: str) -> None:
+        if obj_path not in self._batteries:
+            battery_proxy = Battery(obj_path=obj_path)
+            self._batteries[obj_path] = battery_proxy
+            logging.debug(f"{obj_path} {battery_proxy['Percentage']}")
+
+    def on_battery_removed(self, _manager: Manager, obj_path: str) -> None:
+        if obj_path in self._batteries:
+            battery = self._batteries.pop(obj_path)
+            battery.destroy()
+
     def search_func(self, model: Gtk.TreeModel, column: int, key: str, tree_iter: Gtk.TreeIter) -> bool:
         row = self.get(tree_iter, "caption")
         if key.lower() in row["caption"].lower():
             return False
         logging.info(f"{model} {column} {key} {tree_iter}")
         return True
+
+    def filter_func(self, _model: Gtk.TreeModel, tree_iter: Gtk.TreeIter, _data: Any) -> bool:
+        no_name = self.get(tree_iter, "no_name")["no_name"]
+        if no_name and self.Config["hide-unnamed"]:
+            logging.debug("Hiding unnamed device")
+            return False
+        else:
+            return True
 
     def drag_recv(self, _widget: Gtk.Widget, context: Gdk.DragContext, x: int, y: int, selection: Gtk.SelectionData,
                   _info: int, time: int) -> None:
@@ -150,6 +176,10 @@ class ManagerDeviceList(DeviceList):
         if result is not None:
             path = result[0]
             assert path is not None
+            path = self.filter.convert_path_to_child_path(path)
+            if path is None:
+                return False
+
             if not self.selection.path_is_selected(path):
                 tree_iter = self.get_iter(path)
                 assert tree_iter is not None
@@ -186,12 +216,16 @@ class ManagerDeviceList(DeviceList):
         if event.type not in (Gdk.EventType._2BUTTON_PRESS, Gdk.EventType.BUTTON_PRESS):
             return False
 
-        path = self.get_path_at_pos(int(cast(Gdk.EventButton, event).x), int(cast(Gdk.EventButton, event).y))
-        if path is None:
+        posdata = self.get_path_at_pos(int(cast(Gdk.EventButton, event).x), int(cast(Gdk.EventButton, event).y))
+        if posdata is None:
             return False
+        else:
+            path = posdata[0]
+            assert path is not None
 
-        assert path[0] is not None
-        row = self.get(path[0], "device", "connected")
+        childpath = self.filter.convert_path_to_child_path(path)
+        assert childpath is not None
+        row = self.get(childpath, "device", "connected")
         if not row:
             return False
 
@@ -224,22 +258,22 @@ class ManagerDeviceList(DeviceList):
 
         return icon_info
 
-    def make_device_icon(self, icon_info: Gtk.IconInfo, is_paired: bool = False, is_trusted: bool = False
-                         ) -> cairo.Surface:
+    def make_device_icon(self, icon_info: Gtk.IconInfo, is_paired: bool = False, is_trusted: bool = False,
+                         is_blocked: bool = False) -> cairo.Surface:
         window = self.get_window()
         scale = self.get_scale_factor()
         target = icon_info.load_surface(window)
         ctx = cairo.Context(target)
 
         if is_paired:
-            _icon_info = self.get_icon_info("dialog-password", 16, False)
+            _icon_info = self.get_icon_info("blueman-paired-emblem", 16, False)
             assert _icon_info is not None
             paired_surface = _icon_info.load_surface(window)
             ctx.set_source_surface(paired_surface, 1 / scale, 1 / scale)
             ctx.paint_with_alpha(0.8)
 
         if is_trusted:
-            _icon_info = self.get_icon_info("blueman-trust", 16, False)
+            _icon_info = self.get_icon_info("blueman-trusted-emblem", 16, False)
             assert _icon_info is not None
             trusted_surface = _icon_info.load_surface(window)
             assert isinstance(target, cairo.ImageSurface)
@@ -251,16 +285,32 @@ class ManagerDeviceList(DeviceList):
             ctx.set_source_surface(trusted_surface, 1 / scale, y)
             ctx.paint_with_alpha(0.8)
 
+        if is_blocked:
+            _icon_info = self.get_icon_info("blueman-blocked-emblem", 16, False)
+            assert _icon_info is not None
+            blocked_surface = _icon_info.load_surface(window)
+            assert isinstance(target, cairo.ImageSurface)
+            assert isinstance(blocked_surface, cairo.ImageSurface)
+            width = target.get_width()
+            mini_width = blocked_surface.get_width()
+            ctx.set_source_surface(blocked_surface, (width - mini_width - 1) / scale, 1 / scale)
+            ctx.paint_with_alpha(0.8)
+
         return target
 
     def device_remove_event(self, device: Device) -> None:
         tree_iter = self.find_device(device)
         assert tree_iter is not None
 
-        row_fader = self.get(tree_iter, "row_fader")["row_fader"]
+        iter_set, _child_tree_iter = self.filter.convert_child_iter_to_iter(tree_iter)
+        if iter_set:
+            row_fader = self.get(tree_iter, "row_fader")["row_fader"]
+            self._prepare_fader(row_fader, lambda: self.__fader_finished(device))
+            row_fader.animate(start=row_fader.get_state(), end=0.0, duration=400)
+
+    def __fader_finished(self, device: Device) -> None:
         super().device_remove_event(device)
         self.emit("device-selected", None, None)
-        self._prepare_fader(row_fader).animate(start=row_fader.get_state(), end=0.0, duration=400)
 
     def device_add_event(self, device: Device) -> None:
         self.add_device(device)
@@ -280,21 +330,25 @@ class ManagerDeviceList(DeviceList):
 
     def row_setup_event(self, tree_iter: Gtk.TreeIter, device: Device) -> None:
         if not self.get(tree_iter, "initial_anim")["initial_anim"]:
-            model = self.props.model
-            assert model is not None
-            cell_fader = CellFade(self, model.get_path(tree_iter), [2, 3, 4, 5])
-            row_fader = TreeRowFade(self, model.get_path(tree_iter))
+            assert self.liststore is not None
+            child_path = self.liststore.get_path(tree_iter)
+            result = self.filter.convert_child_path_to_path(child_path)
 
-            has_objpush = self._has_objpush(device)
+            if child_path is not None:
+                cell_fader = CellFade(self, child_path, [2, 3, 4, 5])
+                row_fader = TreeRowFade(self, child_path)
 
-            self.set(tree_iter, row_fader=row_fader, cell_fader=cell_fader, objpush=has_objpush)
+                self.set(tree_iter, row_fader=row_fader, cell_fader=cell_fader)
 
-            cell_fader.freeze()
+                cell_fader.freeze()
 
-            self._prepare_fader(row_fader).animate(start=0.0, end=1.0, duration=500)
+                if result is not None:
+                    self._prepare_fader(row_fader).animate(start=0.0, end=1.0, duration=500)
+                    self.set(tree_iter, initial_anim=True)
+                else:
+                    self.set(tree_iter, initial_anim=False)
 
-            self.set(tree_iter, initial_anim=True)
-
+        has_objpush = self._has_objpush(device)
         klass = get_minor_class(device['Class'])
         # Bluetooth >= 4 devices use Appearance property
         appearance = device["Appearance"]
@@ -308,7 +362,7 @@ class ManagerDeviceList(DeviceList):
         icon_info = self.get_icon_info(device["Icon"], 48, False)
         caption = self.make_caption(device['Alias'], description, device['Address'])
 
-        self.set(tree_iter, caption=caption, icon_info=icon_info, alias=device['Alias'])
+        self.set(tree_iter, caption=caption, icon_info=icon_info, alias=device['Alias'], objpush=has_objpush)
 
         try:
             self.row_update_event(tree_iter, "Trusted", device['Trusted'])
@@ -320,6 +374,10 @@ class ManagerDeviceList(DeviceList):
             logging.exception(e)
         try:
             self.row_update_event(tree_iter, "Connected", device["Connected"])
+        except Exception as e:
+            logging.exception(e)
+        try:
+            self.row_update_event(tree_iter, "Blocked", device["Blocked"])
         except Exception as e:
             logging.exception(e)
 
@@ -337,7 +395,7 @@ class ManagerDeviceList(DeviceList):
         except ConnInfoReadError:
             logging.warning("Failed to get power levels, probably a LE device.")
 
-        model = self.get_model()
+        model = self.liststore
         assert isinstance(model, Gtk.TreeModel)
         r = Gtk.TreeRowReference.new(model, model.get_path(tree_iter))
         self._update_power_levels(tree_iter, device, cinfo)
@@ -397,21 +455,26 @@ class ManagerDeviceList(DeviceList):
                 self._monitor_power_levels(tree_iter, self.get(tree_iter, "device")["device"])
             else:
                 self._disable_power_levels(tree_iter)
+        elif key == "Name":
+            self.set(tree_iter, no_name=False)
+            self.filter.refilter()
+
+        elif key == "Blocked":
+            self.set(tree_iter, blocked=value)
 
     def _update_power_levels(self, tree_iter: Gtk.TreeIter, device: Device, cinfo: conn_info) -> None:
         row = self.get(tree_iter, "cell_fader", "battery", "rssi", "lq", "tpl")
 
         bars = {}
 
-        if device["ServicesResolved"] and any(ServiceUUID(uuid).short_uuid == BATTERY_SERVICE_SVCLASS_ID
-                                              for uuid in device["UUIDs"]):
-            bars["battery"] = Battery(obj_path=device.get_object_path())["Percentage"]
+        obj_path = device.get_object_path()
+        if obj_path in self._batteries:
+            bars["battery"] = self._batteries[obj_path]["Percentage"]
 
         # cinfo init may fail for bluetooth devices version 4 and up
         # FIXME Workaround is horrible and we should show something better
         if cinfo.failed:
-            if not bars:
-                bars = {"rssi": 100.0, "tpl": 100.0, "lq": 100.0}
+            bars.update({"rssi": 100.0, "tpl": 100.0, "lq": 100.0})
         else:
             try:
                 bars["rssi"] = max(50 + float(cinfo.get_rssi()) / 127 * 50, 10)
@@ -443,9 +506,9 @@ class ManagerDeviceList(DeviceList):
         if row["battery"] == row["rssi"] == row["tpl"] == row["lq"] == 0:
             return
 
-        self.set(tree_iter, rssi=0, lq=0, tpl=0)
-        self._prepare_fader(row["cell_fader"], lambda: self.set(tree_iter, rssi_pb=None, lq_pb=None, tpl_pb=None))\
-            .animate(start=1.0, end=0.0, duration=400)
+        self.set(tree_iter, battery=0, rssi=0, lq=0, tpl=0)
+        self._prepare_fader(row["cell_fader"], lambda: self.set(tree_iter, battery_pb=None, rssi_pb=None, lq_pb=None,
+                                                                tpl_pb=None)).animate(start=1.0, end=0.0, duration=400)
 
     def _prepare_fader(self, fader: AnimBase, callback: Optional[Callable[[], None]] = None) -> AnimBase:
         def on_finished(finished_fader: AnimBase) -> None:
@@ -472,15 +535,21 @@ class ManagerDeviceList(DeviceList):
             tree_iter = self.get_iter(path[0])
             assert tree_iter is not None
 
-            row = self.get(tree_iter, "trusted", "paired")
+            row = self.get(tree_iter, "trusted", "paired", "blocked")
             trusted = row["trusted"]
             paired = row["paired"]
-            if trusted and paired:
-                tooltip.set_markup(_("<b>Trusted and Paired</b>"))
-            elif paired:
-                tooltip.set_markup(_("<b>Paired</b>"))
-            elif trusted:
-                tooltip.set_markup(_("<b>Trusted</b>"))
+            blocked = row["blocked"]
+            str_list = []
+            if trusted:
+                str_list.append(_("Trusted"))
+            if paired:
+                str_list.append(_("Paired"))
+            if blocked:
+                str_list.append(_("Blocked"))
+
+            text = ", ".join(str_list)
+            if text:
+                tooltip.set_markup(f"<b>{text}</b>")
             else:
                 return False
 
@@ -571,11 +640,12 @@ class ManagerDeviceList(DeviceList):
                 return True
         return False
 
-    def _set_cell_data(self, _col: Gtk.TreeViewColumn, cell: Gtk.CellRenderer, _model: Gtk.TreeModel,
+    def _set_cell_data(self, _col: Gtk.TreeViewColumn, cell: Gtk.CellRenderer, model: Gtk.TreeModelFilter,
                        tree_iter: Gtk.TreeIter, data: Optional[str]) -> None:
+        tree_iter = model.convert_iter_to_child_iter(tree_iter)
         if data is None:
-            row = self.get(tree_iter, "icon_info", "trusted", "paired")
-            surface = self.make_device_icon(row["icon_info"], row["paired"], row["trusted"])
+            row = self.get(tree_iter, "icon_info", "trusted", "paired", "blocked")
+            surface = self.make_device_icon(row["icon_info"], row["paired"], row["trusted"], row["blocked"])
             cell.set_property("surface", surface)
         else:
             window = self.get_window()
@@ -586,10 +656,3 @@ class ManagerDeviceList(DeviceList):
                 cell.set_property("surface", surface)
             else:
                 cell.set_property("surface", None)
-
-    def add_device(self, device: Device) -> None:
-        if "Name" not in device and self.Config["hide-unnamed"]:
-            logging.info(f"Hiding unnamed device: {device['Address']}")
-            return
-
-        super().add_device(device)

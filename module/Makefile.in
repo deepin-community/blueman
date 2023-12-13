@@ -137,9 +137,10 @@ LTLIBRARIES = $(bluemanlib_LTLIBRARIES)
 am__DEPENDENCIES_1 =
 _blueman_la_DEPENDENCIES = $(am__DEPENDENCIES_1) $(am__DEPENDENCIES_1) \
 	$(am__DEPENDENCIES_1)
-am__blueman_la_OBJECTS = _blueman_la-_blueman.lo \
-	_blueman_la-libblueman.lo
-_blueman_la_OBJECTS = $(am__blueman_la_OBJECTS)
+am__blueman_la_OBJECTS = _blueman_la-libblueman.lo
+nodist__blueman_la_OBJECTS = _blueman_la-_blueman.lo
+_blueman_la_OBJECTS = $(am__blueman_la_OBJECTS) \
+	$(nodist__blueman_la_OBJECTS)
 AM_V_lt = $(am__v_lt_@AM_V@)
 am__v_lt_ = $(am__v_lt_@AM_DEFAULT_V@)
 am__v_lt_0 = --silent
@@ -160,7 +161,7 @@ am__v_at_ = $(am__v_at_@AM_DEFAULT_V@)
 am__v_at_0 = @
 am__v_at_1 = 
 DEFAULT_INCLUDES = -I.@am__isrc@ -I$(top_builddir)
-depcomp = $(SHELL) $(top_srcdir)/../depcomp
+depcomp = $(SHELL) $(top_srcdir)/depcomp
 am__maybe_remake_depfiles = depfiles
 am__depfiles_remade = ./$(DEPDIR)/_blueman_la-_blueman.Plo \
 	./$(DEPDIR)/_blueman_la-libblueman.Plo
@@ -183,7 +184,7 @@ AM_V_CCLD = $(am__v_CCLD_@AM_V@)
 am__v_CCLD_ = $(am__v_CCLD_@AM_DEFAULT_V@)
 am__v_CCLD_0 = @echo "  CCLD    " $@;
 am__v_CCLD_1 = 
-SOURCES = $(_blueman_la_SOURCES)
+SOURCES = $(_blueman_la_SOURCES) $(nodist__blueman_la_SOURCES)
 DIST_SOURCES = $(_blueman_la_SOURCES)
 am__can_run_installinfo = \
   case $$AM_UPDATE_INFO_DIR in \
@@ -207,7 +208,7 @@ am__define_uniq_tagged_files = \
   unique=`for i in $$list; do \
     if test -f "$$i"; then echo $$i; else echo $(srcdir)/$$i; fi; \
   done | $(am__uniquify_input)`
-am__DIST_COMMON = $(srcdir)/Makefile.in $(top_srcdir)/../depcomp
+am__DIST_COMMON = $(srcdir)/Makefile.in $(top_srcdir)/depcomp
 DISTFILES = $(DIST_COMMON) $(DIST_SOURCES) $(TEXINFOS) $(EXTRA_DIST)
 pkgdatadir = @pkgdatadir@
 ACLOCAL = @ACLOCAL@
@@ -394,8 +395,8 @@ _blueman_la_CFLAGS = $(BLUEZ_CFLAGS) $(PYGOBJECT_CFLAGS) $(PYTHON_CFLAGS) \
 
 _blueman_la_LDFLAGS = -module -avoid-version -fPIC
 _blueman_la_LIBADD = $(BLUEZ_LIBS) $(PYGOBJECT_LIBS) $(PYTHON_LIBS)
+nodist__blueman_la_SOURCES = _blueman.c
 _blueman_la_SOURCES = \
-	_blueman.c			\
 	libblueman.c	\
 	libblueman.h
 
@@ -510,19 +511,19 @@ am--depfiles: $(am__depfiles_remade)
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
 @am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(LTCOMPILE) -c -o $@ $<
 
-_blueman_la-_blueman.lo: _blueman.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(_blueman_la_CFLAGS) $(CFLAGS) -MT _blueman_la-_blueman.lo -MD -MP -MF $(DEPDIR)/_blueman_la-_blueman.Tpo -c -o _blueman_la-_blueman.lo `test -f '_blueman.c' || echo '$(srcdir)/'`_blueman.c
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/_blueman_la-_blueman.Tpo $(DEPDIR)/_blueman_la-_blueman.Plo
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='_blueman.c' object='_blueman_la-_blueman.lo' libtool=yes @AMDEPBACKSLASH@
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(_blueman_la_CFLAGS) $(CFLAGS) -c -o _blueman_la-_blueman.lo `test -f '_blueman.c' || echo '$(srcdir)/'`_blueman.c
-
 _blueman_la-libblueman.lo: libblueman.c
 @am__fastdepCC_TRUE@	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(_blueman_la_CFLAGS) $(CFLAGS) -MT _blueman_la-libblueman.lo -MD -MP -MF $(DEPDIR)/_blueman_la-libblueman.Tpo -c -o _blueman_la-libblueman.lo `test -f 'libblueman.c' || echo '$(srcdir)/'`libblueman.c
 @am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/_blueman_la-libblueman.Tpo $(DEPDIR)/_blueman_la-libblueman.Plo
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='libblueman.c' object='_blueman_la-libblueman.lo' libtool=yes @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
 @am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(_blueman_la_CFLAGS) $(CFLAGS) -c -o _blueman_la-libblueman.lo `test -f 'libblueman.c' || echo '$(srcdir)/'`libblueman.c
+
+_blueman_la-_blueman.lo: _blueman.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(_blueman_la_CFLAGS) $(CFLAGS) -MT _blueman_la-_blueman.lo -MD -MP -MF $(DEPDIR)/_blueman_la-_blueman.Tpo -c -o _blueman_la-_blueman.lo `test -f '_blueman.c' || echo '$(srcdir)/'`_blueman.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/_blueman_la-_blueman.Tpo $(DEPDIR)/_blueman_la-_blueman.Plo
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='_blueman.c' object='_blueman_la-_blueman.lo' libtool=yes @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(_blueman_la_CFLAGS) $(CFLAGS) -c -o _blueman_la-_blueman.lo `test -f '_blueman.c' || echo '$(srcdir)/'`_blueman.c
 
 mostlyclean-libtool:
 	-rm -f *.lo

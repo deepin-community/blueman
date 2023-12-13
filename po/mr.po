@@ -3,38 +3,42 @@
 #
 # Translators:
 # Vaibhav S Dalvi <vaibhav.dlv@gmail.com>, 2014
+# ABHISHEK FADAKE <fadkeabhi@gmail.com>, 2022.
 msgid ""
 msgstr ""
 "Project-Id-Version: blueman-project\n"
 "Report-Msgid-Bugs-To: https://github.com/blueman-project/blueman/issues\n"
-"POT-Creation-Date: 2021-10-03 11:06+0200\n"
-"PO-Revision-Date: 2020-04-14 10:14+0000\n"
-"Last-Translator: Christopher Schramm <transifex@cschramm.eu>\n"
-"Language-Team: Marathi (http://www.transifex.com/mate/MATE/language/mr/)\n"
+"POT-Creation-Date: 2022-11-22 19:08+0000\n"
+"PO-Revision-Date: 2022-10-24 14:40+0000\n"
+"Last-Translator: ABHISHEK FADAKE <fadkeabhi@gmail.com>\n"
+"Language-Team: Marathi <https://hosted.weblate.org/projects/blueman/2-3/mr/"
+">\n"
 "Language: mr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 4.14.2-dev\n"
 
-#: data/ui/adapters-tab.ui:29
+#: data/ui/adapters-tab.ui:30
 msgid "<b>Visibility Setting</b>"
 msgstr "<b>दृश्यता सेटिंग</b>"
 
-#: data/ui/adapters-tab.ui:39 blueman/main/Adapter.py:145
+#: data/ui/adapters-tab.ui:40 blueman/main/Adapter.py:155
 msgid "Hidden"
 msgstr "अदृश्य "
 
-#: data/ui/adapters-tab.ui:54
+#: data/ui/adapters-tab.ui:57
 msgid "Always visible"
 msgstr "नेहमी दृष्यास्पद"
 
-#: data/ui/adapters-tab.ui:70
+#: data/ui/adapters-tab.ui:75
 msgid "Temporarily visible"
 msgstr "तात्पुरते दृश्य"
 
-#: data/ui/adapters-tab.ui:101
-msgid "<b>Friendly Name</b>"
+#: data/ui/adapters-tab.ui:110
+#, fuzzy
+msgid "<b>Name</b>"
 msgstr "<b>अनुकूल नाव</b>"
 
 #: data/ui/applet-passkey.ui:8
@@ -53,72 +57,87 @@ msgstr ""
 msgid "Show input"
 msgstr "इनपुट दाखवा"
 
-#: data/ui/manager-main.ui:53
+#: data/ui/manager-main.ui:54
 msgid "_Adapter"
 msgstr "अडॅप्टर (_A)"
 
-#: data/ui/manager-main.ui:61
+#: data/ui/manager-main.ui:62
 msgid "_Device"
 msgstr "साधन (_D)"
 
-#: data/ui/manager-main.ui:69
+#: data/ui/manager-main.ui:70
 msgid "_View"
 msgstr "दृश्य(_V)"
 
-#: data/ui/manager-main.ui:77 blueman/gui/manager/ManagerMenu.py:55
-#: blueman/plugins/applet/StandardItems.py:48
+#: data/ui/manager-main.ui:78 blueman/gui/manager/ManagerMenu.py:56
+#: blueman/plugins/applet/StandardItems.py:51
 msgid "_Help"
 msgstr "मदत(_H)"
 
-#: data/ui/manager-main.ui:96
+#: data/ui/manager-main.ui:98
 msgid "Search for nearby devices"
 msgstr "नजीकचे साधन शोधत आहे..."
 
 #. translators: toolbar item: keep it as short as possible
-#: data/ui/manager-main.ui:98
+#: data/ui/manager-main.ui:100
 msgid "Search"
 msgstr "शोधा"
 
-#: data/ui/manager-main.ui:121 blueman/gui/manager/ManagerDeviceMenu.py:355
+#: data/ui/manager-main.ui:123 blueman/gui/manager/ManagerDeviceMenu.py:364
 msgid "Create pairing with the device"
 msgstr "साधनाबरोबर जोडणी तयार करा"
 
 #. translators: toolbar item: keep it as short as possible
-#: data/ui/manager-main.ui:122
+#: data/ui/manager-main.ui:124
 msgid "Pair"
 msgstr "जोडी"
 
-#: data/ui/manager-main.ui:135 blueman/gui/manager/ManagerDeviceMenu.py:373
+#: data/ui/manager-main.ui:137 blueman/gui/manager/ManagerDeviceMenu.py:382
 msgid "Mark/Unmark this device as trusted"
 msgstr "साधनाची विश्वासू अशी नोंद करा/ नोंद खोडा"
 
 #. translators: toolbar item: keep it as short as possible
-#: data/ui/manager-main.ui:136 blueman/gui/manager/ManagerToolbar.py:39
+#: data/ui/manager-main.ui:138 blueman/gui/manager/ManagerToolbar.py:39
 #: blueman/gui/manager/ManagerToolbar.py:99
 msgid "Trust"
 msgstr "विश्वासर्ह"
 
-#: data/ui/manager-main.ui:149 blueman/gui/manager/ManagerDeviceMenu.py:406
+#: data/ui/manager-main.ui:151 blueman/gui/manager/ManagerDeviceMenu.py:427
 msgid "Remove this device from the known devices list"
 msgstr "या साधनाला माहितीतल्या साधनांच्या यादीतून काढून टाका"
 
 #. translators: toolbar item: keep it as short as possible
-#: data/ui/manager-main.ui:150
+#: data/ui/manager-main.ui:152
 msgid "Remove"
 msgstr "काढून टाका"
 
-#: data/ui/manager-main.ui:172
+#: data/ui/manager-main.ui:174
 msgid "Send file(s) to the device"
 msgstr "साधन करीता फाइल पाठवा"
 
 #. translators: toolbar item: keep it as short as possible
-#: data/ui/manager-main.ui:174
+#: data/ui/manager-main.ui:176
 msgid "Send File"
 msgstr "फाइल पाठवा"
 
 #: data/ui/rename-device.ui:8
 msgid "Rename device"
-msgstr ""
+msgstr "डिव्हाइसचे नाव बदला"
+
+#: data/ui/rename-device.ui:26 data/ui/net-usage.ui:243
+msgid "_Reset"
+msgstr "स्वच्छ करा (_R)"
+
+#: data/ui/rename-device.ui:40 data/ui/note.ui:26 blueman/main/Sendto.py:235
+#: blueman/gui/DeviceSelectorDialog.py:17
+#, fuzzy
+msgid "_Cancel"
+msgstr "रद्द करत आहे"
+
+#: data/ui/rename-device.ui:54 data/ui/note.ui:41
+#: blueman/gui/DeviceSelectorDialog.py:17
+msgid "_OK"
+msgstr "_ठीक आहे"
 
 #: data/ui/services-network.ui:37
 msgid "Network Access Point (NAP)"
@@ -164,23 +183,23 @@ msgstr "<b>DUN आधार </b>"
 msgid "<b>Network Settings</b>"
 msgstr "<b>संजाळ सेटिंग</b>"
 
-#: data/ui/services-transfer.ui:24
+#: data/ui/services-transfer.ui:25
 msgid "<b>File Receiving (Object Push)</b>"
 msgstr "<b>फाईल प्राप्तीकरण (Object Push)</b>"
 
-#: data/ui/services-transfer.ui:37
+#: data/ui/services-transfer.ui:38
 msgid "Incoming Folder:"
 msgstr ""
 
-#: data/ui/services-transfer.ui:49
+#: data/ui/services-transfer.ui:50
 msgid "Select folder for incoming file transfers"
-msgstr ""
+msgstr "येणाऱ्या फाईल साठी फोल्डर निवडा"
 
-#: data/ui/services-transfer.ui:58
+#: data/ui/services-transfer.ui:59
 msgid "Accept files from trusted devices"
 msgstr "विश्वासू साधनाकडून फाईल्स स्वीकारा"
 
-#: data/ui/services-transfer.ui:96
+#: data/ui/services-transfer.ui:106
 msgid "<b>Transfer Settings</b>"
 msgstr "<b>बदली सेटिंग </b>"
 
@@ -218,8 +237,8 @@ msgstr "<b>लेखक:</b>"
 
 #. translators: device class
 #: data/ui/applet-plugins-widget.ui:161
-#: blueman/gui/manager/ManagerDeviceList.py:301
-#: blueman/gui/manager/ManagerDeviceList.py:303 blueman/DeviceClass.py:86
+#: blueman/gui/manager/ManagerDeviceList.py:355
+#: blueman/gui/manager/ManagerDeviceList.py:357 blueman/DeviceClass.py:86
 #: blueman/DeviceClass.py:114 blueman/DeviceClass.py:168
 #: blueman/DeviceClass.py:242 blueman/DeviceClass.py:291 blueman/Sdp.py:376
 #: blueman/plugins/applet/NetUsage.py:209
@@ -251,7 +270,7 @@ msgstr "APN:"
 msgid "Traffic statistics"
 msgstr "रहदारी आकडेवारी"
 
-#: data/ui/net-usage.ui:33
+#: data/ui/net-usage.ui:33 blueman/gui/GsmSettings.py:38
 msgid "_Close"
 msgstr "बंद करा (_C)"
 
@@ -275,70 +294,72 @@ msgstr "<b>लॉग सुरु केला:</b>"
 msgid "<b>Log duration:</b>"
 msgstr "<b>लॉग कालावधी:</b>"
 
-#: data/ui/net-usage.ui:243
-msgid "_Reset"
-msgstr "स्वच्छ करा (_R)"
-
 #: data/ui/note.ui:8
 msgid "Send note"
-msgstr ""
+msgstr "नोट पाठवा"
 
-#: blueman/main/Adapter.py:50
+#: blueman/main/Adapter.py:59
 msgid "Bluetooth needs to be turned on for the adapter manager to work"
-msgstr ""
+msgstr "अडॉप्टर व्यवस्थापकाने काम करण्यासाठी ब्लूटूथ चालू करणे आवश्यक आहे"
 
-#: blueman/main/Adapter.py:86 data/blueman-adapters.desktop.in:3
+#: blueman/main/Adapter.py:95 data/blueman-adapters.desktop.in:3
 msgid "Bluetooth Adapters"
 msgstr "Bluetooth अडॅप्टर"
 
-#: blueman/main/Adapter.py:143
+#: blueman/main/Adapter.py:153
 msgid "Always"
 msgstr "नेहमी"
 
-#: blueman/main/Adapter.py:147 blueman/main/Sendto.py:189
-#, fuzzy, python-format
-#| msgid "%d Minute"
-#| msgid_plural "%d Minutes"
+#: blueman/main/Adapter.py:157 blueman/main/Sendto.py:189
+#, python-format
 msgid "%(minutes)d Minute"
 msgid_plural "%(minutes)d Minutes"
-msgstr[0] "%d मिनिट"
-msgstr[1] " %d मिनिटे"
+msgstr[0] "%(minutes)d मिनिट"
+msgstr[1] "%(minutes)d मिनिटॆ"
 
-#: blueman/main/Adapter.py:212
+#: blueman/main/Adapter.py:222
 msgid "Adapter"
 msgstr ""
 
-#: blueman/main/Manager.py:89 blueman/main/Manager.py:130
-msgid "Bluetooth needs to be turned on for the device manager to function"
-msgstr ""
+#: blueman/main/Manager.py:63
+msgid "Bluetooth Devices"
+msgstr "Bluetooth साधन"
 
-#: blueman/main/Manager.py:109
+#: blueman/main/Manager.py:99 blueman/main/Manager.py:140
+msgid "Bluetooth needs to be turned on for the device manager to function"
+msgstr "डिव्हाइस व्यवस्थापकाने कार्य करण्यासाठी ब्लूटूथ चालू करणे आवश्यक आहे"
+
+#: blueman/main/Manager.py:119
 msgid "Connection to BlueZ failed"
 msgstr "ब्लुझशी जुळवणी झाली नाही"
 
-#: blueman/main/Manager.py:110
+#: blueman/main/Manager.py:120
 msgid ""
 "Bluez daemon is not running, blueman-manager cannot continue.\n"
 "This probably means that there were no Bluetooth adapters detected or "
 "Bluetooth daemon was not started."
 msgstr ""
 
-#: blueman/main/Manager.py:198
+#: blueman/main/Manager.py:208
 msgid "Searching"
 msgstr "शोधत आहे"
 
-#: blueman/main/Manager.py:221 blueman/plugins/applet/StandardItems.py:79
+#: blueman/main/Manager.py:231 blueman/plugins/applet/StandardItems.py:84
 msgid "Adapter Preferences"
 msgstr ""
 
-#: blueman/main/Manager.py:233 blueman/gui/manager/ManagerDeviceList.py:143
-#: blueman/plugins/applet/StandardItems.py:72
+#: blueman/main/Manager.py:247 blueman/gui/manager/ManagerDeviceList.py:169
+#: blueman/plugins/applet/StandardItems.py:77
 msgid "File Sender"
 msgstr ""
 
 #: blueman/main/Sendto.py:33
 msgid "Bluetooth File Transfer"
 msgstr "Bluetooth फाइल स्थानांतरण"
+
+#: blueman/main/Sendto.py:42
+msgid "_Stop"
+msgstr "_थांबवा"
 
 #: blueman/main/Sendto.py:57 blueman/gui/manager/ManagerProgressbar.py:27
 msgid "Connecting"
@@ -382,75 +403,83 @@ msgstr ""
 
 #: blueman/main/Sendto.py:234
 msgid "Retry"
-msgstr ""
+msgstr "पुन्हा प्रयत्न करा"
 
 #: blueman/main/Sendto.py:285
 msgid "Error occurred"
 msgstr "चूक उद्भवली"
 
-#: blueman/main/applet/BluezAgent.py:193
+#: blueman/main/applet/BluezAgent.py:123
 #, python-format
 msgid "Pairing request for %s"
 msgstr "%s करीता जोडी बनवण्याची विनंती"
 
-#: blueman/main/applet/BluezAgent.py:204 blueman/main/applet/BluezAgent.py:322
+#: blueman/main/applet/BluezAgent.py:134 blueman/main/applet/BluezAgent.py:246
 msgid "Bluetooth Authentication"
 msgstr "ब्लूटूथ अधिप्रमाणन"
 
-#: blueman/main/applet/BluezAgent.py:235
+#: blueman/main/applet/BluezAgent.py:165
 msgid "Enter PIN code for authentication:"
 msgstr "अधिप्रमानासाठी पिन कोड टाका:"
 
-#: blueman/main/applet/BluezAgent.py:250
+#: blueman/main/applet/BluezAgent.py:174
 msgid "Enter passkey for authentication:"
 msgstr "अधिप्रमानासाठी पासकी टाका:"
 
-#: blueman/main/applet/BluezAgent.py:261
+#: blueman/main/applet/BluezAgent.py:185
 msgid "Pairing passkey for"
 msgstr ""
 
-#: blueman/main/applet/BluezAgent.py:272
+#: blueman/main/applet/BluezAgent.py:196
 msgid "Pairing PIN code for"
 msgstr ""
 
-#: blueman/main/applet/BluezAgent.py:285
+#: blueman/main/applet/BluezAgent.py:209
 msgid "Pairing request for:"
 msgstr "जोडी बनवण्याची विनंती:"
 
-#: blueman/main/applet/BluezAgent.py:288
+#: blueman/main/applet/BluezAgent.py:212
 msgid "Confirm value for authentication:"
 msgstr "अधिप्रमानासाठी मूल्याची पुष्टी करा"
 
-#: blueman/main/applet/BluezAgent.py:289
+#: blueman/main/applet/BluezAgent.py:213
 msgid "Confirm"
 msgstr "पुष्टी करा"
 
-#: blueman/main/applet/BluezAgent.py:289 blueman/main/applet/BluezAgent.py:320
+#: blueman/main/applet/BluezAgent.py:213 blueman/main/applet/BluezAgent.py:244
 msgid "Deny"
 msgstr "अमान्य"
 
-#: blueman/main/applet/BluezAgent.py:317
+#: blueman/main/applet/BluezAgent.py:241
 msgid "Authorization request for:"
 msgstr "ओळख पटवण्याची विनंती यांच्यासाठी:"
 
-#: blueman/main/applet/BluezAgent.py:317
+#: blueman/main/applet/BluezAgent.py:241
 msgid "Service:"
 msgstr "सेवा:"
 
-#: blueman/main/applet/BluezAgent.py:318
+#: blueman/main/applet/BluezAgent.py:242
 msgid "Always accept"
 msgstr "नेहमी स्वीकारा"
 
-#: blueman/main/applet/BluezAgent.py:319
+#: blueman/main/applet/BluezAgent.py:243
 #: blueman/plugins/applet/TransferService.py:130
 msgid "Accept"
 msgstr "स्वीकार"
 
-#: blueman/main/PluginManager.py:67
+#: blueman/main/PluginManager.py:68
 msgid ""
 "<b>An error has occured while loading a plugin. Please notify the developers "
 "with the content of this message to our </b>\n"
 "<a href=\"http://github.com/blueman-project/blueman/issues\">website.</a>"
+msgstr ""
+
+#: blueman/main/Services.py:33
+msgid "Local Services"
+msgstr "स्थानिक सेवा"
+
+#: blueman/main/Services.py:47
+msgid "_Apply"
 msgstr ""
 
 #: blueman/Functions.py:71
@@ -477,258 +506,282 @@ msgstr "होय"
 msgid "No"
 msgstr "नाही"
 
-#: blueman/gui/manager/ManagerMenu.py:45
+#: blueman/Functions.py:181
+msgid "B"
+msgstr ""
+
+#: blueman/Functions.py:184
+msgid "KB"
+msgstr ""
+
+#: blueman/Functions.py:187
+msgid "MB"
+msgstr ""
+
+#: blueman/Functions.py:190
+msgid "GB"
+msgstr ""
+
+#: blueman/gui/manager/ManagerMenu.py:46
 msgid "_Report a Problem"
 msgstr "अडचणीची माहिती द्या (_R)"
 
-#: blueman/gui/manager/ManagerMenu.py:62
+#: blueman/gui/manager/ManagerMenu.py:63
 msgid "Device Manager"
 msgstr "साधन व्यवस्थापक"
 
-#: blueman/gui/manager/ManagerMenu.py:68
+#: blueman/gui/manager/ManagerMenu.py:69
 msgid "Show _Toolbar"
 msgstr ""
 
-#: blueman/gui/manager/ManagerMenu.py:73
+#: blueman/gui/manager/ManagerMenu.py:74
 msgid "Show _Statusbar"
 msgstr ""
 
-#: blueman/gui/manager/ManagerMenu.py:78
+#: blueman/gui/manager/ManagerMenu.py:79
 msgid "Hide _unnamed devices"
 msgstr ""
 
-#: blueman/gui/manager/ManagerMenu.py:88
+#: blueman/gui/manager/ManagerMenu.py:89
 msgid "S_ort By"
 msgstr ""
 
-#: blueman/gui/manager/ManagerMenu.py:95
+#: blueman/gui/manager/ManagerMenu.py:96
 msgid "_Name"
 msgstr ""
 
-#: blueman/gui/manager/ManagerMenu.py:100
+#: blueman/gui/manager/ManagerMenu.py:101
 msgid "_Added"
 msgstr ""
 
-#: blueman/gui/manager/ManagerMenu.py:114
+#: blueman/gui/manager/ManagerMenu.py:115
 msgid "_Descending"
 msgstr ""
 
-#: blueman/gui/manager/ManagerMenu.py:127
-#: blueman/plugins/applet/StandardItems.py:50
+#: blueman/gui/manager/ManagerMenu.py:128
+#: blueman/plugins/applet/StandardItems.py:54
 msgid "_Plugins"
 msgstr "प्लगइन (_P)"
 
-#: blueman/gui/manager/ManagerMenu.py:132
-#: blueman/plugins/applet/StandardItems.py:43
+#: blueman/gui/manager/ManagerMenu.py:133
+#: blueman/plugins/applet/StandardItems.py:45
 msgid "_Local Services"
 msgstr "स्थानिक सेवा(_L)"
 
-#: blueman/gui/manager/ManagerMenu.py:133
-#: blueman/plugins/applet/StandardItems.py:82
+#: blueman/gui/manager/ManagerMenu.py:134
+#: blueman/plugins/applet/StandardItems.py:87
 msgid "Service Preferences"
 msgstr ""
 
-#: blueman/gui/manager/ManagerMenu.py:141
+#: blueman/gui/manager/ManagerMenu.py:142
 msgid "_Search"
 msgstr "शोधा (_S)"
 
-#: blueman/gui/manager/ManagerMenu.py:155
+#: blueman/gui/manager/ManagerMenu.py:156
 msgid "_Preferences"
 msgstr ""
 
-#: blueman/gui/manager/ManagerMenu.py:164 blueman/plugins/applet/ExitItem.py:12
+#: blueman/gui/manager/ManagerMenu.py:165 blueman/plugins/applet/ExitItem.py:12
 msgid "_Exit"
 msgstr ""
 
 #. translators: device class
-#: blueman/gui/manager/ManagerDeviceList.py:276
-#: blueman/gui/manager/ManagerDeviceList.py:301 blueman/DeviceClass.py:24
+#: blueman/gui/manager/ManagerDeviceList.py:326
+#: blueman/gui/manager/ManagerDeviceList.py:355 blueman/DeviceClass.py:24
 #: blueman/DeviceClass.py:29 blueman/DeviceClass.py:46
 #: blueman/DeviceClass.py:80 blueman/DeviceClass.py:121
 #, fuzzy
-#| msgid "uncategorized"
 msgid "Uncategorized"
 msgstr "अवर्गीकृत"
 
-#: blueman/gui/manager/ManagerDeviceList.py:479
-msgid "<b>Trusted and Paired</b>"
-msgstr ""
-
-#: blueman/gui/manager/ManagerDeviceList.py:481
-msgid "<b>Paired</b>"
-msgstr ""
-
-#: blueman/gui/manager/ManagerDeviceList.py:483
-msgid "<b>Trusted</b>"
-msgstr "<b>विश्वासू</b>"
-
-#: blueman/gui/manager/ManagerDeviceList.py:502
+#: blueman/gui/manager/ManagerDeviceList.py:544
 #, fuzzy
-#| msgid "<b>Connect To:</b>"
+msgid "Trusted"
+msgstr "विश्वासर्ह"
+
+#: blueman/gui/manager/ManagerDeviceList.py:546
+#, fuzzy
+msgid "Paired"
+msgstr "जोडी"
+
+#: blueman/gui/manager/ManagerDeviceList.py:548
+msgid "Blocked"
+msgstr ""
+
+#: blueman/gui/manager/ManagerDeviceList.py:571
+#, fuzzy
 msgid "<b>Connected</b>"
 msgstr "<b>जोडणी करा:</b>"
 
-#: blueman/gui/manager/ManagerDeviceList.py:517
+#: blueman/gui/manager/ManagerDeviceList.py:586
 msgid "Poor"
 msgstr "निकृष्ट"
 
-#: blueman/gui/manager/ManagerDeviceList.py:519
-#: blueman/gui/manager/ManagerDeviceList.py:544
+#: blueman/gui/manager/ManagerDeviceList.py:588
+#: blueman/gui/manager/ManagerDeviceList.py:613
 msgid "Sub-optimal"
 msgstr "कमी-इष्टतम"
 
-#: blueman/gui/manager/ManagerDeviceList.py:521
-#: blueman/gui/manager/ManagerDeviceList.py:546
+#: blueman/gui/manager/ManagerDeviceList.py:590
+#: blueman/gui/manager/ManagerDeviceList.py:615
 msgid "Optimal"
 msgstr "इष्टतम"
 
-#: blueman/gui/manager/ManagerDeviceList.py:523
+#: blueman/gui/manager/ManagerDeviceList.py:592
 msgid "Much"
 msgstr "खूप"
 
-#: blueman/gui/manager/ManagerDeviceList.py:525
+#: blueman/gui/manager/ManagerDeviceList.py:594
 msgid "Too much"
 msgstr "खूप जास्त"
 
-#: blueman/gui/manager/ManagerDeviceList.py:528
+#: blueman/gui/manager/ManagerDeviceList.py:597
 #, python-format
 msgid "<b>Received Signal Strength: %(rssi)u%%</b> <i>(%(rssi_state)s)</i>"
 msgstr ""
 
-#: blueman/gui/manager/ManagerDeviceList.py:531
+#: blueman/gui/manager/ManagerDeviceList.py:600
 #, python-format
 msgid "Received Signal Strength: %(rssi)u%% <i>(%(rssi_state)s)</i>"
 msgstr ""
 
-#: blueman/gui/manager/ManagerDeviceList.py:536
+#: blueman/gui/manager/ManagerDeviceList.py:605
 #, python-format
 msgid "<b>Link Quality: %(lq)u%%</b>"
 msgstr ""
 
-#: blueman/gui/manager/ManagerDeviceList.py:538
+#: blueman/gui/manager/ManagerDeviceList.py:607
 #, python-format
 msgid "Link Quality: %(lq)u%%"
 msgstr ""
 
-#: blueman/gui/manager/ManagerDeviceList.py:542
+#: blueman/gui/manager/ManagerDeviceList.py:611
 msgid "Low"
 msgstr "कमी"
 
-#: blueman/gui/manager/ManagerDeviceList.py:548
+#: blueman/gui/manager/ManagerDeviceList.py:617
 msgid "High"
 msgstr "जास्त"
 
-#: blueman/gui/manager/ManagerDeviceList.py:550
+#: blueman/gui/manager/ManagerDeviceList.py:619
 msgid "Very High"
 msgstr "खूपच जास्त"
 
-#: blueman/gui/manager/ManagerDeviceList.py:553
+#: blueman/gui/manager/ManagerDeviceList.py:622
 #, python-format
 msgid "<b>Transmit Power Level: %(tpl)u%%</b> <i>(%(tpl_state)s)</i>"
 msgstr ""
 
-#: blueman/gui/manager/ManagerDeviceList.py:556
+#: blueman/gui/manager/ManagerDeviceList.py:625
 #, python-format
 msgid "Transmit Power Level: %(tpl)u%% <i>(%(tpl_state)s)</i>"
 msgstr ""
 
-#: blueman/gui/manager/ManagerDeviceMenu.py:131
+#: blueman/gui/manager/ManagerDeviceMenu.py:135
 msgid "Success!"
 msgstr "सफलता!"
 
-#: blueman/gui/manager/ManagerDeviceMenu.py:138
+#: blueman/gui/manager/ManagerDeviceMenu.py:142
 msgid "Failed"
 msgstr "अपयशी"
 
-#: blueman/gui/manager/ManagerDeviceMenu.py:144
+#: blueman/gui/manager/ManagerDeviceMenu.py:148
 #, fuzzy
-#| msgid "Connecting"
 msgid "Connecting…"
 msgstr "जुळवत आहे"
 
-#: blueman/gui/manager/ManagerDeviceMenu.py:180
+#: blueman/gui/manager/ManagerDeviceMenu.py:184
 msgid "Disconnection Failed: "
 msgstr ""
 
-#: blueman/gui/manager/ManagerDeviceMenu.py:204
+#: blueman/gui/manager/ManagerDeviceMenu.py:208
 msgid "No audio endpoints registered"
 msgstr ""
 
-#: blueman/gui/manager/ManagerDeviceMenu.py:207
+#: blueman/gui/manager/ManagerDeviceMenu.py:211
 msgid "Input/output error"
 msgstr ""
 
-#: blueman/gui/manager/ManagerDeviceMenu.py:209
+#: blueman/gui/manager/ManagerDeviceMenu.py:213
 msgid "Device did not respond"
 msgstr ""
 
-#: blueman/gui/manager/ManagerDeviceMenu.py:213
+#: blueman/gui/manager/ManagerDeviceMenu.py:217
 #, fuzzy
-#| msgid "Temporarily visible"
 msgid "Resource temporarily unavailable"
 msgstr "तात्पुरते दृश्य"
 
-#: blueman/gui/manager/ManagerDeviceMenu.py:218
+#: blueman/gui/manager/ManagerDeviceMenu.py:222
 msgid "Connection Failed: "
 msgstr "जुळणी अयशस्वी:"
 
-#: blueman/gui/manager/ManagerDeviceMenu.py:285
+#: blueman/gui/manager/ManagerDeviceMenu.py:294
 #, fuzzy
-#| msgid "<b>Connect To:</b>"
-msgid "_<b>_Connect</b>"
+msgid "<b>_Connect</b>"
 msgstr "<b>जोडणी करा:</b>"
 
-#: blueman/gui/manager/ManagerDeviceMenu.py:287
+#: blueman/gui/manager/ManagerDeviceMenu.py:296
 msgid "Connects auto connect profiles A2DP source, A2DP sink, and HID"
 msgstr ""
 
-#: blueman/gui/manager/ManagerDeviceMenu.py:291
-msgid "_<b>Disconnect</b>"
-msgstr ""
+#: blueman/gui/manager/ManagerDeviceMenu.py:300
+#, fuzzy
+msgid "<b>_Disconnect</b>"
+msgstr "<b>जोडणी तोडा:</b>"
 
-#: blueman/gui/manager/ManagerDeviceMenu.py:292
+#: blueman/gui/manager/ManagerDeviceMenu.py:301
 msgid "Forcefully disconnect the device"
 msgstr "साधन जबरदस्तीने काढून टाका"
 
-#: blueman/gui/manager/ManagerDeviceMenu.py:308
+#: blueman/gui/manager/ManagerDeviceMenu.py:317
 msgid "<b>Connect To:</b>"
 msgstr "<b>जोडणी करा:</b>"
 
-#: blueman/gui/manager/ManagerDeviceMenu.py:313
+#: blueman/gui/manager/ManagerDeviceMenu.py:322
 msgid "<b>Disconnect:</b>"
 msgstr "<b>जोडणी तोडा:</b>"
 
-#: blueman/gui/manager/ManagerDeviceMenu.py:322
+#: blueman/gui/manager/ManagerDeviceMenu.py:331
 #, fuzzy
-#| msgid "<b>Disconnect:</b>"
 msgid "<b>Auto-connect:</b>"
 msgstr "<b>जोडणी तोडा:</b>"
 
-#: blueman/gui/manager/ManagerDeviceMenu.py:341
+#: blueman/gui/manager/ManagerDeviceMenu.py:350
 #, fuzzy
-#| msgid "Send a _File..."
 msgid "Send a _File…"
 msgstr "एक फाईल पाठवा (_F)..."
 
-#: blueman/gui/manager/ManagerDeviceMenu.py:354
+#: blueman/gui/manager/ManagerDeviceMenu.py:363
 msgid "_Pair"
 msgstr "जोडी (_P)"
 
-#: blueman/gui/manager/ManagerDeviceMenu.py:364
+#: blueman/gui/manager/ManagerDeviceMenu.py:373
 msgid "_Trust"
 msgstr "विश्वासू बनवा (_T)"
 
-#: blueman/gui/manager/ManagerDeviceMenu.py:369
+#: blueman/gui/manager/ManagerDeviceMenu.py:378
 msgid "_Untrust"
 msgstr "विश्वासू यादीतून काढा (_U)"
 
-#: blueman/gui/manager/ManagerDeviceMenu.py:393
+#: blueman/gui/manager/ManagerDeviceMenu.py:385
+msgid "_Block"
+msgstr ""
+
+#: blueman/gui/manager/ManagerDeviceMenu.py:390
+msgid "_Unblock"
+msgstr ""
+
+#: blueman/gui/manager/ManagerDeviceMenu.py:394
+#, fuzzy
+msgid "Block/Unblock this device"
+msgstr "साधन करीता फाइल पाठवा"
+
+#: blueman/gui/manager/ManagerDeviceMenu.py:414
 msgid "R_ename device…"
 msgstr ""
 
-#: blueman/gui/manager/ManagerDeviceMenu.py:402
+#: blueman/gui/manager/ManagerDeviceMenu.py:423
 #, fuzzy
-#| msgid "Remove"
 msgid "_Remove…"
 msgstr "काढून टाका"
 
@@ -742,12 +795,12 @@ msgid "Data activity indication"
 msgstr "डेटा हालचाल निर्देशन"
 
 #: blueman/gui/manager/ManagerStats.py:43
-#: blueman/gui/manager/ManagerStats.py:53
+#: blueman/gui/manager/ManagerStats.py:55
 msgid "Total data received and rate of transmission"
 msgstr "एकूण डेटा मिळाला आणि किती वेगाने मिळाला"
 
 #: blueman/gui/manager/ManagerStats.py:47
-#: blueman/gui/manager/ManagerStats.py:51
+#: blueman/gui/manager/ManagerStats.py:52
 msgid "Total data sent and rate of transmission"
 msgstr "एकूण डेटा पाठवला आणि किती वेगाने पाठवला"
 
@@ -764,7 +817,7 @@ msgstr "साधन निवडा"
 msgid "More"
 msgstr "अजून"
 
-#: blueman/gui/CommonUi.py:62
+#: blueman/gui/CommonUi.py:65
 msgid "Blueman is a GTK+ Bluetooth manager"
 msgstr ""
 
@@ -773,16 +826,16 @@ msgid "GSM Settings"
 msgstr "GSM सेटिंग"
 
 #: blueman/gui/applet/PluginDialog.py:95
-#: blueman/plugins/applet/StandardItems.py:88
+#: blueman/plugins/applet/StandardItems.py:93
 msgid "Plugins"
 msgstr "प्लगईन"
 
-#: blueman/gui/applet/PluginDialog.py:294
-#: blueman/gui/applet/PluginDialog.py:316
+#: blueman/gui/applet/PluginDialog.py:296
+#: blueman/gui/applet/PluginDialog.py:318
 msgid "Dependency issue"
 msgstr "आश्रितता वाद"
 
-#: blueman/gui/applet/PluginDialog.py:296
+#: blueman/gui/applet/PluginDialog.py:298
 #, python-format
 msgid ""
 "Plugin <b>\"%(0)s\"</b> depends on <b>%(1)s</b>. Unloading <b>%(1)s</b> will "
@@ -793,15 +846,15 @@ msgstr ""
 "<b>\"%(0)s\"</b> पण अनलोड होईल.\n"
 "करायचे?"
 
-#: blueman/gui/applet/PluginDialog.py:318
+#: blueman/gui/applet/PluginDialog.py:320
 #, python-format
 msgid ""
 "Plugin <b>%(0)s</b> conflicts with <b>%(1)s</b>. Loading <b>%(1)s</b> will "
 "unload <b>%(0)s</b>.\n"
 "Proceed?"
 msgstr ""
-"प्लगईन <b>%(0)s</b>, <b>%(1)s</b> शी आवादित आहे. <b>%(1)s</b> लोड केल्यास <b>"
-"%(0)s</b> अनलोड होईल.\n"
+"प्लगईन <b>%(0)s</b>, <b>%(1)s</b> शी आवादित आहे. <b>%(1)s</b> लोड केल्यास "
+"<b>%(0)s</b> अनलोड होईल.\n"
 "करायचे?"
 
 #: blueman/gui/DeviceSelectorWidget.py:39
@@ -810,7 +863,6 @@ msgstr "अडॅप्टर निवड"
 
 #: blueman/gui/DeviceSelectorWidget.py:45
 #, fuzzy
-#| msgid "Disconnecting..."
 msgid "Discovering…"
 msgstr "जुळवणी मोडत आहे..."
 
@@ -832,7 +884,6 @@ msgstr ""
 #. translators: device class
 #: blueman/DeviceClass.py:12
 #, fuzzy
-#| msgid "Network Access Point"
 msgid "Access point"
 msgstr "Network Access Point"
 
@@ -864,28 +915,24 @@ msgstr ""
 #. translators: device class
 #: blueman/DeviceClass.py:31
 #, fuzzy
-#| msgid "desktop"
 msgid "Desktop"
 msgstr "डेस्कटॉप"
 
 #. translators: device class
 #: blueman/DeviceClass.py:33
 #, fuzzy
-#| msgid "server"
 msgid "Server"
 msgstr "सर्व्हर"
 
 #. translators: device class
 #: blueman/DeviceClass.py:35
 #, fuzzy
-#| msgid "laptop"
 msgid "Laptop"
 msgstr "लॅपटॉप"
 
 #. translators: device class
 #: blueman/DeviceClass.py:37
 #, fuzzy
-#| msgid "handheld"
 msgid "Handheld"
 msgstr "हातात मावणारे"
 
@@ -897,34 +944,30 @@ msgstr ""
 #. translators: device class
 #: blueman/DeviceClass.py:48
 #, fuzzy
-#| msgid "cellular"
 msgid "Cellular"
 msgstr "सेलुलर "
 
 #. translators: device class
 #: blueman/DeviceClass.py:50
 #, fuzzy
-#| msgid "cordless"
 msgid "Cordless"
 msgstr "कॉर्डलेस"
 
 #. translators: device class
 #: blueman/DeviceClass.py:52
 #, fuzzy
-#| msgid "smart phone"
-msgid "Smart phone"
+msgid "Smartphone"
 msgstr "स्मार्ट फोन "
 
 #. translators: device class
 #: blueman/DeviceClass.py:54
 #, fuzzy
-#| msgid "modem"
 msgid "Modem"
 msgstr "मोडेम"
 
 #. translators: device class
 #: blueman/DeviceClass.py:56
-msgid "Isdn"
+msgid "ISDN"
 msgstr ""
 
 #. translators: device class
@@ -934,32 +977,32 @@ msgstr ""
 
 #. translators: device class
 #: blueman/DeviceClass.py:63
-msgid "1-17 percent"
+msgid "1–17 percent"
 msgstr ""
 
 #. translators: device class
 #: blueman/DeviceClass.py:65
-msgid "17-33 percent"
+msgid "17–33 percent"
 msgstr ""
 
 #. translators: device class
 #: blueman/DeviceClass.py:67
-msgid "33-50 percent"
+msgid "33–50 percent"
 msgstr ""
 
 #. translators: device class
 #: blueman/DeviceClass.py:69
-msgid "50-67 percent"
+msgid "50–67 percent"
 msgstr ""
 
 #. translators: device class
 #: blueman/DeviceClass.py:71
-msgid "67-83 percent"
+msgid "67–83 percent"
 msgstr ""
 
 #. translators: device class
 #: blueman/DeviceClass.py:73
-msgid "83-99 percent"
+msgid "83–99 percent"
 msgstr ""
 
 #. translators: device class
@@ -970,21 +1013,18 @@ msgstr ""
 #. translators: device class
 #: blueman/DeviceClass.py:82 blueman/Sdp.py:123 blueman/Sdp.py:164
 #, fuzzy
-#| msgid "headset"
 msgid "Headset"
 msgstr "हेडसेट"
 
 #. translators: device class
 #: blueman/DeviceClass.py:84 blueman/Sdp.py:145
 #, fuzzy
-#| msgid "handsfree"
 msgid "Handsfree"
 msgstr "handsfree"
 
 #. translators: device class
 #: blueman/DeviceClass.py:88
 #, fuzzy
-#| msgid "microphone"
 msgid "Microphone"
 msgstr "ध्वनीविस्तारक"
 
@@ -1015,18 +1055,17 @@ msgstr ""
 
 #. translators: device class
 #: blueman/DeviceClass.py:100
-msgid "Hifi audio"
+msgid "Hi-Fi audio"
 msgstr ""
 
 #. translators: device class
 #: blueman/DeviceClass.py:102
-msgid "Vcr"
+msgid "VCR"
 msgstr ""
 
 #. translators: device class
 #: blueman/DeviceClass.py:104
 #, fuzzy
-#| msgid "Audio Source"
 msgid "Video camera"
 msgstr "ध्वनी स्त्रोत"
 
@@ -1038,7 +1077,6 @@ msgstr ""
 #. translators: device class
 #: blueman/DeviceClass.py:108
 #, fuzzy
-#| msgid "Audio Source"
 msgid "Video monitor"
 msgstr "ध्वनी स्त्रोत"
 
@@ -1050,7 +1088,6 @@ msgstr ""
 #. translators: device class
 #: blueman/DeviceClass.py:112
 #, fuzzy
-#| msgid "Audio Source"
 msgid "Video conferencing"
 msgstr "ध्वनी स्त्रोत"
 
@@ -1062,14 +1099,12 @@ msgstr ""
 #. translators: device class
 #: blueman/DeviceClass.py:123 blueman/DeviceClass.py:189
 #, fuzzy
-#| msgid "keyboard"
 msgid "Keyboard"
 msgstr "कळफलक"
 
 #. translators: device class
 #: blueman/DeviceClass.py:125
 #, fuzzy
-#| msgid "pointing"
 msgid "Pointing"
 msgstr "कडे केंद्रित"
 
@@ -1150,19 +1185,16 @@ msgstr ""
 
 #: blueman/DeviceClass.py:169
 #, fuzzy
-#| msgid "Connect"
 msgid "Generic Phone"
 msgstr "जुळवणी करा"
 
 #: blueman/DeviceClass.py:170
 #, fuzzy
-#| msgid "Connect"
 msgid "Generic Computer"
 msgstr "जुळवणी करा"
 
 #: blueman/DeviceClass.py:171
 #, fuzzy
-#| msgid "Connect"
 msgid "Generic Watch"
 msgstr "जुळवणी करा"
 
@@ -1172,55 +1204,46 @@ msgstr ""
 
 #: blueman/DeviceClass.py:173
 #, fuzzy
-#| msgid "Connect"
 msgid "Generic Clock"
 msgstr "जुळवणी करा"
 
 #: blueman/DeviceClass.py:174
 #, fuzzy
-#| msgid "Bluetooth File Transfer"
 msgid "Generic Display"
 msgstr "Bluetooth फाइल स्थानांतरण"
 
 #: blueman/DeviceClass.py:175
 #, fuzzy
-#| msgid "Connect"
 msgid "Generic Remote Control"
 msgstr "जुळवणी करा"
 
 #: blueman/DeviceClass.py:176
 #, fuzzy
-#| msgid "Bluetooth File Transfer"
 msgid "Generic Eye-glasses"
 msgstr "Bluetooth फाइल स्थानांतरण"
 
 #: blueman/DeviceClass.py:177
 #, fuzzy
-#| msgid "Bluetooth File Transfer"
 msgid "Generic Tag"
 msgstr "Bluetooth फाइल स्थानांतरण"
 
 #: blueman/DeviceClass.py:178
 #, fuzzy
-#| msgid "Group Network"
 msgid "Generic Keyring"
 msgstr "गट संजाळ"
 
 #: blueman/DeviceClass.py:179
 #, fuzzy
-#| msgid "Bluetooth File Transfer"
 msgid "Generic Media Player"
 msgstr "Bluetooth फाइल स्थानांतरण"
 
 #: blueman/DeviceClass.py:180
 #, fuzzy
-#| msgid "Connect"
 msgid "Generic Barcode Scanner"
 msgstr "जुळवणी करा"
 
 #: blueman/DeviceClass.py:181
 #, fuzzy
-#| msgid "Connect"
 msgid "Generic Thermometer"
 msgstr "जुळवणी करा"
 
@@ -1230,7 +1253,6 @@ msgstr ""
 
 #: blueman/DeviceClass.py:183
 #, fuzzy
-#| msgid "Bluetooth File Transfer"
 msgid "Generic Heart rate Sensor"
 msgstr "Bluetooth फाइल स्थानांतरण"
 
@@ -1284,7 +1306,6 @@ msgstr ""
 
 #: blueman/DeviceClass.py:197
 #, fuzzy
-#| msgid "Connect"
 msgid "Generic Glucose Meter"
 msgstr "जुळवणी करा"
 
@@ -1306,7 +1327,6 @@ msgstr ""
 
 #: blueman/DeviceClass.py:202
 #, fuzzy
-#| msgid "Group Network"
 msgid "Generic: Cycling"
 msgstr "गट संजाळ"
 
@@ -1340,7 +1360,7 @@ msgid "Fingertip"
 msgstr ""
 
 #: blueman/DeviceClass.py:211
-msgid "Wrist Worn"
+msgid "Wrist-Worn"
 msgstr ""
 
 #: blueman/DeviceClass.py:212
@@ -1514,7 +1534,6 @@ msgstr ""
 
 #: blueman/Sdp.py:116
 #, fuzzy
-#| msgid "Serial Ports"
 msgid "Serial Port"
 msgstr "सीरिअल पोर्ट"
 
@@ -1536,7 +1555,6 @@ msgstr ""
 
 #: blueman/Sdp.py:121
 #, fuzzy
-#| msgid "Bluetooth File Transfer"
 msgid "OBEX File Transfer"
 msgstr "Bluetooth फाइल स्थानांतरण"
 
@@ -1698,7 +1716,6 @@ msgstr ""
 
 #: blueman/Sdp.py:163
 #, fuzzy
-#| msgid "Network Access Point (NAP)"
 msgid "Phonebook Access (PBAP)"
 msgstr "Network Access Point (NAP)"
 
@@ -1712,7 +1729,6 @@ msgstr ""
 
 #: blueman/Sdp.py:167
 #, fuzzy
-#| msgid "Network Access Point (NAP)"
 msgid "Message Access Profile (MAP)"
 msgstr "Network Access Point (NAP)"
 
@@ -1762,13 +1778,11 @@ msgstr ""
 
 #: blueman/Sdp.py:179
 #, fuzzy
-#| msgid "Group Network"
 msgid "Generic Networking"
 msgstr "गट संजाळ"
 
 #: blueman/Sdp.py:180
 #, fuzzy
-#| msgid "Bluetooth File Transfer"
 msgid "Generic FileTransfer"
 msgstr "Bluetooth फाइल स्थानांतरण"
 
@@ -1782,13 +1796,11 @@ msgstr ""
 
 #: blueman/Sdp.py:183
 #, fuzzy
-#| msgid "Audio Source"
 msgid "Video Source"
 msgstr "ध्वनी स्त्रोत"
 
 #: blueman/Sdp.py:184
 #, fuzzy
-#| msgid "Audio Sink"
 msgid "Video Sink"
 msgstr "ऑडियो सिंक"
 
@@ -1802,7 +1814,6 @@ msgstr ""
 
 #: blueman/Sdp.py:187
 #, fuzzy
-#| msgid "Audio Source"
 msgid "HDP Source"
 msgstr "ध्वनी स्त्रोत"
 
@@ -1864,7 +1875,6 @@ msgstr ""
 
 #: blueman/Sdp.py:202
 #, fuzzy
-#| msgid "Local Services"
 msgid "Battery Service"
 msgstr "स्थानिक सेवा"
 
@@ -1950,25 +1960,20 @@ msgstr ""
 
 #: blueman/Sdp.py:223
 #, fuzzy
-#| msgid "Transfer"
 msgid "Object Transfer"
 msgstr "स्थानांतरन"
 
 #: blueman/Sdp.py:224
-#, fuzzy
-#| msgid "applet"
 msgid "AppleAgent"
-msgstr " एप्लेट"
+msgstr "ॲपलएजंट"
 
 #: blueman/Sdp.py:225
 #, fuzzy
-#| msgid "Local Services"
 msgid "Primary Service"
 msgstr "स्थानिक सेवा"
 
 #: blueman/Sdp.py:226
 #, fuzzy
-#| msgid "Search for nearby devices"
 msgid "Secondary Service"
 msgstr "नजीकचे साधन शोधत आहे..."
 
@@ -1982,7 +1987,6 @@ msgstr ""
 
 #: blueman/Sdp.py:229
 #, fuzzy
-#| msgid "Device Manager"
 msgid "Device Name"
 msgstr "साधन व्यवस्थापक"
 
@@ -1996,7 +2000,6 @@ msgstr ""
 
 #: blueman/Sdp.py:232
 #, fuzzy
-#| msgid "Recent _Connections"
 msgid "Reconnection Address"
 msgstr "अलीकडच्या जोडण्या (_C)"
 
@@ -2006,7 +2009,6 @@ msgstr ""
 
 #: blueman/Sdp.py:234
 #, fuzzy
-#| msgid "Device Manager"
 msgid "Service Changed"
 msgstr "साधन व्यवस्थापक"
 
@@ -2080,7 +2082,6 @@ msgstr ""
 
 #: blueman/Sdp.py:378
 #, fuzzy
-#| msgid "Audio Profile"
 msgid "Audio and input profiles"
 msgstr "ऑडियो प्रोफाइल"
 
@@ -2140,8 +2141,8 @@ msgstr ""
 
 #. https://github.com/python/mypy/issues/2608
 #: blueman/plugins/applet/AutoConnect.py:50
-#: blueman/plugins/applet/ConnectionNotifier.py:21
-#: blueman/plugins/applet/RecentConns.py:223
+#: blueman/plugins/applet/ConnectionNotifier.py:36
+#: blueman/plugins/applet/RecentConns.py:155
 #: blueman/plugins/applet/PPPSupport.py:75
 msgid "Connected"
 msgstr "जुळले"
@@ -2151,13 +2152,12 @@ msgstr "जुळले"
 msgid "Automatically connected to %(service)s on %(device)s"
 msgstr ""
 
-#: blueman/plugins/applet/ConnectionNotifier.py:13
+#: blueman/plugins/applet/ConnectionNotifier.py:15
 msgid "Shows desktop notifications when devices get connected or disconnected."
 msgstr ""
 
-#: blueman/plugins/applet/ConnectionNotifier.py:21
+#: blueman/plugins/applet/ConnectionNotifier.py:48
 #, fuzzy
-#| msgid "Disconnecting..."
 msgid "Disconnected"
 msgstr "जुळवणी मोडत आहे..."
 
@@ -2221,9 +2221,9 @@ msgstr ""
 msgid "Shows network traffic usage"
 msgstr "संजाळ वाहतूक वापर दाखवते "
 
-#: blueman/plugins/applet/StatusIcon.py:42
-#: blueman/plugins/applet/ShowConnected.py:72
-#: blueman/plugins/applet/PowerManager.py:189
+#: blueman/plugins/applet/StatusIcon.py:43
+#: blueman/plugins/applet/ShowConnected.py:71
+#: blueman/plugins/applet/PowerManager.py:190
 msgid "Bluetooth Enabled"
 msgstr "ब्लूटूथ कार्यान्वीत आहे"
 
@@ -2251,25 +2251,25 @@ msgstr "सर्वाधिक घटक "
 msgid "The maximum number of items recent connections menu will display."
 msgstr "शेवटच्या जोडण्यांची कमाल संख्या जे मेनू दाखवेल."
 
-#: blueman/plugins/applet/RecentConns.py:64
+#: blueman/plugins/applet/RecentConns.py:63
 msgid "Recent _Connections"
 msgstr "अलीकडच्या जोडण्या (_C)"
 
-#: blueman/plugins/applet/RecentConns.py:223
+#: blueman/plugins/applet/RecentConns.py:155
 #, python-format
 msgid "Connected to %s"
 msgstr "%s ला जुळणी झाली"
 
-#: blueman/plugins/applet/RecentConns.py:229
+#: blueman/plugins/applet/RecentConns.py:161
 msgid "Failed to connect"
 msgstr "जुळणी होऊ शकली नाही"
 
-#: blueman/plugins/applet/RecentConns.py:249
+#: blueman/plugins/applet/RecentConns.py:171
 #, python-format
 msgid "%(service)s on %(device)s"
 msgstr "%(service)s, %(device)s वर "
 
-#: blueman/plugins/applet/RecentConns.py:253
+#: blueman/plugins/applet/RecentConns.py:175
 msgid "Adapter for this connection is not available"
 msgstr "या जोडणीसाठी अडॅप्टर उपलब्ध नाही"
 
@@ -2331,6 +2331,10 @@ msgstr "फाईल पूर्णपणे प्राप्त झाली
 msgid "File %(0)s from %(1)s successfully received"
 msgstr "फाईल %(0)s, %(1)s कडून यशस्वीरीत्या प्राप्त झाली"
 
+#: blueman/plugins/applet/TransferService.py:308
+msgid "Open"
+msgstr ""
+
 #: blueman/plugins/applet/TransferService.py:312
 msgid "Transfer failed"
 msgstr "फाईल बदलीमध्ये त्रुटी आली"
@@ -2347,17 +2351,18 @@ msgstr "फाईल्स प्राप्त झाल्या"
 
 #: blueman/plugins/applet/TransferService.py:334
 #, fuzzy, python-format
-#| msgid "Received %d file in the background"
-#| msgid_plural "Received %d files in the background"
 msgid "Received %(files)d file in the background"
 msgid_plural "Received %(files)d files in the background"
 msgstr[0] "%d फाईल पार्श्वभूमीमध्ये प्राप्त झाली"
 msgstr[1] "%d फाईल्स पार्श्वभूमीमध्ये प्राप्त झाल्या"
 
+#: blueman/plugins/applet/TransferService.py:339
+#: blueman/plugins/applet/TransferService.py:347
+msgid "Open Location"
+msgstr ""
+
 #: blueman/plugins/applet/TransferService.py:343
 #, fuzzy, python-format
-#| msgid "Received %d more file in the background"
-#| msgid_plural "Received %d more files in the background"
 msgid "Received %(files)d more file in the background"
 msgid_plural "Received %(files)d more files in the background"
 msgstr[0] "अजून %d फाईल पार्श्वभूमीमध्ये प्राप्त झाली"
@@ -2365,7 +2370,7 @@ msgstr[1] "अजून %d फाईल्स पार्श्वभूमी�
 
 #: blueman/plugins/applet/KillSwitch.py:37
 msgid ""
-"Switches Bluetooth killswitch status to match Bluetooth power state.Allows "
+"Switches Bluetooth killswitch status to match Bluetooth power state. Allows "
 "turning Bluetooth back on from an icon that shows its status; provided it "
 "isn't unplugged by the system, or physically."
 msgstr ""
@@ -2382,13 +2387,13 @@ msgstr "साधनाला फाईल पाठवा (_F)"
 msgid "_Devices"
 msgstr "साधने(_D)"
 
-#: blueman/plugins/applet/StandardItems.py:40
+#: blueman/plugins/applet/StandardItems.py:41
 msgid "Adap_ters"
 msgstr "अॅङॅप्टर (_T)"
 
-#: blueman/plugins/applet/StandardItems.py:85
+#: blueman/plugins/applet/StandardItems.py:90
 msgid "applet"
-msgstr " एप्लेट"
+msgstr "ॲपलेट"
 
 #: blueman/plugins/applet/AuthAgent.py:8
 msgid "Provides passkey, authentication services for BlueZ daemon"
@@ -2435,29 +2440,17 @@ msgstr ""
 msgid "Bluetooth Active"
 msgstr "ब्लूटूथ कार्यक्षम"
 
-#: blueman/plugins/applet/ShowConnected.py:64
+#: blueman/plugins/applet/ShowConnected.py:63
 #, fuzzy, python-format
-#| msgid "<b>%d Active Connection</b>"
-#| msgid_plural "<b>%d Active Connections</b>"
 msgid "<b>%(connections)d Active Connection</b>"
 msgid_plural "<b>%(connections)d Active Connections</b>"
 msgstr[0] "<b>%d कार्यक्षम जुळणी </b>"
 msgstr[1] "<b>%d कार्यक्षम जुळण्या </b>"
 
-#: blueman/plugins/applet/ShowConnected.py:74
-#: blueman/plugins/applet/PowerManager.py:192
+#: blueman/plugins/applet/ShowConnected.py:73
+#: blueman/plugins/applet/PowerManager.py:193
 msgid "Bluetooth Disabled"
 msgstr "ब्लूटूथ अकार्यान्वीत आहे"
-
-#: blueman/plugins/applet/AppIndicator.py:17
-msgid "Uses libappindicator to show a statusicon"
-msgstr ""
-
-#: blueman/plugins/applet/Battery.py:14
-msgid ""
-"Shows desktop notifications with battery percentage when devices get "
-"connected."
-msgstr ""
 
 #: blueman/plugins/applet/DisconnectItems.py:14
 msgid "Adds disconnect menu items"
@@ -2465,7 +2458,6 @@ msgstr ""
 
 #: blueman/plugins/applet/DisconnectItems.py:40
 #, fuzzy, python-format
-#| msgid "Disconnecting..."
 msgid "Disconnect %s"
 msgstr "जुळवणी मोडत आहे..."
 
@@ -2497,7 +2489,7 @@ msgstr "मुलभूत अडॅप्टर तात्पुरता द
 msgid "Discoverable… %ss"
 msgstr ""
 
-#: blueman/plugins/applet/Menu.py:113
+#: blueman/plugins/applet/Menu.py:115
 msgid ""
 "Provides a menu for the applet and an API for other plugins to manipulate it"
 msgstr ""
@@ -2567,27 +2559,31 @@ msgid "Automatically power on adapters"
 msgstr ""
 
 #: blueman/plugins/applet/PowerManager.py:55
-#: blueman/plugins/applet/PowerManager.py:171
+#: blueman/plugins/applet/PowerManager.py:172
 msgid "<b>Turn Bluetooth _Off</b>"
 msgstr ""
 
-#: blueman/plugins/applet/PowerManager.py:56
-#: blueman/plugins/applet/PowerManager.py:173
+#: blueman/plugins/applet/PowerManager.py:57
+#: blueman/plugins/applet/PowerManager.py:174
 msgid "Turn off all adapters"
 msgstr "सर्व अडॅप्टर बंद करा"
 
-#: blueman/plugins/applet/PowerManager.py:162
+#: blueman/plugins/applet/PowerManager.py:163
 msgid "<b>Turn Bluetooth _On</b>"
 msgstr ""
 
-#: blueman/plugins/applet/PowerManager.py:164
+#: blueman/plugins/applet/PowerManager.py:165
 msgid "Turn on all adapters"
 msgstr "सर्व अडॅप्टर सुरु करा"
 
-#: blueman/plugins/applet/GameControllerWakelock.py:19
+#: blueman/plugins/applet/GameControllerWakelock.py:20
 msgid ""
 "Temporarily suspends the screensaver when a bluetooth game controller is "
 "connected."
+msgstr ""
+
+#: blueman/plugins/applet/StatusNotifierItem.py:10
+msgid "Provides a StatusNotifierItem to show a statusicon"
 msgstr ""
 
 #: blueman/plugins/services/Network.py:25
@@ -2639,31 +2635,25 @@ msgstr "IP पत्ता नुतनीकरण करा"
 
 #: data/blueman-adapters.desktop.in:4
 #, fuzzy
-#| msgid "Bluetooth Adapters"
 msgid "Set Bluetooth Adapter Properties"
 msgstr "Bluetooth अडॅप्टर"
 
 #: data/blueman.desktop.in:3
-#, fuzzy
-#| msgid "applet"
 msgid "Blueman Applet"
-msgstr " एप्लेट"
+msgstr "ब्लूमॅन ॲपलेट"
 
 #: data/blueman.desktop.in:4 data/blueman-manager.desktop.in:4
 #, fuzzy
-#| msgid "Bluetooth Enabled"
 msgid "Blueman Bluetooth Manager"
 msgstr "ब्लूटूथ कार्यान्वीत आहे"
 
 #: data/blueman-manager.desktop.in:3
 #, fuzzy
-#| msgid "Bluetooth Enabled"
 msgid "Bluetooth Manager"
 msgstr "ब्लूटूथ कार्यान्वीत आहे"
 
 #: data/thunar-sendto-blueman.desktop.in:5
 #, fuzzy
-#| msgid "Bluetooth Devices"
 msgid "Bluetooth Device"
 msgstr "Bluetooth साधन"
 
@@ -2699,13 +2689,15 @@ msgstr ""
 msgid "Setting RfKill State requires privileges"
 msgstr ""
 
+#~ msgid "<b>Trusted</b>"
+#~ msgstr "<b>विश्वासू</b>"
+
+#~ msgid "<b>Friendly Name</b>"
+#~ msgstr "<b>अनुकूल नाव</b>"
+
 #, fuzzy
-#~| msgid "Disconnecting..."
 #~ msgid "Disconnecting…"
 #~ msgstr "जुळवणी मोडत आहे..."
-
-#~ msgid "Local Services"
-#~ msgstr "स्थानिक सेवा"
 
 #~ msgid "Serial Ports"
 #~ msgstr "सीरिअल पोर्ट"
@@ -2785,9 +2777,6 @@ msgstr ""
 #~ msgid "Serial port connected to %s"
 #~ msgstr "सीरिअल पोर्ट ला %s जोडलेले आहे"
 
-#~ msgid "Bluetooth Devices"
-#~ msgstr "Bluetooth साधन"
-
 #~ msgid "%.0f Minute"
 #~ msgid_plural "%.0f Minutes"
 #~ msgstr[0] "%.0f मिनिट"
@@ -2800,9 +2789,6 @@ msgstr ""
 
 #~ msgid "_Remove..."
 #~ msgstr "काढून टाका (_R)..."
-
-#~ msgid "Send files to this device"
-#~ msgstr "साधन करीता फाइल पाठवा"
 
 #~ msgid "No adapters found"
 #~ msgstr "अडॅप्टर उपलब्ध नाही"
